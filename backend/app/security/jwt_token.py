@@ -29,3 +29,17 @@ def verify_token(token: str, credentials_exception):
         raise credentials_exception
 
 
+def create_reset_token(email: str):
+    expire = datetime.utcnow() + timedelta(minutes=15)
+    payload = {"sub": email, "purpose": "reset_password", "exp": expire}
+    return jwt.encode(payload, SECRET_KEY, algorithm=ALGORITHM)
+
+def verify_reset_token(token: str):
+    try:
+        payload = decode_token(token)
+        if payload.get("purpose") != "reset_password":
+            raise ValueError("Invalid token purpose")
+        return payload
+    except (JWTError, ValueError) as e:
+        raise HTTPException(status_code=400, detail=str(e))
+
