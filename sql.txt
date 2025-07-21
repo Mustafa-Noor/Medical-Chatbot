@@ -28,3 +28,19 @@ CREATE TABLE chat_messages (
     matched_qa_id INT,  -- for CSV matches
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+
+
+CREATE TYPE answer_source AS ENUM ('csv', 'rag', 'llm');
+
+CREATE TABLE chat_logs (
+    id SERIAL PRIMARY KEY,
+    user_id INT REFERENCES users(id) ON DELETE CASCADE,
+    chat_session_id INT REFERENCES chat_sessions(id) ON DELETE CASCADE,
+    user_query TEXT NOT NULL,
+    source answer_source NOT NULL,  -- csv, rag, or llm
+    matched_qa_id INT,              -- if CSV match found
+    rag_score FLOAT,                -- cosine sim score if RAG used
+    llm_answer_used BOOLEAN DEFAULT FALSE,
+    llm_answer_text TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);

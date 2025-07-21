@@ -5,3 +5,4 @@ pydantic
 dotenv
 bcrypt
 asyncpg
+pydantic[email]

@@ -21,8 +21,9 @@ class ChatSessionOut(ChatSessionCreate):
     id: int
     created_at: datetime
 
-    class Config:
-        orm_mode = True
+    model_config = {
+        "from_attributes": True
+    }
 
 class ChatMessageCreate(BaseModel):
     session_id: int
@@ -35,5 +36,6 @@ class ChatMessageOut(ChatMessageCreate):
     id: int
     created_at: datetime
 
-    class Config:
-        orm_mode = True
+    model_config = {
+        "from_attributes": True
+    }
