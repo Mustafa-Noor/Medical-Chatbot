@@ -1,0 +1,39 @@
+from pydantic import BaseModel
+from typing import Optional
+from datetime import datetime
+from enum import Enum
+
+class SenderType(str, Enum):
+    user = "user"
+    assistant = "assistant"
+
+class SourceType(str, Enum):
+    csv = "csv"
+    rag = "rag"
+    llm = "llm"
+
+class ChatSessionCreate(BaseModel):
+    user_id: int
+    topic: Optional[str]
+    title: Optional[str]
+
+class ChatSessionOut(ChatSessionCreate):
+    id: int
+    created_at: datetime
+
+    class Config:
+        orm_mode = True
+
+class ChatMessageCreate(BaseModel):
+    session_id: int
+    sender: SenderType
+    message: str
+    source: Optional[SourceType] = None
+    matched_qa_id: Optional[int] = None
+
+class ChatMessageOut(ChatMessageCreate):
+    id: int
+    created_at: datetime
+
+    class Config:
+        orm_mode = True
