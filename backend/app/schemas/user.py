@@ -16,3 +16,7 @@ class UserOut(BaseModel):
     model_config = {
         "from_attributes": True
     }
+
+class UserLogin(BaseModel):
+    username: str
+    password: str 
