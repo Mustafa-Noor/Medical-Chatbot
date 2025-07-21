@@ -5,6 +5,17 @@
   box-sizing: border-box;
 }
 
+:root {
+  --primary-color: #0096a0;
+  --accent-color: #f7b32b;
+  --light-color: #f2f9f9;
+  --text-color: #333;
+  --form-bg: #ffffff;
+  --input-bg: #f5f7fa;
+  --input-border: #ccc;
+}
+
+
 html, body {
   height: 100%;
   width: 100%;
