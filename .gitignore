@@ -1,0 +1,26 @@
+# Python virtual environment
+venv/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Environment variables
+.env
+
+# SQLite or other local DBs (if any)
+*.sqlite3
+
+# Logs and temp files
+*.log
+logs/
+
+# Pyright / mypy / IDE stuff
+.mypy_cache/
+.pyright/
+.idea/
+.vscode/
+
+# OS-specific
+.DS_Store
+Thumbs.db
