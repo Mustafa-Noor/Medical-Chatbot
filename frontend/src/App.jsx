@@ -1,18 +1,19 @@
-// App.jsx
-
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import RegisterForm from "./components/RegisterForm";
+import LoginForm from "./components/LoginForm";
+import HomePage from "./components/HomePage"; // <-- import
 import ResetPassword from "./pages/ResetPassword";
-// import other pages like Home, Login, etc.
 
 function App() {
   return (
-    <Router>
+    <BrowserRouter>
       <Routes>
-        {/* Example route */}
-        {/* <Route path="/" element={<Home />} /> */}
+        <Route path="/" element={<HomePage />} />
+        <Route path="/register" element={<RegisterForm />} />
+        <Route path="/login" element={<LoginForm />} />
         <Route path="/reset-password" element={<ResetPassword />} />
       </Routes>
-    </Router>
+    </BrowserRouter>
   );
 }
 

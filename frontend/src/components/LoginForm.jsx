@@ -1,5 +1,6 @@
 import { useState } from "react";
 import API from "../services/api";
+import "./LoginRegister.css"; // make sure this file exists
 
 function LoginForm() {
   const [form, setForm] = useState({ username: "", password: "" });
@@ -11,25 +12,34 @@ function LoginForm() {
       localStorage.setItem("token", res.data.access_token);
       alert("Logged in!");
     } catch (err) {
-      alert("Login failed");
+      alert("Login failed. Please check your credentials.");
     }
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <h2>Login</h2>
-      <input
-        type="text"
-        placeholder="Username"
-        onChange={(e) => setForm({ ...form, username: e.target.value })}
-      />
-      <input
-        type="password"
-        placeholder="Password"
-        onChange={(e) => setForm({ ...form, password: e.target.value })}
-      />
-      <button type="submit">Login</button>
-    </form>
+    <div className="auth-container">
+      <form className="auth-form" onSubmit={handleSubmit}>
+        <h2>Login</h2>
+        <input
+          type="text"
+          placeholder="Username"
+          value={form.username}
+          onChange={(e) => setForm({ ...form, username: e.target.value })}
+          required
+        />
+        <input
+          type="password"
+          placeholder="Password"
+          value={form.password}
+          onChange={(e) => setForm({ ...form, password: e.target.value })}
+          required
+        />
+        <button type="submit">Login</button>
+        <p>
+          Don't have an account? <a href="/register">Register here</a>
+        </p>
+      </form>
+    </div>
   );
 }
 
