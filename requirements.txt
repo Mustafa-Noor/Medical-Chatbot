@@ -10,3 +10,10 @@ passlib
 python-jose
 python-multipart
 aiosmtplib
+langchain
+langchain-community
+langchain-experimental
+sentence-transformers
+pypdf
+faiss-cpu
+cryptography
