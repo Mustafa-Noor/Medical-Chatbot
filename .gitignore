@@ -53,3 +53,11 @@ coverage/
 # cache
 .eslintcache
 .turbo/
+
+
+
+# PDF
+# Uncomment the following lines if you want to ignore PDF files
+# *.pdf
+PDFS/
+data/embeddings
