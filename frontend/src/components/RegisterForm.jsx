@@ -12,7 +12,7 @@ function RegisterForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await API.post("/auth/register", new URLSearchParams(form));
+      await API.post("/auth/register", form);
       alert("Registered successfully! Please login.");
       window.location.href = "/login";
     } catch (err) {
