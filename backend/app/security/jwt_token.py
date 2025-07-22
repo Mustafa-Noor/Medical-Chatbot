@@ -2,6 +2,7 @@ from datetime import datetime, timedelta
 from jose import JWTError, jwt
 from ..config import settings
 from ..schemas.token_schema import TokenData
+from fastapi import HTTPException
 
 
 SECRET_KEY = settings.Secret_Key
