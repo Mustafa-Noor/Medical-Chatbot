@@ -1,16 +1,24 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom"; // ✅ ADD THIS
 import API from "../services/api";
-import "./LoginRegister.css"; // make sure this file exists
+import "./LoginRegister.css";
 
 function LoginForm() {
   const [form, setForm] = useState({ username: "", password: "" });
+  const navigate = useNavigate(); // ✅ ADD THIS
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       const res = await API.post("/auth/login", new URLSearchParams(form));
+
+      // ✅ Save token and user_id if available
       localStorage.setItem("token", res.data.access_token);
-      alert("Logged in!");
+      if (res.data.user_id) {
+        localStorage.setItem("user_id", res.data.user_id);
+      }
+
+      navigate("/select-topic"); // ✅ REDIRECT TO TOPIC SELECTION
     } catch (err) {
       alert("Login failed. Please check your credentials.");
     }
@@ -39,8 +47,8 @@ function LoginForm() {
           Don't have an account? <a href="/register">Register here</a>
         </p>
         <p>
-  <a href="/forgot-password">Forgot your password?</a>
-</p>
+          <a href="/forgot-password">Forgot your password?</a>
+        </p>
       </form>
     </div>
   );
