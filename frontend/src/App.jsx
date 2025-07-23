@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import RegisterForm from "./components/RegisterForm";
 import LoginForm from "./components/LoginForm";
 import HomePage from "./components/HomePage"; // <-- import
-import ResetPassword from "./pages/ResetPassword";
+import ResetPassword from "./components/ResetPassword";
 import ForgotPasswordForm from "./components/ForgotPasswordForm";
 import PasswordResetSent from "./components/PasswordResetSent";
 
