@@ -2,6 +2,7 @@ from fastapi import FastAPI
 from .routes import auth
 from .database import engine, Base
 from fastapi.middleware.cors import CORSMiddleware
+from app.routes import auth, chat, topics
 
 
 
@@ -21,7 +22,7 @@ app.add_middleware(
     allow_headers=["*"],     # allow all headers
 )
 
-
+app.include_router(topics.router)
 app.include_router(auth.router)
 
 @app.on_event("startup")

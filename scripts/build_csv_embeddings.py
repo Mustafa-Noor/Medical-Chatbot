@@ -82,25 +82,6 @@ def save_to_faiss(folder_name: str, documents: list[Document]):
     db.save_local(persist_dir)
     print(f"[✅] Saved FAISS index for '{folder_name}' to {persist_dir}")
 
-def save_failed_rows(failed_rows: list):
-    if not failed_rows:
-        return
-
-    # Filter out None keys
-    all_keys = set()
-    for row in failed_rows:
-        clean_row = {k if k is not None else "" for k in row.keys()}
-        all_keys.update(clean_row)
-    all_keys = list(all_keys)
-
-    os.makedirs(os.path.dirname(FAILED_ROWS_LOG), exist_ok=True)
-    with open(FAILED_ROWS_LOG, "w", encoding="utf-8", newline="") as f:
-        writer = csv.DictWriter(f, fieldnames=all_keys)
-        writer.writeheader()
-        for row in failed_rows:
-            writer.writerow({k: row.get(k, "") for k in all_keys})
-
-    print(f"[⚠️] Logged {len(failed_rows)} failed rows with reasons to {FAILED_ROWS_LOG}")
 
 
 # ---- MAIN ---- #
@@ -120,7 +101,6 @@ def process_all_csvs():
             if failed:
                 all_failed.extend(failed)
 
-    save_failed_rows(all_failed)
 
 if __name__ == "__main__":
     process_all_csvs()

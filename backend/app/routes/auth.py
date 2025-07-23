@@ -75,7 +75,12 @@ async def login_user(request: OAuth2PasswordRequestForm = Depends(), db: AsyncSe
         access_token = jwt_token.create_access_token(
             data={"sub": db_user.username}
         )
-        return {"access_token": access_token, "token_type": "bearer"}
+        return {
+            "access_token": access_token,
+            "token_type": "bearer",
+            "user_id": db_user.id
+        }
+
 
     except HTTPException:
         raise
@@ -95,8 +100,6 @@ async def get_current_user(current_user: TokenData = Depends(deps.get_current_us
         print("ERROR:", e)
         traceback.print_exc()
         raise HTTPException(status_code=500, detail="Internal Server Error")
-
-
 
 
 @router.post("/forgot-password")
