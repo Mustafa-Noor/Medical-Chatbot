@@ -1,0 +1,977 @@
+[
+    {
+      "topic": "Congenital Dislocations: Radial Head Dislocation",
+      "text": "Congenital radial head dislocation, most commonly anterior, is often associated with systemic conditions like Nail Patella syndrome or achondroplasia. It may present with reduced ROM or pain. Management is usually non-operative, but surgical options like radial head excision or annular ligament reconstruction are considered for symptomatic cases, often requiring bone length equalization."
+    },
+    {
+      "topic": "Madelung Deformity",
+      "text": "Madelung deformity is a congenital condition affecting the distal radius, characterized by premature fusion of the volar-ulnar epiphysis. It leads to a prominent ulna head and carpal subluxation. Management aims to restore radial anatomy, reduce DRUJ instability, and improve ROM."
+    },
+    {
+      "topic": "Orthopaedic Classifications: Swanson's Classification of Congenital Hand Anomalies",
+      "text": "Swanson's classification categorizes congenital hand anomalies by aetiology: failure of formation (amelia, longitudinal arrest), failure of differentiation (syndactyly, camptodactyly), duplication (polydactyly), overgrowth/undergrowth (hyperplasia/hypoplasia), and constriction bands. General syndromes and Madelung's deformity are also considered."
+    },
+    {
+      "topic": "Orthopaedic Classifications: Wassel's Classification of Thumb Duplications",
+      "text": "Wassel's classification of thumb polydactyly describes types based on the pattern of duplication: Type 1 (bifid P3), Type 2 (duplicated P3), Type 3 (bifid P2), Type 4 (duplicated P2 - most common), Type 5 (bifid P1), Type 6 (duplicated P1), and Type 7 (triphalangism). This guides surgical management, aiming for the most functional duplication."
+    },
+    {
+      "topic": "Paediatric Upper Limb Conditions: Brachial Plexus Birth Palsy",
+      "text": "Brachial Plexus Birth Palsy (BPBP) results from traction injury to the brachial plexus during birth. Erb's palsy (C5/6) is most common with better prognosis than Klumpke's (C8/T1) or total plexus injuries. Management involves observation for recovery and ROM exercises. Surgical options like nerve grafting or tendon transfers address persistent deficits. Poor prognosis factors include pre-ganglionic injury and lack of biceps recovery."
+    },
+    {
+      "topic": "Paediatric Upper Limb Conditions: Congenital Pseudoarthrosis of the Clavicle",
+      "text": "Congenital pseudoarthrosis of the clavicle is a failure of ossification centers to unite, presenting as a painless mass. Unlike tibial pseudoarthrosis, it rarely causes functional deficit. Surgical excision and fixation with bone grafting have good results and high union rates, typically performed if the appearance or function is compromised."
+    },
+    {
+      "topic": "Paediatric Upper Limb Conditions: Congenital Synostosis of the Forearm",
+      "text": "Congenital forearm synostosis is a failure of differentiation between the radius and ulna, typically resulting in fixed pronation. It can be isolated or associated with other anomalies. Surgery (rotational osteotomy) is rarely indicated due to poor outcomes and high complication rates. Most children adapt well to the functional limitations."
+    },
+    {
+      "topic": "Paediatric Upper Limb Conditions: Sprengel's Deformity",
+      "text": "Sprengel's deformity is a developmental condition of incomplete scapular descent, leading to hypoplastic shoulder musculature and dysfunction, especially in abduction. It is associated with scoliosis and omovertebral bars (requiring excision). Management involves observation for mild cases or the Woodward procedure (scapulothoracic release, translation) for most, often with clavicle osteotomy to prevent brachial plexus injury."
+    },
+    {
+      "topic": "Paediatric Upper Limb Conditions: Trigger Finger/Thumb",
+      "text": "Trigger thumb is more common than trigger digits in children, presenting with painful triggering and a palpable nodule. Conservative management involves observation until age one, as spontaneous resolution is possible. Surgical release of the A1 pulley is indicated for persistent or painful cases, with meticulous care to avoid damaging the digital nerve and the oblique pulley."
+    },
+    {
+      "topic": "Useful Tables: Swanson's Classification of Congenital Hand Anomalies",
+      "text": "Swanson categorizes congenital hand anomalies by aetiology: failure of formation, differentiation, duplication, overgrowth/undergrowth, and constriction bands. Syndromes like Madelung's and thumb duplication (Wassel classification) are also considered, guiding reconstructive strategies for optimal function."
+    },
+    {
+      "topic": "Useful Tables: Wassel's Classification of Thumb Duplications",
+      "text": "Wassel's classification of thumb polydactyly describes types based on bone duplication or bifurcation (P1, P2, P3). Type 4 (duplicated P2) is most common. This guides surgical reconstruction to create the most functional and aesthetically acceptable thumb."
+    },
+    {
+      "topic": "Causes of Paediatric Genu Valgum and Genu Varum",
+      "text": "Paediatric genu varum can be caused by Blount's disease, rickets, achondroplasia, and multiple hereditary osteochondromatosis. Genu valgum can be physiologic, or pathological due to fibula hemimelia, Morquio syndrome, MED, cozen's fracture, or rickets. Identifying the underlying cause is crucial for management."
+    },
+    {
+      "topic": "Differential Diagnosis of Intoeing",
+      "text": "Intoeing in children can be caused by Metatarsus Adductus (benign, resolves with WB), Internal Tibial Torsion (resolves by age 2-4), Femoral Anteversion (normal variant, resolves by age 8-10), Club Foot (pathologic), or Cerebral Palsy (pathologic). Assessing the thigh-foot axis and foot progression angle helps differentiate these conditions."
+    },
+    {
+      "topic": "Examination of Paediatric Lower Limb Angular Deformity",
+      "text": "Examining a paediatric lower limb for angular deformity involves assessing overall appearance (stature, scars, deformity location), gait (thrust, anatalgia), and palpating to measure intermalleolar distance and assess correctability. While lying down, square the pelvis and measure the deformity. Evaluate joint ROM and rotational profile. Finishing the examination with standing X-rays, CT scanograms, and a family history provides a comprehensive assessment."
+    },
+    {
+      "topic": "Limb Deficiencies: Fibula Hemimelia",
+      "text": "Fibula hemimelia is the most common limb deficiency, involving partial or complete absence of the fibula. It's often associated with other limb deformities, including knee and foot issues. Management is dictated by overall limb and foot function, with amputation considered if the foot is severely dysplastic or flail, ideally before age three for better psychological impact."
+    },
+    {
+      "topic": "Limb Deficiencies: Proximal Femoral Focal Deficiency (PFFD)",
+      "text": "PFFD is a spectrum of femoral shortening. Management is reconstructive or ablative, based on hip stability, lower leg function, bone deficiencies, and knee/ankle stability. Surgery is usually delayed until ages 2-3, with options including lengthening, knee fusion with foot ablation, rotationplasty, or femoro-pelvic fusion, aiming to optimize limb length and function for prosthetic use."
+    },
+    {
+      "topic": "Limb Deficiencies: Tibial Hemimelia",
+      "text": "Tibial hemimelia is less common and often associated with other anomalies, including fibula hemimelia and equinovarus foot deformities. Management depends on knee extension and dictates reconstruction or prosthesis use after foot ablation. The primary goal is to achieve a functional, plantigrade, and braceable foot, providing the best possible outcome for ambulation."
+    },
+    {
+      "topic": "Paediatric Limb Length Discrepancy (LLD) Management",
+      "text": "LLD assessment involves evaluating gait, pelvic tilt, and measuring true and apparent lengths. Growth prediction methods (e.g., Green & Anderson) guide management, which can include shoe raises, epiphysiodesis (bone growth arrest), shortening osteotomies, lengthening procedures (distraction osteogenesis), or amputation for severe discrepancies. Decisions balance functional goals with surgical risks and patient age."
+    },
+    {
+      "topic": "Paediatric Lower Limb Deformities: Genu Valgum",
+      "text": "Genu valgum can be physiologic up to age 7. Pathological causes include rickets, MED, and trauma (Cozen's fracture). Assessment involves measuring intermalleolar distance and evaluating the cause. Management can include observation, bracing, guided growth (tethering lateral physis), hemiepiphysiodesis, or osteotomy for severe or progressive deformities, usually performed after age 10."
+    },
+    {
+      "topic": "Paediatric Lower Limb Deformities: Genu Varum and Blount's Disease",
+      "text": "Genu varum can be physiologic or pathological, with Blount's disease (medial tibial physeal overload) being the most common pathological cause. Blount's is progressive and more aggressive in infants. Evaluation involves X-rays to assess metaphyseal-diaphyseal angle (MDA), with MDA >16 suggesting Blount's. Management ranges from observation for physiologic bowing to osteotomy or hemiepiphysiodesis for Blount's disease."
+    },
+    {
+      "topic": "Paediatric Lower Limb Deformities: Tibial Bowing",
+      "text": "Tibial bowing can be posteromedial (often physiologic, resolves within 1 year) or anterolateral (associated with congenital pseudoarthrosis of the tibia). Posteromedial bowing may cause leg length discrepancy requiring correction. Anterolateral bowing with pseudoarthrosis is challenging and requires specialized management, often involving IM nailing, external fixation, or vascularized fibula transfer."
+    },
+    {
+      "topic": "Paediatric Rotational Abnormalities: Examination of Lower Limb Deformities",
+      "text": "Examination of paediatric lower limb deformities involves assessing overall appearance, gait, and joint ROM. Specific assessments include the block test for leg length discrepancy, rotational profile (femoral version via Gage's test, tibial torsion via thigh-foot angle), and palpation of bony landmarks. Full limb X-rays and CT scanograms are essential for accurate planning."
+    },
+    {
+      "topic": "Paediatric Rotational Abnormalities: Examination Techniques",
+      "text": "Assessing rotational abnormalities involves evaluating the foot progression angle, thigh-foot angle (prone), femoral version (Gage's test), and assessing correctability of foot deformities. These help differentiate conditions like femoral anteversion and tibial torsion, which often cause intoeing. Management is typically conservative, with surgery reserved for symptomatic older children with significant functional limitations."
+    },
+    {
+      "topic": "Paediatric Rotational Abnormalities: Femoral Torsion",
+      "text": "Femoral torsion refers to the physiological anteversion of the femur, which decreases with age. Excessive anteversion (>70 IR, <10 ER in older children) can cause intoeing, awkward gait, or anterior knee pain (miserable malalignment syndrome). Management is typically conservative, with surgery reserved for symptomatic older children or those with significant functional or psychological impact."
+    },
+    {
+      "topic": "Paediatric Rotational Abnormalities: Metatarsus Adductus",
+      "text": "Metatarsus adductus is forefoot adduction with a normal hindfoot, common in newborns and often associated with DDH. Most cases resolve spontaneously by age 4. Flexible deformities are managed with stretching, while stiffer cases in younger children may benefit from serial casting. Surgery (osteotomies) is reserved for older children with persistent, rigid deformities causing functional issues."
+    },
+    {
+      "topic": "Paediatric Rotational Abnormalities: Skewfoot",
+      "text": "Skewfoot is a complex deformity with forefoot adduction and hindfoot valgus, often a packaging disorder. Most cases are asymptomatic and observed. Symptomatic deformities require combination osteotomies (calcaneal osteotomy for valgus, medial column lengthening/lateral shortening for adduction) which are technically demanding and aim to correct the multiplanar deformity."
+    },
+    {
+      "topic": "Paediatric Rotational Abnormalities: Tibial Torsion",
+      "text": "Tibial torsion is assessed by the thigh-foot angle, with normal external torsion increasing with age. Internal tibial torsion is a common cause of intoeing, often resolving spontaneously. Surgery (supramalleolar osteotomy) is indicated only for symptomatic children over 10 years old with persistent deformities impacting gait or function."
+    },
+    {
+      "topic": "Congenital Dislocations: Knee and Patella",
+      "text": "Congenital knee dislocation is rare, often associated with breech presentation or ACL deficiency. Management usually involves closed reduction and serial casting. Congenital patellar dislocation presents with knee hyperextension and a laterally displaced patella, requiring surgical correction of soft tissues and patellar alignment. The quadriceps mechanism must be addressed for functional recovery."
+    },
+    {
+      "topic": "Coxa Vara (Developmental)",
+      "text": "Developmental coxa vara is characterized by a neck-shaft angle less than 120 degrees, often presenting in children aged 1-5 years with a Trendelenburg gait. It results from an ossification defect in the inferomedial proximal femoral physis. The 'inverted Y' sign on X-ray is pathognomonic. Management is guided by the Hilgenreiner's Epiphyseal Angle (HEA); angles less than 45 degrees usually correct spontaneously, 45-60 degrees require observation, and >60 degrees necessitates surgical correction, typically with a Pawlows Y-shaped osteotomy to place the physis under compression."
+    },
+    {
+      "topic": "Developmental Dysplasia of the Hip (DDH)",
+      "text": "DDH is a developmental condition occurring after birth, affecting 1 in 1000 live births, predominantly in females (80%) and often involving the left hip (60%). Risk factors include genetic predisposition, intrauterine crowding (breech presentation, oligohydramnios, twins), and neuromuscular conditions. Pathophysiology involves a shallow acetabulum and femoral anteversion, leading to abnormal enclavement of the femoral head. Clinical diagnosis relies on leg length assessment, range of motion, and specific tests like Barlow's and Ortolani's. Imaging includes ultrasound (for infants <4 months) and X-rays (once the femoral head ossifies), assessing parameters like Graf angles, Perkins line, Shenton's line, acetabular index, and Center Edge (CE) angle."
+    },
+    {
+      "topic": "Management of Developmental Dysplasia of the Hip (DDH)",
+      "text": "Treatment depends on the child's age at diagnosis. For infants 0-4 months with a reducible hip, the Pavlik harness is the first-line treatment. For irreducible hips, failed closed treatment, or very narrow safe zones, open reduction with or without adductor tenotomy and hip spica casting is performed. For older children (4 months to 8 years), open reduction and spica casting are primary, often requiring femoral or pelvic osteotomies if reduction is under tension or the dysplasia is severe. After 8 years, remodelling potential is poor, and surgery is generally reserved for salvage procedures or specific indications."
+    },
+    {
+      "topic": "Orthopaedic Classifications: Graf Classification of DDH",
+      "text": "Graf's classification of Developmental Dysplasia of the Hip (DDH) is based on the alpha angle (bony acetabular coverage) and beta angle (cartilaginous coverage). Type 1 is normal, Type 2 is borderline, Type 3 indicates subluxation, and Type 4 indicates dislocation. This classification is used in infants under 4 months before the femoral head ossifies."
+    },
+    {
+      "topic": "Orthopaedic Classifications: Perthes Disease - Herring Lateral Pillar Height",
+      "text": "Herring's classification of Perthes disease assesses lateral pillar height: Stage A (normal), Stage B (>50% height), Stage B/C (50% with physeal narrowing), and Stage C (<50% height). This classification is crucial for prognosis and guiding treatment, as lateral pillar collapse significantly impacts outcomes."
+    },
+    {
+      "topic": "Paediatric Hip Conditions: Coxa Vara"
+    },
+    {
+      "topic": "Paediatric Hip Conditions: Developmental Dysplasia of the Hip (DDH)"
+    },
+    {
+      "topic": "Paediatric Hip Conditions: Femoral Head Blood Supply"
+    },
+    {
+      "topic": "Paediatric Hip Conditions: Perthes Disease"
+    },
+    {
+      "topic": "Paediatric Hip Conditions: Slipped Capital Femoral Epiphysis (SCFE)"
+    },
+    {
+      "topic": "Pelvic Osteotomies for DDH",
+      "text": "Pelvic osteotomies are used to improve acetabular coverage. Options include the Salter (redirectional, hinges on pubic symphysis), Pemberton (volume-reducing, pivots near triradiate cartilage), Dega (volume-reducing, better for paralytic conditions), Ganz periacetabular (redirectional, close to the cup), Chiari (salvage, volume-increasing), and shelf procedures (salvage, augments acetabulum). The choice depends on the child's age, the degree of dysplasia, and surgical goals."
+    },
+    {
+      "topic": "Perthes Disease",
+      "text": "Perthes disease is idiopathic avascular necrosis (AVN) of the proximal femoral epiphysis, typically affecting boys aged 4-8 years. It presents with a limp, hip or knee pain, and stiffness. Diagnosis is usually made via X-ray, though MRI can detect early changes. Stages include necrotic, fragmentation, re-ossification, and remodelling. The Herring's Lateral Pillar Classification is the best prognostic indicator. 'At Risk' signs like Gage sign, horizontal physis, lateral subluxation, calcification lateral to the physis, and metaphyseal cysts correlate with worse outcomes. Management aims to prevent femoral head deformation by preventing lateral extrusion and maintaining containment. Treatment depends on age and extrusion, with older children (>8 years) and those with extrusion generally requiring surgical containment via femoral or pelvic osteotomies."
+    },
+    {
+      "topic": "Perthes Disease: Catterall's Head at Risk Signs",
+      "text": "Catterall's 'Head at Risk' signs in Perthes disease indicate a poorer prognosis and include Gage's sign (lateral physeal lucency), lateral head subluxation, calcification lateral to the epiphysis, and a horizontal physis. Treatment aims to prevent head collapse and deformation, particularly in older children or those with these risk factors."
+    },
+    {
+      "topic": "Slipped Capital Femoral Epiphysis (SCFE)",
+      "text": "SCFE is an endocrine-related condition occurring in adolescence, characterized by the anterior displacement of the femoral neck on the femoral head through the hypertrophic zone of the physis. It is more common in boys, obese children, and often bilateral. Classification is based on stability (stable vs. unstable) and chronicity (acute, acute-on-chronic, chronic). The Southwick angle quantifies slip severity. Radiographic signs include a widened, hazy physis, Klein's line overlap, Steel's blanch sign, and Trethowan's sign. Management goals are to prevent slip progression and avoid complications. Stable SCFE is typically treated with in situ pinning, while unstable SCFE requires urgent fixation, often with in situ pinning, or sometimes surgical dislocation and reduction."
+    },
+    {
+      "topic": "Complications and Morbidity of SCFE",
+      "text": "Complications of SCFE include chondrolysis (due to screw/wire penetration), fracture, avascular necrosis (AVN, especially in unstable slips or aggressive reduction), and CAM impingement leading to early osteoarthritis. After treatment, patients are kept non-weight bearing for 6-12 weeks and followed until skeletal maturity to monitor for contralateral SCFE. Late AVN can occur up to a year after initial treatment."
+    },
+    {
+      "topic": "Useful Tables: Graf Classification of DDH",
+      "text": "Graf's classification of DDH in infants uses alpha and beta angles from ultrasound. Type 1 is normal, Type 2 borderline, Type 3 subluxated, and Type 4 dislocated. This aids in early diagnosis and management, typically with a Pavlik harness for reducible hips."
+    },
+    {
+      "topic": "Useful Tables: Perthes Disease - Herring Lateral Pillar Height",
+      "text": "Herring's classification of Perthes disease assesses lateral pillar height: Stage A (normal), B (>50%), B/C (50% with physeal narrowing), and C (<50%). This is a key prognostic indicator, as lateral pillar collapse significantly impacts the final shape of the femoral head and the risk of early osteoarthritis."
+    },
+    {
+      "topic": "Useful Tables: Sufe Severity (Southwick Angle)",
+      "text": "The Southwick angle quantifies the severity of Slipped Capital Femoral Epiphysis (SUFE) by measuring the difference in the lateral epiphyseal angle between the affected and unaffected hips. Mild is <30 degrees, moderate is 30-50 degrees, and severe is >50 degrees. This influences prognosis and management."
+    },
+    {
+      "topic": "Useful Tables: SUFE Severity (Southwick Angle)",
+      "text": "The Southwick angle quantifies SUFE severity based on the difference in lateral epiphyseal angle between hips. Mild (<30), Moderate (30-50), and Severe (>50) classifications guide management, with higher degrees of slip associated with poorer outcomes and increased AVN risk."
+    },
+    {
+      "topic": "Acceptable C-Spine Radiographic Measurements",
+      "text": "Acceptable C-spine measurements are crucial for assessing stability. ADI should be <5mm (child) or <3-5mm (adult), with changes on flexion/extension indicating instability. PADI/SAC <14mm suggests stenosis. Powers ratio <1 is normal. Pre-vertebral soft tissue swelling is also assessed. These values help diagnose instability and guide surgical intervention."
+    },
+    {
+      "topic": "Adolescent Idiopathic Scoliosis (AIS)"
+    },
+    {
+      "topic": "Atlanto-Occipital Dissociation and Atlanto-Axial Instability",
+      "text": "Atlanto-occipital dissociation is a potentially unstable injury in children with a 50% mortality rate. Atlanto-axial AP instability is assessed by the Atlanto-Dental Interval (ADI), with >5mm in children <8 years or >3mm in children >8 years considered abnormal. The Space Available for the Cord (SAC) should be >13mm. Steel's rule of thirds describes the normal proportions of the cord, odontoid, and CSF in the upper cervical spine."
+    },
+    {
+      "topic": "Clinical and Radiographic Evaluation of Scoliosis",
+      "text": "Clinical assessment involves checking for asymmetry in shoulders, leg lengths, pelvic tilt, and rib prominence. Radiographic evaluation includes standing AP and lateral X-rays of the entire spine, along with bending films to assess curve flexibility. MRI is indicated for any neurological findings, unusual curve patterns, or infantile/juvenile scoliosis. Skeletal maturity is assessed using Risser sign, Tanner stages, and triradiate cartilage closure."
+    },
+    {
+      "topic": "Complications of Scoliosis Surgery",
+      "text": "Complications of scoliosis surgery can include the crankshaft phenomenon, neurologic injury (rare), curve progression, pseudoarthrosis, pancreatitis, superior mesenteric artery occlusion, and thromboembolism."
+    },
+    {
+      "topic": "Congenital Kyphosis",
+      "text": "Congenital kyphosis results from vertebral anomalies (failure of formation, segmentation, or mixed). Type 1 (failure of formation) has the highest risk of progression and neurological injury. Management involves observation for Type 2 curves, while operative intervention (posterior fusion, anterior decompression) is indicated for neurological deficits, progressive curves, or those exceeding 50 degrees in young children."
+    },
+    {
+      "topic": "Congenital Scoliosis Etiology",
+      "text": "Congenital scoliosis results from failures in vertebral formation (hemivertebra, wedge vertebra), segmentation (unilateral or complete bars), or a combination of both. These malformations lead to uneven spinal growth, causing the curvature. Associations with other congenital anomalies, such as VATER/VACTERL syndrome, and intraspinal anomalies like diastematomyelia or tethered cord, are common and necessitate thorough workup."
+    },
+    {
+      "topic": "Congenital Scoliosis Management",
+      "text": "Non-operative management (bracing) is ineffective for congenital scoliosis due to fixed bony deformities. Operative management typically involves posterior instrumented fusion, potentially with anterior fusion for young patients or severe curves to prevent crankshaft phenomenon. Excision of bars or hemivertebrae are other surgical options, aimed at correcting deformity and preventing progression."
+    },
+    {
+      "topic": "Diastematomyelia",
+      "text": "Diastematomyelia involves a split in the spinal cord by a fibrous or osseous bar, often in the lumbar spine. It can cause cord tethering, leading to scoliosis or kyphosis. X-rays may show interpedicular widening, and MRI confirms the diagnosis. Excision of the bar is recommended prior to deformity correction to prevent neurological compromise."
+    },
+    {
+      "topic": "Idiopathic Scoliosis: Risk Factors and Progression",
+      "text": "Progression of idiopathic scoliosis is influenced by curve magnitude, Risser sign (skeletal immaturity), and Rib-Vertebra Angle Difference (RVAD). Curves >25 degrees in skeletally immature patients or those with RVAD >20 degrees have a higher risk of progression. Early onset AIS necessitates vigilant monitoring due to longer growth potential."
+    },
+    {
+      "topic": "Incidence of Concurrent Spinal Trauma in C-Spine Fractures",
+      "text": "Spinal trauma is frequently associated with cervical spine fractures. The risk of concurrent injury decreases with level: C1 fractures have a 50% risk of associated spinal injury, C2 around 30%, and C3 around 20%. This highlights the importance of a complete spinal assessment in patients with cervical spine injuries."
+    },
+    {
+      "topic": "Intervertebral Disc Calcification and Down's Syndrome in Paediatric Spine",
+      "text": "Intervertebral disc calcification is an idiopathic, self-limiting condition in children causing neck pain and reduced ROM. Down's syndrome (Trisomy 21) can be associated with atlantoaxial and atlanto-occipital instability; screening and treatment are indicated for symptomatic or severely unstable cases. Management is generally symptomatic, but surgical fusion may be necessary."
+    },
+    {
+      "topic": "Klippel-Feil Syndrome",
+      "text": "Klippel-Feil syndrome results from failure of cervical spine segmentation, leading to a stiff neck, low hairline, and webbed neck (in <50% of cases). It is associated with congenital scoliosis, Sprengel's shoulder, renal, and cardiac anomalies. Management is usually supportive, but cervical decompression and stabilization are necessary for myelopathy."
+    },
+    {
+      "topic": "Management of Adolescent Idiopathic Scoliosis (AIS)",
+      "text": "Management goals for AIS are to prevent progression, correct deformity, and improve spinal balance and cosmesis. Bracing is used for curves between 25-40 degrees to slow progression. Spinal fusion with instrumentation is recommended for curves greater than 40-50 degrees, as these curves tend to progress into adulthood and can lead to cardiopulmonary compromise and chronic back pain. Posterior spinal fusion is the primary surgical approach, with anterior instrumentation added for severe, stiff curves or in younger patients to prevent the 'crankshaft phenomenon'. Growing rods may be used in younger children with significant remaining growth."
+    },
+    {
+      "topic": "Management of Pediatric Cervical Spine Trauma",
+      "text": "Management includes maintaining blood pressure, advanced imaging, spinal immobilization for 3 months, and activity restriction for an additional 3 months. Outcomes are poor if the injury is complete but reasonable if partial."
+    },
+    {
+      "topic": "Modes of Injury in Pediatric Cervical Spine Trauma",
+      "text": "Pediatric cervical spine injuries manifest as fractures, fracture-subluxations, subluxations, or SCIWORA (Spinal Cord Injury Without Radiologic Abnormality). Patterns vary with age: children over 8 years often present with adult-like subaxial injuries, while younger children (<8 years) are more prone to axial injuries, subluxations, and end-plate fractures due to their unique spinal biomechanics."
+    },
+    {
+      "topic": "Morquio's Syndrome and Torticollis in Paediatric Spine",
+      "text": "Morquio's syndrome, a mucopolysaccharidosis, has a 100% incidence of atlantoaxial instability due to odontoid hypoplasia, with a higher risk of cord injury than in Down's syndrome, often requiring stabilization. Torticollis, a head tilt with chin rotation, can be acute (muscle spasm, usually self-limiting) or congenital (due to occipitocervical anomalies). Muscular torticollis, the most common orthopaedic cause, results from sternocleidomastoid (SCM) contracture and is treated with physiotherapy or SCM release."
+    },
+    {
+      "topic": "Neurofibromatosis and Spinal Deformity",
+      "text": "Neurofibromatosis commonly affects the spine, causing kyphoscoliosis, vertebral scalloping, and foraminal widening. Dystrophic forms are more aggressive. Intraspinal anomalies are frequent, requiring MRI. Management is similar to AIS but more aggressive for dystrophic types, with a higher pseudoarthrosis rate after surgery."
+    },
+    {
+      "topic": "Neuromuscular Scoliosis Management Principles",
+      "text": "Neuromuscular scoliosis requires individualized treatment aims, generally focusing on maintaining sitting balance, preventing curve progression, and avoiding thoracic complications. Non-surgical bracing may be suitable for smaller, less aggressive curves with minimal progression. Posterior instrumented fusion is common, often extending to the pelvis, and may require anterior fusion in young patients with severe deformities. Adequate nutrition is crucial pre-operatively due to a higher risk of infection."
+    },
+    {
+      "topic": "Odontoid Fractures in Children",
+      "text": "Odontoid fractures in children can occur through the synchondrosis and may have an intact periosteal sleeve. They typically result from sudden deceleration and flexion in RTA. Management involves immobilization in a HALO or Minerva brace for 3 months. HALO application requires caution in infants due to thin skulls and open sutures. Surgical stabilization is indicated for gross instability, inability to reduce closed, or neurological deficit requiring decompression."
+    },
+    {
+      "topic": "Orthopaedic Classifications: Spondylolisthesis (Wiltse & Myerding)",
+      "text": "Spondylolisthesis is classified by Wiltse based on aetiology (Dysplastic, Isthmic, Degenerative, Traumatic, Pathologic, Iatrogenic) and by Myerding based on the degree of slippage (Grade 1: 0-25% to Grade 5: >100%). Isthmic Type 2a (stress fracture of pars) is common, while dysplastic types have a higher risk of progression and neurologic injury."
+    },
+    {
+      "topic": "Os Odontoidum",
+      "text": "Os odontoidum is a failure of fusion of the odontoid ossification centers, creating a separate ossicle at C1-C2. This leads to atlantoaxial instability, potentially causing neurological symptoms, increased ADI, and reduced SAC. Treatment typically involves C1-3 fusion to stabilize the cervical spine and prevent cord compression."
+    },
+    {
+      "topic": "Paediatric Cervical Spine Abnormalities: Atlantoaxial Instability",
+      "text": "Atlantoaxial instability, either AP or rotatory, can occur in pediatric cervical spine trauma and is associated with syndromes like Down's or Morquio's. Instability is suspected with ADI >5mm (child) or SAC <13mm. Basilar invagination, migration of the odontoid into the foramen magnum, requires operative stabilization to prevent neurological deficit and spinal cord compression."
+    },
+    {
+      "topic": "Paediatric Cervical Spine Stability"
+    },
+    {
+      "topic": "Paediatric Cervical Spine Trauma: Anatomy and Development"
+    },
+    {
+      "topic": "Paediatric Cervical Spine Trauma: Anatomy and Stability"
+    },
+    {
+      "topic": "Paediatric Cervical Spine Trauma: Management and Outcomes"
+    },
+    {
+      "topic": "Paediatric Spine: Scoliosis Classification and Epidemiology"
+    },
+    {
+      "topic": "Pseudosubluxation in Pediatric Cervical Spine",
+      "text": "Pseudosubluxation, a common anatomical variant, typically occurs at the C2-C3 level in children under 8 years old. It is characterized by a step of no more than 1mm on the spinolaminar or Swischuk's line, differentiating it from true subluxation which may involve an endplate fracture."
+    },
+    {
+      "topic": "Sacral Agenesis",
+      "text": "Sacral agenesis is the absence of the sacrum and lower lumbar spine, often associated with maternal diabetes. Affected individuals present with a prominent lumbar spine and a characteristic 'Buddha' sitting posture. Management options include amputation or spinal-pelvic fusion, depending on the extent of the deficiency and functional goals."
+    },
+    {
+      "topic": "Scheuermann's Kyphosis",
+      "text": "Scheuermann's kyphosis is a developmental disorder causing excessive thoracic kyphosis (>45) with wedging of three consecutive vertebrae. It typically presents in adolescent boys with poor posture and back pain. Bracing may be used for milder curves near skeletal maturity, while surgery (posterior fusion with osteotomies) is indicated for kyphosis >75 or progressive curves."
+    },
+    {
+      "topic": "Scheuermann's Kyphosis Definition and Etiology",
+      "text": "Scheuermann's kyphosis is defined by a thoracic kyphosis greater than 45 degrees with anterior wedging of at least three consecutive vertebrae by more than 5 degrees. It is thought to result from a developmental error in collagen causing disturbed endochondral ossification of the endplates. While most commonly thoracic, it can occur in the lumbar spine, often presenting with increased pain and stiffness but rarely neurological compromise."
+    },
+    {
+      "topic": "Scheuermann's Kyphosis Management",
+      "text": "Non-operative management, such as bracing, may be considered for patients near skeletal maturity with less severe kyphosis and minimal pain. Operative intervention is indicated for kyphosis exceeding 75 degrees, progressive curves in younger patients, significant pain, or rare neurological deficits. Surgery typically involves posterior instrumented fusion with osteotomies, and anterior release may be needed for curves over 90 degrees."
+    },
+    {
+      "topic": "SCIWORA (Spinal Cord Injury Without Radiologic Abnormality)",
+      "text": "SCIWORA is a diagnosis of exclusion in pediatric cervical spine trauma, where neurological deficits exist without clear radiographic abnormalities. MRI is crucial for diagnosis, though it may be normal in up to 30% of symptomatic cases. The spinal column can stretch significantly, but the cord is injured after stretching more than 1 cm. Neurologic status at presentation is the main predictor of outcome."
+    },
+    {
+      "topic": "Scoliosis Evaluation and Management",
+      "text": "Scoliosis evaluation includes history (neurologic symptoms, menarche, curve progression) and examination (asymmetry, rib hump, Adams test). Radiography (AP/Lateral spine films, bending views) assesses Cobb angle, apical vertebra, rotation, and skeletal maturity (Risser, Tanner). Management involves observation, bracing for curves 25-40 degrees, and spinal fusion with instrumentation for curves >50 degrees to prevent progression and thoracic compromise."
+    },
+    {
+      "topic": "Spondylolisthesis Classification and Risk of Progression",
+      "text": "Spondylolisthesis is classified by Wiltse into types based on aetiology (dysplastic, isthmic, degenerate, etc.) and by Myerding into grades (1-5) based on the percentage of slippage. High-grade slips (3-4), dysplastic types, female gender, and significant lumbosacral kyphosis are risk factors for progression. Non-operative management with bracing is indicated for low-grade symptomatic cases, while operative intervention is considered for high-grade slips, progression, intractable pain, or neurological compromise."
+    },
+    {
+      "topic": "Spondylolisthesis: Classification and Management",
+      "text": "Spondylolisthesis is classified by Wiltse (type: dysplastic, isthmic, etc.) and Myerding (grade: 1-5 slippage). Isthmic Type 2a (pars defect) and dysplastic types are common. Management includes non-operative measures for low-grade slips and operative intervention (in situ fusion with decompression) for high-grade slips, progression, intractable pain, or neurologic compromise. Risk factors for progression include female gender and high slip grade."
+    },
+    {
+      "topic": "Useful Tables: Spondylolisthesis (Wiltse & Myerding)",
+      "text": "Spondylolisthesis is classified by Wiltse (type: dysplastic, isthmic, etc.) and Myerding (grade: 1-5 based on slippage). Isthmic Type 2a (pars stress fracture) and dysplastic types are common. High-grade slips and dysplastic types have a higher risk of progression and neurological compromise, often requiring surgical stabilization."
+    },
+    {
+      "topic": "Paediatric Foot Disorders: Accessory Navicular and Habitual Toe Walking"
+    },
+    {
+      "topic": "Paediatric Foot Disorders: Accessory Navicular, Habitual Toe Walking, Ball and Socket Ankle"
+    },
+    {
+      "topic": "Paediatric Foot Disorders: Juvenile Bunions and Apophysitis"
+    },
+    {
+      "topic": "Paediatric Foot Disorders: Kohler's Disease and Curly Toes"
+    },
+    {
+      "topic": "Paediatric Foot Disorders: Metatarsus Adductus"
+    },
+    {
+      "topic": "Paediatric Foot Disorders: Pes Calcaneovalgus and Congenital Vertical Talus"
+    },
+    {
+      "topic": "Paediatric Foot Disorders: Pes Cavus"
+    },
+    {
+      "topic": "Paediatric Foot Disorders: Pes Planovalgus"
+    },
+    {
+      "topic": "Paediatric Foot Disorders: Polydactyly, Congenital Hallux Varus, and Overlapping Toes"
+    },
+    {
+      "topic": "Paediatric Foot Disorders: Polydactyly, Hallux Varus, and Overlapping Toes"
+    },
+    {
+      "topic": "Paediatric Foot Disorders: Skewfoot"
+    },
+    {
+      "topic": "Paediatric Foot Disorders: Skewfoot and Pes Calcaneovalgus"
+    },
+    {
+      "topic": "Paediatric Foot Disorders: Talipes Equinovarus (Clubfoot)"
+    },
+    {
+      "topic": "Paediatric Foot Disorders: Tarsal Coalition"
+    },
+    {
+      "topic": "Malunion (Cubitus Varus) After Supracondylar Fractures",
+      "text": "Cubitus varus malunion can occur due to fixation in varus alignment, not growth disturbance. While the distal humerus has limited remodeling potential, cubitus varus can lead to issues like increased lateral condyle fractures, tardy ulnar nerve palsy, posterolateral instability in adulthood, premature elbow arthritis, and cosmetic dissatisfaction. Correction is typically achieved with a lateral closing wedge osteotomy."
+    },
+    {
+      "topic": "Paediatric Supracondylar Fracture of the Humerus",
+      "text": "Paediatric supracondylar humerus fractures are common and can involve nerve palsies (ulnar for flexion type, AIN for extension type). Vascular compromise (pulseless but perfused hand) requires urgent exploration. Compartment syndrome is a risk. Reduction and pinning are standard, with lateral pinning often preferred. Malunion can lead to cubitus varus, affecting elbow mechanics and increasing the risk of late issues."
+    },
+    {
+      "topic": "Pediatric fractures",
+      "text": "Pediatric fractures have unique characteristics due to the immature skeleton's growth potential and different tissue properties. Fractures tend to heal rapidly, and malunions often remodel well, except for physeal injuries leading to growth arrest. The Salter-Harris classification (with Type VI and VII extensions) describes physeal injuries, while the AO Pediatric Comprehensive Classification provides a detailed system for all pediatric long-bone fractures, incorporating bone, segment, type, child code, and severity. Treatment aims for pain relief, anatomical restoration, early mobilization, and avoidance of complications, often utilizing closed or minimally invasive techniques like ESIN or K-wires."
+    },
+    {
+      "topic": "Pinning Patterns for Supracondylar Humerus Fractures",
+      "text": "Lateral pinning with two or three wires is often sufficient, especially for oblique fractures. Medial pinning is reserved for unstable fractures or those with medial comminution risking varus. Cross wires provide stronger biomechanical configuration. The high lateral wire should be avoided due to radial nerve risk. Assessment of reduction includes maintaining Bauman's angle and the anterior humeral line intersecting the capitellum. Cubitus varus malunion results from fixation in varus, not growth arrest, and has limited remodeling potential."
+    },
+    {
+      "topic": "Cerebral Palsy (CP) Classification and Functional Estimation",
+      "text": "Cerebral Palsy (CP) is a non-progressive brain injury causing neuromuscular imbalance. It's classified by type (spastic, athetoid, ataxic), geographical involvement (quadriplegia, diplegia, hemiparesis), and functional level using the Gross Motor Function Classification System (GMFCS). Poor prognostic factors for future function include the presence of primitive reflexes after one year and inability to sit by five or walk by eight."
+    },
+    {
+      "topic": "Cerebral Palsy: Clinical Examination",
+      "text": "Examination of a child with CP includes observing their posture at rest, assessing gait (if ambulatory), and evaluating joint range of motion for contractures. Specific attention is paid to the spine for coronal and sagittal balance, and the feet for deformities like hallux valgus or ulceration. The presence of an intrathecal baclofen pump should be noted. Assessment of passive ROM is crucial to quantify contractures, particularly in the hips, knees, and feet."
+    },
+    {
+      "topic": "Cerebral Palsy: History Taking",
+      "text": "A comprehensive history for a child with Cerebral Palsy includes background information on pregnancy, birth, and developmental milestones, as well as details of any chronic orthopaedic issues (spine, hips, knees, feet), previous treatments (orthotics, medications, surgery), and current problems. Functional level (walking, sitting, self-care) and social circumstances are also important to understand the patient's needs and limitations."
+    },
+    {
+      "topic": "Hereditary Motor Sensory Neuropathies (HMSN)",
+      "text": "HMSN, including Charcot-Marie-Tooth disease, causes progressive distal motor and sensory deficits. HMSN Type 1 involves demyelination, while Type 2 has axonal degeneration. Both can lead to cavovarus foot deformities and scoliosis. Management aims to preserve flexibility with transfers and osteotomies, avoiding fusion if possible due to the potential for recurrence and the young age of onset."
+    },
+    {
+      "topic": "Muscular Dystrophies: Duchenne and Becker's",
+      "text": "Duchenne Muscular Dystrophy (DMD) is a progressive X-linked recessive disorder leading to muscle weakness, scoliosis, and cardiorespiratory failure. Becker MD is a milder form with reduced dystrophin. Orthopaedic management focuses on maximizing ambulation, addressing contractures, and managing scoliosis, though surgical risks are high due to potential malignant hyperthermia."
+    },
+    {
+      "topic": "Myelodysplasia (Spina Bifida) Management",
+      "text": "Myelodysplasia management is multidisciplinary, addressing neurosurgical (defect closure, shunting) and orthopaedic issues. Orthopaedic goals include managing spinal deformities (scoliosis, kyphosis) with fusions, hip dislocations (often non-operative), knee and foot deformities, and ensuring a plantigrade, braceable foot. Lifelong observation is required due to potential neurological deterioration."
+    },
+    {
+      "topic": "Orthopaedic Classifications: Cerebral Palsy Types",
+      "text": "Cerebral Palsy is classified by type (Spastic, Athetoid, Ataxic), geographic distribution (Quadriplegic, Diplegic, Hemiplegic), and functional level using the Gross Motor Function Classification System (GMFCS), which ranges from GMFCS 1 (walks independently) to GMFCS 5 (wheelchair-bound, head support needed). This classification helps tailor treatment and predict functional outcomes."
+    },
+    {
+      "topic": "Orthopaedic Classifications: HMSN Sub-types",
+      "text": "Hereditary Motor Sensory Neuropathy (HMSN) subtypes include HMSN1 (demyelinating, absent reflexes, NCS abnormal), HMSN2 (axonal, reflexes present, NCS near normal), and HMSN3 (Dejerine-Sottas, infantile onset, severe). Management for Charcot-Marie-Tooth disease (HMSN1/2) often involves tendon transfers and osteotomies to maintain foot flexibility and avoid fusion where possible."
+    },
+    {
+      "topic": "Orthopaedic Classifications: Spina Bifida Types",
+      "text": "Spina Bifida is classified by the extent of spinal cord and meningeal involvement: Occulta (posterior element defect, no extrusion), Meningocele (dural sac extrusion only), Myelomeningocele (meninges and neural elements extruded), and Rachischisis (fully exposed neural elements). Management is guided by the lowest functional level of the lesion."
+    },
+    {
+      "topic": "Orthopaedic Classifications: Spinal Muscular Atrophy (SMA) Types",
+      "text": "SMA is classified into three types based on age of onset and severity: SMA1 (onset <6 months, death <2 years), SMA2 (onset <2 years, death by 20 years), and SMA3 (onset >2 years, normal life expectancy). Orthopaedic management aims to address scoliosis, hip dislocations, and foot deformities, prioritizing function and respiratory health."
+    },
+    {
+      "topic": "Orthopaedic Management of Cerebral Palsy",
+      "text": "Orthopaedic management of CP involves a multidisciplinary approach, often deferring surgery until after age three. Treatment progresses from physiotherapy and splinting to medications like baclofen or Botox, and surgical interventions such as soft tissue releases, tendon transfers, osteotomies, and fusions. Common issues addressed include scoliosis (requiring long fusions, often to the pelvis), hip subluxation/dislocation (managed with conservative measures or surgery depending on migration), and foot deformities (planovalgus or equinovarus)."
+    },
+    {
+      "topic": "Other Neuromuscular Conditions: Arthrogryposis Multiplex Congenita",
+      "text": "Arthrogryposis Multiplex Congenita involves multiple joint contractures, often affecting upper limbs (shoulder adduction, elbow extension) and feet (rigid clubfoot, vertical talus). Management includes early physiotherapy, serial casting, and surgical releases or fusions to achieve functional outcomes, aiming for a plantigrade foot and improved upper limb use."
+    },
+    {
+      "topic": "Other Neuromuscular Conditions: Larsen's Syndrome and Freidrich's Ataxia",
+      "text": "Larsen's syndrome presents with congenital joint dislocations and potential cervical spine kyphosis, which may require stabilization. Freidreich's Ataxia is a spinocerebellar disorder causing ataxia, cardiomyopathy, foot deformities (cavovarus), and scoliosis, requiring management of these musculoskeletal and systemic issues."
+    },
+    {
+      "topic": "Other Neuromuscular Conditions: Spinal Muscular Atrophy (SMA) and Polio",
+      "text": "SMA is an AR disorder causing progressive weakness due to anterior horn cell loss, with varying severity and life expectancy. Orthopaedic management focuses on hip dislocations (often non-operative), scoliosis (requiring aggressive fusions), and foot deformities. Polio sequelae primarily involve unilateral weakness and limb shortening, with management aimed at achieving a functional, braceable foot."
+    },
+    {
+      "topic": "Spina Bifida: Clinical Examination",
+      "text": "Examination of a patient with Spina Bifida involves assessing gait with and without orthotics, noting any deformities, muscle wasting, healed ulcers, or cutaneous stigmata of spinal dysraphism. A thorough sensory examination is crucial to determine the neurologic level, and passive range of motion of joints should be assessed for dislocations or contractures. Motor power assessment helps establish the motor level, particularly in the feet, to understand functional capabilities."
+    },
+    {
+      "topic": "Useful Tables: Cerebral Palsy Types",
+      "text": "Cerebral Palsy is classified by type (Spastic, Athetoid, Ataxic), limb involvement (Quadriplegic, Diplegic, Hemiplegic), and functional level (GMFCS 1-5). This classification helps tailor orthopaedic interventions to improve mobility, manage spasticity, and enhance quality of life for affected individuals."
+    },
+    {
+      "topic": "Achondroplasia: Clinical Examination",
+      "text": "Examination of a patient with Achondroplasia reveals characteristic features from head to toe: frontal bossing, midface flattening, disproportionately short limbs with rhizomelic shortening, decreased elbow ROM, radial head dislocation, trident hands, lumbar hyperlordosis, kyphosis, and genu varum. Assessing for spinal stenosis, particularly at the foramen magnum and lumbar spine, is also important."
+    },
+    {
+      "topic": "Chromosomal & Teratologic Disorders: Down's Syndrome",
+      "text": "Down's Syndrome (Trisomy 21) is associated with hypotonia, intellectual disability, cardiac defects, and orthopaedic manifestations. These include atlantoaxial instability (requiring screening and potential fusion), scoliosis, hip dislocation, and foot deformities. Management addresses these specific issues to improve function and prevent secondary complications."
+    },
+    {
+      "topic": "Chromosomal & Teratologic Disorders: Nail Patella Syndrome",
+      "text": "Nail Patella Syndrome is an AD disorder with dysplastic nails, hypoplastic patellae, conical iliac horns, and dysplastic radial heads. It can lead to elbow arthritis, patellar instability, and crucially, autoimmune nephropathy in ~40% of cases, necessitating periodic renal screening and management of symptomatic orthopaedic issues."
+    },
+    {
+      "topic": "Chromosomal & Teratologic Disorders: Turner's and Noonan's Syndromes",
+      "text": "Turner's syndrome (45, XO) presents with short stature, hypogonadism, webbed neck, cubitus valgum, and scoliosis. Noonan syndrome shares similar features but normal sexual development and more severe scoliosis. Prader-Willi involves hypotonia, obesity, and intellectual impairment with juvenile scoliosis. Rett's syndrome causes progressive spasticity, while Beckwith-Wiedman features organomegaly and potential hemihypertrophy."
+    },
+    {
+      "topic": "Differential Diagnosis of Torticollis",
+      "text": "Torticollis can be muscular (SCM contracture, common), acute idiopathic (muscle spasm), congenital (occipitocervical anomalies), neurogenic (nerve tumor), ocular (visual problem), or due to atlanto-axial rotatory instability (traumatic, syndromic, infective). Muscular torticollis is characterized by SCM mass and associated facial asymmetry."
+    },
+    {
+      "topic": "Genetics",
+      "text": "Chromosomes, located in the cell nucleus, are composed of DNA, RNA, and proteins, arranged in a double helix. Humans have 46 chromosomes: 22 pairs of autosomes and 2 sex chromosomes (XX for females, XY for males). Genes are DNA sequences that code for protein synthesis. Genotype determines phenotype, and abnormalities can arise from chromosomal duplication, absence, or structural problems."
+    },
+    {
+      "topic": "Useful Tables: Genes and Inheritance Patterns in Orthopaedic Disease",
+      "text": "Many orthopaedic conditions have genetic links. Achondroplasia is AD due to FGFR3 mutation, while Cleidocranial dysplasia involves CBFA1. Ehlers-Danlos and Marfan syndromes are AD due to collagen defects. Neurofibromatosis Type 1 is AD due to the neurofibromin gene. Pseudoachondroplasia involves the COMP gene."
+    },
+    {
+      "topic": "Alternative Options to Physeal Bar Resection",
+      "text": "Alternatives to bar resection include epiphysiodesis (in older children to prevent angular deformity), osteotomy (to correct existing angulation, often combined with resection), limb lengthening (at skeletal maturity if the bar is irresectable or fails), and delayed hemiepiphysiodesis (opposite the bar to correct angulation once growth is re-established). Resection techniques involve osteotomy or a metaphyseal window, with the resected space filled with an interposition graft (fat or PMMA). Corrective osteotomy may be performed if significant, non-recoverable angular deformity is present."
+    },
+    {
+      "topic": "Conditions affecting various parts of the Physis & Epiphysis",
+      "text": "Epiphyseal conditions include Multiple Epiphyseal Dysplasia and Trevor's disease (Epiphyseal Hyperplasia). The reserve zone can be affected by Gaucher's Disease and Pseudoachondroplasia. The proliferative zone is impacted by Achondroplasia (reduced growth) and Gigantism (increased growth). The hypertrophic zone can be affected by fractures, SUFE, mucopolysaccharidoses, and enchondromas. The provisional zone of calcification is affected in Rickets and Osteomalacia, while the metaphysis can be affected by Rickets, SUFE (renal failure related), osteomyelitis, scurvy, and osteogenesis imperfecta."
+    },
+    {
+      "topic": "Diseases affecting the growth Plate",
+      "text": "Achondroplasia is characterized by an altered Fibroblast Growth Factor receptor 3 (FGFR3), affecting the proliferative zone and thus longitudinal growth. Intramembranous and appositional ossification, including skull bones, remain unaffected, leading to macrocephaly, frontal bossing, and limb shortening."
+    },
+    {
+      "topic": "Factors Affecting Physeal Bar Resection",
+      "text": "Factors influencing the decision to resect a physeal bar include the aetiology (trauma yields better results than infection), the affected physis and its growth contribution, patient age and remaining growth potential, bar size (maximum 50% cross-section), and bar location (peripheral bars causing angular deformity should be resected, while central bars may cause length discrepancy but not necessarily deformity). Resection is generally recommended for children with at least 2 cm of growth remaining and bars ideally <25% or maximally 50%."
+    },
+    {
+      "topic": "Paget's Disease of Bone",
+      "text": "Paget's disease is a metabolic bone disorder with disordered osteoclast and osteoblast activity, leading to abnormal bone. It is more common in men and increases with age. The pathophysiology involves initial osteoclast overactivity, followed by compensatory osteoblastic activity, resulting in accelerated but disorganized bone formation. Clinical presentation is often incidental, with fractures, arthritis, bone pain, and nerve compression being potential complications. Malignant transformation to osteosarcoma occurs in about 30x increased risk, particularly in long-standing polyostotic disease."
+    },
+    {
+      "topic": "Physeal Injuries and Bar Formation",
+      "text": "Physeal injuries, including fractures and bars, disrupt normal growth. Bars form from bridging tissue between epiphysis and metaphysis, typically due to trauma or surgery. Distal femoral physis is most susceptible. Growth arrest occurs in ~10% of physeal fractures, more often in severe types. Bar resection is considered for angular deformity or significant length discrepancy, with careful planning based on growth remaining and bar size."
+    },
+    {
+      "topic": "Rickets",
+      "text": "Rickets affects the hypertrophic zone, specifically the provisional zone of calcification, where there is a failure of calcification. The uncalcified matrix becomes invaded by disordered blood vessels, resulting in a widened, hazy, and thick physis, along with characteristic metaphyseal flaring (cupping) due to a lack of metaphyseal calcification."
+    },
+    {
+      "topic": "Useful Tables: Conditions Affecting Physis and Epiphysis",
+      "text": "Various conditions affect different zones of the physis and epiphysis. Epiphyseal involvement includes MED, SED, and Trevor's disease. The reserve zone can be affected by pseudoachondroplasia and Gaucher's. Proliferative zone by achondroplasia and gigantism. Hypertrophic zone by SUFE and trauma. Provisional calcification zone by rickets and osteomyelitis."
+    },
+    {
+      "topic": "Paediatric Lower Limb Deformities: Genu Varum and Blount's Disease",
+      "text": "Genu varum can be physiologic or pathological, with Blount's disease being a common progressive condition due to medial tibial physeal overload. Evaluation includes X-rays to assess the metaphyseal-diaphyseal angle (MDA), with MDA >16 suggesting Blount's. Management ranges from observation for physiologic bowing to osteotomy or hemiepiphysiodesis for Blount's disease, aiming to correct alignment and prevent arthritis."
+    },
+    {
+      "topic": "Paediatric Lower Limb Deformities: Genu Valgum",
+      "text": "Genu valgum is normal up to age 7. Pathological causes include rickets, MED, and trauma (Cozen's fracture). Management depends on the cause and severity, ranging from observation and bracing to guided growth (tethering lateral physis) or hemiepiphysiodesis. Osteotomy is reserved for severe or late-presenting deformities, usually after age 10, to correct alignment and improve function."
+    },
+    {
+      "topic": "Paediatric Lower Limb Deformities: Tibial Bowing",
+      "text": "Tibial bowing can be posteromedial (often physiologic, resolves within 1 year) or anterolateral, associated with congenital pseudoarthrosis of the tibia. Posteromedial bowing may cause leg length discrepancy requiring correction. Anterolateral bowing with pseudoarthrosis is challenging, managed with IM nailing, external fixation, or vascularized fibula transfer to achieve union and limb length."
+    },
+    {
+      "topic": "Paediatric Upper Limb Conditions: Brachial Plexus Birth Palsy",
+      "text": "Brachial Plexus Birth Palsy (BPBP) results from traction injury to the brachial plexus during birth. Erb's palsy (C5/6) is common with a better prognosis than Klumpke's (C8/T1) or total plexus injuries. Management involves observation, ROM exercises, and surgical options like nerve grafting or tendon transfers for persistent deficits. Poor prognostic factors include pre-ganglionic injury and lack of biceps recovery by 5-6 months."
+    },
+    {
+      "topic": "Paediatric Upper Limb Conditions: Congenital Pseudoarthrosis of the Clavicle",
+      "text": "Congenital pseudoarthrosis of the clavicle is a failure of ossification centers to unite, presenting as a painless mass. Unlike tibial pseudoarthrosis, it rarely causes functional deficit. Surgical excision and fixation with bone grafting have good results and high union rates, typically performed if the appearance or function is compromised, offering a better outcome than non-operative management in these specific cases."
+    },
+    {
+      "topic": "Paediatric Upper Limb Conditions: Sprengel's Deformity",
+      "text": "Sprengel's deformity is a developmental condition of incomplete scapular descent, leading to hypoplastic shoulder musculature and dysfunction, especially in abduction. It's associated with scoliosis and omovertebral bars (requiring excision). Management involves observation for mild cases or the Woodward procedure (scapulothoracic release, translation) for most, often with clavicle osteotomy to prevent brachial plexus injury."
+    },
+    {
+      "topic": "Paediatric Upper Limb Conditions: Congenital Synostosis of the Forearm",
+      "text": "Congenital forearm synostosis is a failure of differentiation between the radius and ulna, typically causing fixed pronation. It can be isolated or associated with other anomalies. Surgery (rotational osteotomy) is rarely indicated due to poor outcomes and high complication rates. Most children adapt well to the functional limitations, making non-operative management the usual approach."
+    },
+    {
+      "topic": "Paediatric Upper Limb Conditions: Trigger Finger/Thumb",
+      "text": "Trigger thumb is more common than trigger digits in children, presenting with painful triggering and a palpable nodule. Conservative management involves observation until age one, as spontaneous resolution is possible. Surgical release of the A1 pulley is indicated for persistent or painful cases, with meticulous care to avoid damaging the digital nerve and the oblique pulley, ensuring optimal functional recovery."
+    },
+    {
+      "topic": "Congenital Dislocations: Knee and Patella",
+      "text": "Congenital knee dislocation is rare, often associated with breech presentation or ACL deficiency. Management typically involves closed reduction and serial casting. Congenital patellar dislocation presents with knee hyperextension and a laterally displaced patella, requiring surgical correction of soft tissues and patellar alignment. Quadriceps function must be addressed for successful outcomes."
+    },
+    {
+      "topic": "Congenital Dislocations: Radial Head Dislocation",
+      "text": "Congenital radial head dislocation, commonly anterior, is often associated with systemic conditions like Nail Patella syndrome or achondroplasia. It may present with reduced ROM or pain. Management is usually non-operative, but surgical options like radial head excision or annular ligament reconstruction are considered for symptomatic cases, often requiring bone length equalization for better joint congruity."
+    },
+    {
+      "topic": "Chromosomal & Teratologic Disorders: Down's Syndrome",
+      "text": "Down's Syndrome (Trisomy 21) is associated with hypotonia, intellectual disability, cardiac defects, and orthopaedic manifestations. These include atlantoaxial instability (requiring screening and potential fusion), scoliosis, hip dislocation, and foot deformities. Management addresses these specific issues to improve function, prevent complications, and enhance overall quality of life."
+    },
+    {
+      "topic": "Chromosomal & Teratologic Disorders: Nail Patella Syndrome",
+      "text": "Nail Patella Syndrome is an AD disorder with dysplastic nails, hypoplastic patellae, conical iliac horns, and dysplastic radial heads. It can lead to elbow arthritis, patellar instability, and importantly, autoimmune nephropathy in ~40% of cases, necessitating periodic renal screening and management of symptomatic orthopaedic issues to prevent long-term complications."
+    },
+    {
+      "topic": "Paediatric Limb Length Discrepancy (LLD) Management",
+      "text": "LLD assessment involves evaluating gait, pelvic tilt, and measuring true and apparent lengths. Growth prediction methods guide management, which can include shoe raises, epiphysiodesis (growth arrest), shortening osteotomies, lengthening procedures (distraction osteogenesis), or amputation for severe discrepancies. Decisions balance functional goals with surgical risks and patient age, aiming to optimize limb function."
+    },
+    {
+      "topic": "Paediatric Rotational Abnormalities: Examination Techniques",
+      "text": "Assessing rotational abnormalities involves evaluating foot progression angle, thigh-foot angle (prone), femoral version (Gage's test), and foot posture. These help differentiate conditions like femoral anteversion and tibial torsion, which often cause intoeing. Management is typically conservative, with surgery reserved for symptomatic older children with significant functional limitations or psychological distress."
+    },
+    {
+      "topic": "Paediatric Lower Limb Deformities: Genu Varum and Blount's Disease",
+      "text": "Genu varum can be physiologic or pathological, with Blount's disease (medial tibial physeal overload) being a common progressive cause. Evaluation involves X-rays to assess the metaphyseal-diaphyseal angle (MDA), with MDA >16 suggesting Blount's. Management ranges from observation for physiologic bowing to osteotomy or hemiepiphysiodesis for Blount's disease, aiming to correct alignment and prevent arthritis."
+    },
+    {
+      "topic": "Paediatric Lower Limb Deformities: Tibial Bowing",
+      "text": "Tibial bowing can be posteromedial (often physiologic, resolves within 1 year) or anterolateral, associated with congenital pseudoarthrosis of the tibia. Posteromedial bowing may cause leg length discrepancy requiring correction. Anterolateral bowing with pseudoarthrosis is challenging, managed with IM nailing, external fixation, or vascularized fibula transfer to achieve union and limb length equalization."
+    },
+    {
+      "topic": "Paediatric Upper Limb Conditions: Brachial Plexus Birth Palsy",
+      "text": "Brachial Plexus Birth Palsy (BPBP) results from traction injury to the brachial plexus during birth. Erb's palsy (C5/6) is most common with a better prognosis than Klumpke's (C8/T1) or total plexus injuries. Management involves observation, ROM exercises, and surgical options like nerve grafting or tendon transfers for persistent deficits. Poor prognostic factors include pre-ganglionic injury and lack of biceps recovery by 5-6 months."
+    },
+    {
+      "topic": "Paediatric Upper Limb Conditions: Congenital Synostosis of the Forearm",
+      "text": "Congenital forearm synostosis is a failure of differentiation between the radius and ulna, typically resulting in fixed pronation. It can be isolated or associated with other anomalies. Surgery (rotational osteotomy) is rarely indicated due to poor outcomes and high complication rates. Most children adapt well to the functional limitations, making non-operative management the usual approach."
+    },
+    {
+      "topic": "Paediatric Limb Length Discrepancy (LLD) Management",
+      "text": "LLD assessment involves evaluating gait, pelvic tilt, and measuring true and apparent lengths. Growth prediction methods guide management, which can include shoe raises, epiphysiodesis (growth arrest), shortening osteotomies, lengthening procedures (distraction osteogenesis), or amputation for severe discrepancies. Decisions balance functional goals with surgical risks and patient age, aiming to optimize limb function and minimize compensatory gait abnormalities."
+    },
+    {
+      "topic": "Paediatric Rotational Abnormalities: Examination Techniques",
+      "text": "Assessing rotational abnormalities involves evaluating foot progression angle, thigh-foot angle (prone), femoral version (Gage's test), and foot posture. These help differentiate conditions like femoral anteversion and tibial torsion, which often cause intoeing. Management is typically conservative, with surgery reserved for symptomatic older children with significant functional limitations or psychological distress impacting quality of life."
+    },
+    {
+      "topic": "Paediatric Lower Limb Deformities: Tibial Bowing",
+      "text": "Tibial bowing can be posteromedial (often physiologic, resolves within 1 year) or anterolateral, associated with congenital pseudoarthrosis of the tibia. Posteromedial bowing may cause leg length discrepancy requiring correction. Anterolateral bowing with pseudoarthrosis is challenging, managed with IM nailing, external fixation, or vascularized fibula transfer to achieve union and limb length equalization, aiming for optimal functional outcome."
+    },
+    {
+      "topic": "Chromosomal & Teratologic Disorders: Turner's and Noonan's Syndromes",
+      "text": "Turner's syndrome (45, XO) presents with short stature, hypogonadism, webbed neck, cubitus valgum, and scoliosis. Noonan syndrome shares similar features but normal sexual development and more severe scoliosis. Prader-Willi involves hypotonia, obesity, and intellectual impairment with juvenile scoliosis. Rett's syndrome causes progressive spasticity, while Beckwith-Wideman features organomegaly and potential hemihypertrophy."
+    },
+    {
+      "topic": "Pediatric fractures",
+      "text": "Pediatric fractures are common due to children's activities, and growth plate (physeal) involvement is a key consideration. Remodeling potential varies by age, fracture location, and growth plate activity. The Salter-Harris classification describes physeal injuries, while the AO Pediatric Comprehensive Classification details fractures by bone, segment, type (Epiphysis, Metaphysis, Diaphysis), child code, and severity. Treatment aims for rapid healing, pain relief, and functional restoration, often using closed or minimally invasive techniques like ESIN or K-wires, with surgical intervention indicated for open fractures, polytrauma, certain unstable fractures, and those with growth plate involvement."
+    },
+    {
+      "topic": "Diseases affecting the growth Plate",
+      "text": "Spondyloepiphyseal Dysplasia and Multiple Epiphyseal Dysplasia affect the epiphysis, resulting in small, weakened epiphyses."
+    },
+    {
+      "topic": "Diseases affecting the growth Plate",
+      "text": "Trevor's Disease involves epiphyseal hyperplasia, leading to epiphyseal osteochondromas, commonly seen in the ankle and knee."
+    },
+    {
+      "topic": "Genetics",
+      "text": "Chromosomal abnormalities include monosomy (loss of a chromosome, e.g., Turner Syndrome with XO) and trisomy (addition of a chromosome, e.g., Trisomy 21 - Down syndrome). Structural problems include point mutations, deletions, and inversions. Autosomal dominant inheritance involves a single abnormal allele expressing the trait, with a 50% inheritance chance if one parent is heterozygous. Autosomal recessive inheritance requires homozygous abnormal alleles for the trait to be expressed."
+    },
+    {
+      "topic": "Genetics",
+      "text": "X-linked inheritance primarily affects males due to the Y chromosome's limited genetic information. X-linked conditions can be dominant or recessive. X-linked recessive conditions are expressed when a female is a carrier and the male inherits the affected X chromosome. X-linked dominant conditions are expressed in individuals with at least one abnormal gene."
+    },
+    {
+      "topic": "Paget's Disease of Bone",
+      "text": "Paget's disease involves disordered osteoclast and osteoblast activity, leading to abnormal bone. It is more common in men and increases with age, with polyostotic forms being more prevalent. The pathophysiology involves initial osteoclast overactivity, followed by compensatory osteoblastic activity, resulting in disorganized bone formation. Clinical presentation is often incidental, but fractures, arthritis, bone pain, and nerve compression can occur. Malignant transformation to osteosarcoma is a risk."
+    },
+    {
+      "topic": "Genetics",
+      "text": "Chromosomes are organized within the cell nucleus and are composed of DNA, RNA, and proteins. Genes are DNA sequences coding for protein synthesis. Autosomal inheritance involves genes on non-sex chromosomes, while X-linked inheritance relates to genes on the X chromosome. Penetrance refers to the degree a genotype is expressed in the phenotype."
+    },
+    {
+      "topic": "Genetics",
+      "text": "Chromosomal abnormalities include monosomy and trisomy, leading to conditions like Turner Syndrome and Down Syndrome, respectively. Structural abnormalities involve point mutations, deletions, and inversions. Autosomal dominant inheritance has a 50% inheritance chance with one affected allele, while autosomal recessive inheritance requires two affected alleles. X-linked conditions are more common in males."
+    },
+    {
+      "topic": "Genetics",
+      "text": "Chromosomes, composed of DNA, RNA, and proteins, carry genetic information. Humans have 46 chromosomes: 22 pairs of autosomes and sex chromosomes (XX female, XY male). Genes are DNA sequences coding for protein synthesis. Autosomal inheritance involves genes on non-sex chromosomes, while X-linked inheritance relates to genes on the X chromosome. Penetrance describes how consistently a genotype expresses a phenotype."
+    },
+    {
+      "topic": "Genetics",
+      "text": "Chromosomal abnormalities include monosomy (e.g., Turner Syndrome) and trisomy (e.g., Down Syndrome). Structural abnormalities involve mutations, deletions, and inversions. Autosomal dominant inheritance requires one affected allele for expression, while autosomal recessive inheritance requires two. X-linked conditions are more common in males."
+    },
+    {
+      "topic": "Genetics",
+      "text": "Chromosomes, composed of DNA, RNA, and proteins, carry genetic information. Humans have 46 chromosomes: 22 pairs of autosomes and sex chromosomes (XX female, XY male). Genes are DNA sequences coding for protein synthesis. Autosomal dominant inheritance requires one affected allele for expression, while autosomal recessive inheritance requires two. X-linked conditions are more common in males."
+    },
+    {
+      "topic": "Genetics",
+      "text": "Chromosomal abnormalities include monosomy (e.g., Turner Syndrome) and trisomy (e.g., Down Syndrome). Structural abnormalities involve point mutations, deletions, and inversions. Penetrance refers to how consistently a genotype expresses a phenotype. Understanding genetic inheritance patterns is crucial for diagnosing and managing hereditary conditions."
+    },
+    {
+      "topic": "Genetics",
+      "text": "Chromosomal abnormalities include monosomy (e.g., Turner Syndrome) and trisomy (e.g., Down Syndrome). Structural abnormalities involve point mutations, deletions, and inversions. Penetrance describes how consistently a genotype expresses a phenotype. Understanding genetic inheritance patterns is crucial for diagnosing and managing hereditary conditions."
+    },
+    {
+      "topic": "Genetics",
+      "text": "Chromosomal abnormalities include monosomy (e.g., Turner Syndrome) and trisomy (e.g., Down Syndrome). Structural abnormalities involve point mutations, deletions and inversions."
+    },
+    {
+      "topic": "Genetics",
+      "text": "Chromosomes, composed of DNA, RNA, and proteins, carry genetic information. Humans have 46 chromosomes, including 22 pairs of autosomes and sex chromosomes (XX female, XY male). Genes are DNA sequences coding for protein synthesis. Autosomal dominant inheritance requires one affected allele for expression, while recessive inheritance requires two. X-linked conditions are more common in males."
+    },
+    {
+      "topic": "Genetics",
+      "text": "Chromosomal abnormalities include monosomy (e.g., Turner Syndrome) and trisomy (e.g., Down Syndrome)."
+    },
+    {
+      "topic": "Paediatric Supracondylar Fracture of the Humerus",
+      "text": "Supracondylar fractures of the humerus in children commonly involve nerve palsies: ulnar nerve for flexion-type fractures and anterior interosseous nerve for extension-type fractures. Any nerve can be injured, necessitating clear pre-operative documentation. Nerve injury increases the risk of compartment syndrome. Vascular compromise, indicated by a pulseless but perfused hand, requires immediate theatre intervention. Indications for an anterior approach include pulselessness and pallor, with a transverse or 'boat race' incision. Compartment syndrome is a significant risk, especially with median nerve palsy. If a pulse is lost after reduction, exploration is mandatory to rule out arterial incarceration or kinking. Persistent suspicion of compartment syndrome warrants observation with the arm out of plaster and elevated."
+    },
+    {
+      "topic": "Physeal Injuries and Bar Formation",
+      "text": "Physeal bars, or bony bridges, form when there is direct contact between the metaphysis and epiphysis, most commonly due to trauma or surgical intervention (e.g., pin placement). The distal femur is most susceptible due to its wavy shape. Growth arrest occurs in about 10% of physeal fractures, more commonly in Type 4 and 5 fractures, but is often not clinically significant in adolescents due to limited remaining growth. Bars typically begin forming around 6 weeks post-injury and can take time to become clinically apparent. X-ray evaluation includes angular deformity, visible bars, and asymmetry of Harris growth recovery lines. CT or MRI is vital for precise bar mapping."
+    },
+    {
+      "topic": "Idiopathic Scoliosis: Risk Factors and Progression",
+      "text": "Risk factors for curve progression in idiopathic scoliosis include curve magnitude, Risser sign (immaturity), and Rib-Vertebra Angle Difference (RVAD). Curves greater than 25 degrees in skeletally immature patients, or those with an RVAD greater than 20 degrees, have a higher propensity to progress. Infantile idiopathic scoliosis has a high spontaneous resolution rate, but progressive curves require vigilant monitoring and potential intervention."
+    },
+    {
+      "topic": "Congenital Scoliosis Management",
+      "text": "Non-operative management, such as bracing, has no place in congenital scoliosis due to the fixed nature of the bony deformities. Observation is reserved for low-risk curves or mild deformities. Operative management typically involves posterior instrumented fusion in situ, often augmented with anterior fusion for younger patients, large curves, or those at risk of crankshaft deformity. Other options include hemiepiphysiodesis or excision of the causative bony bar or hemivertebra."
+    },
+    {
+      "topic": "Congenital Kyphosis",
+      "text": "Congenital kyphosis can result from failures of formation, segmentation, or a mix of both vertebral anomalies. Type 1 (failure of formation) carries the highest risk of progression and neurological injury, often resulting in a severe, acute kyphosis. A high association (over 50%) with neural anomalies necessitates thorough workup including MRI. Management involves observation for Type 2 curves, while operative intervention is indicated for neurological deficits, progressive curves, or curves exceeding 50 degrees in young children."
+    },
+    {
+      "topic": "Neurofibromatosis and Spinal Deformity",
+      "text": "The spine is commonly affected in neurofibromatosis, manifesting as kyphoscoliosis. Dystrophic forms are more aggressive, with vertebral scalloping, tight acute curves, foraminal widening, and pencil-like transverse processes. Intraspinal anomalies are frequent, requiring MRI before intervention. Management principles are similar to idiopathic scoliosis but are more aggressive for the dystrophic type, with a higher rate of pseudoarthrosis post-surgery."
+    },
+    {
+      "topic": "Diastematomyelia",
+      "text": "Diastematomyelia is a congenital condition where a fibrous or osseous bar splits the spinal cord longitudinally, most often in the lumbar spine. This can cause cord tethering and is associated with scoliosis and kyphosis. XR may show interpedicular widening, and MRI confirms the diagnosis. Excision of the bar is recommended prior to correcting any associated spinal deformity, though asymptomatic cases may be observed."
+    },
+    {
+      "topic": "Sacral Agenesis",
+      "text": "Sacral agenesis involves the absence of the sacrum and lower lumbar spine, often associated with maternal diabetes. Affected individuals present with a prominent lumbar spine and typically sit in a 'Buddha' position. Management options include amputation or spinal-pelvic fusion."
+    },
+    {
+      "topic": "Paediatric Cervical Spine Abnormalities: Atlantoaxial Instability",
+      "text": "Atlantoaxial instability can be AP or rotatory, often associated with syndromes like Down's or Morquio's. Instability is suspected with an ADI >5mm (adults >4mm) or a SAC <13mm. Basilar invagination, where the odontoid migrates proximally through the foramen magnum, is highly correlated with neurological deficit and requires operative stabilization. Management aims to prevent or stabilize neurological symptoms."
+    },
+    {
+      "topic": "Klippel-Feil Syndrome",
+      "text": "Klippel-Feil syndrome is characterized by the failure of segmentation of the cervical spine, leading to classic features of a stiff neck, low hairline, and webbed neck, although these are present in less than 50% of cases. It is associated with congenital scoliosis, Sprengel's shoulder, renal disease, and cardiac anomalies. Management is usually supportive, but cervical decompression and stabilization may be needed for myelopathy."
+    },
+    {
+      "topic": "Os Odontoidum",
+      "text": "Os odontoidum is a failure of the odontoid ossification centers to fuse, resulting in a separate ossicle at the C1-C2 joint. This leads to atlantoaxial instability, potentially causing neurological symptoms, an increased ADI, and reduced SAC. Treatment involves C1-3 fusion."
+    },
+    {
+      "topic": "Myelodysplasia (Spina Bifida) Management",
+      "text": "Myelodysplasia (Spina Bifida) is a congenital condition of the spinal cord and column, often associated with hydrocephalus, Arnold-Chiari malformation, tethered cord, and latex allergy. Management is multidisciplinary, addressing neurosurgical (defect closure, shunting) and orthopaedic issues. Orthopaedic goals include managing spinal deformities (scoliosis, kyphosis) with fusions, hip dislocations (often non-operative due to risks), knee and foot deformities, and ensuring a plantigrade, braceable foot."
+    },
+    {
+      "topic": "Muscular Dystrophies: Duchenne and Becker's",
+      "text": "Duchenne Muscular Dystrophy (DMD) is an X-linked recessive disorder causing progressive muscle weakness, typically leading to inability to walk by 10 and death by 20 from cardiorespiratory failure. Becker Muscular Dystrophy is a less severe X-linked recessive form with reduced, but not absent, dystrophin. Orthopaedic management for DMD focuses on maximizing ambulation, including physiotherapy, steroids, and surgery for scoliosis and contractures, though surgical risks are high. Fascioscapulohumeral Dystrophy is an autosomal dominant disorder affecting facial muscles and shoulder girdle weakness, with potential for scapulothoracic fusion if symptomatic."
+    },
+    {
+      "topic": "Other Neuromuscular Conditions: Arthrogryposis Multiplex Congenita",
+      "text": "Arthrogryposis Multiplex Congenita (AMC) is a non-progressive disorder characterized by multiple joint contractures, often affecting the upper limbs (shoulder adduction/internal rotation, elbow extension) and feet (rigid clubfoot, vertical talus). Management involves early physiotherapy, serial casting, and surgical releases or fusions to achieve functional outcomes, aiming for a plantigrade, shoeable foot and improved upper limb function."
+    },
+    {
+      "topic": "Other Neuromuscular Conditions: Larsen's Syndrome and Freidrich's Ataxia",
+      "text": "Larsen's syndrome involves congenital joint dislocations, particularly affecting the hips, knees, and radial heads, often with cervical spine kyphosis and potential neurological compromise. Freidreich's Ataxia is an autosomal recessive spinocerebellar disorder leading to progressive ataxia, cardiomyopathy, and foot deformities (cavovarus, equinovarus) requiring fusions and scoliosis management."
+    },
+    {
+      "topic": "Other Neuromuscular Conditions: Spinal Muscular Atrophy (SMA) and Polio",
+      "text": "Spinal Muscular Atrophy (SMA) is an autosomal recessive disorder causing progressive weakness due to anterior horn cell loss. SMA types vary in severity and life expectancy. Orthopaedic management focuses on hip dislocations (often non-operative), scoliosis (requiring aggressive, long fusions), and foot deformities. Polio, a viral infection causing anterior horn cell loss, typically results in unilateral weakness and limb shortening, with management aimed at achieving a plantigrade, braceable foot."
+    },
+    {
+      "topic": "Hereditary Motor Sensory Neuropathies (HMSN)",
+      "text": "HMSN, including Charcot-Marie-Tooth disease, involves progressive distal motor and sensory deficits. HMSN Type 1 involves demyelination, while Type 2 involves axonal degeneration. Both typically cause cavovarus foot deformities and scoliosis, with management aiming to preserve flexibility through transfers and osteotomies, avoiding fusion where possible. HMSN Type 3 (Dejerine-Sottas) is a more severe infantile form. Guillain-Barr syndrome is an acute, self-limiting polyneuropathy."
+    },
+    {
+      "topic": "Limb Deficiencies: Fibula Hemimelia",
+      "text": "Fibula hemimelia is the most common limb deficiency, characterized by partial or complete absence of the fibula, often associated with other limb deformities, including hip and knee issues, and ankle valgus. Management is dictated by the overall limb and foot function, with a decision between reconstructive surgery or amputation (especially if >3 foot rays are absent) typically made by age three. Knee preservation is prioritized for prosthetic fitting."
+    },
+    {
+      "topic": "Limb Deficiencies: Proximal Femoral Focal Deficiency (PFFD)",
+      "text": "PFFD represents a spectrum of femoral shortening, from congenital shortening of the femur (CSF) to complete absence of the proximal femur. It's often associated with other deficiencies, particularly fibula hemimelia. Management is either reconstructive or ablative, based on hip stability, lower leg function, bone deficiencies, and knee/ankle stability. Surgery is typically delayed until ages 2-3, with options including lengthening, knee fusion with foot ablation, rotationplasty, or femoro-pelvic fusion."
+    },
+    {
+      "topic": "Limb Deficiencies: Tibial Hemimelia",
+      "text": "Tibial hemimelia is less common than fibula hemimelia and often associated with other anomalies, including pre-axial polydactyly and equinovarus foot deformities. Management depends on knee extension and dictates whether reconstruction or prosthesis is used after foot ablation. The primary aim is to achieve a functional, braceable foot."
+    },
+    {
+      "topic": "Paediatric Rotational Abnormalities: Femoral Torsion",
+      "text": "Femoral torsion refers to the normal anteversion of the femur, which decreases from approximately 40 degrees at birth to 10-15 degrees by skeletal maturity. Significant anteversion (>70 degrees IR, <10 degrees ER in an older child) can cause in-toeing, awkward gait, or anterior knee pain (miserable malalignment syndrome). Management is usually conservative, with surgical rotational osteotomy considered for symptomatic older children or those with significant psychological distress."
+    },
+    {
+      "topic": "Paediatric Rotational Abnormalities: Tibial Torsion",
+      "text": "Tibial torsion is assessed by the thigh-foot angle, with normal external torsion increasing from birth. Internal tibial torsion is the most common cause of in-toeing and is often a packaging disorder, resolving spontaneously. Surgery (supramalleolar osteotomy) is reserved for symptomatic children over 10 years old. External tibial torsion can be compensatory for femoral anteversion."
+    },
+    {
+      "topic": "Paediatric Rotational Abnormalities: Metatarsus Adductus",
+      "text": "Metatarsus adductus is forefoot adduction with a normal hindfoot, seen in about 12% of newborns and often associated with DDH. Most cases resolve spontaneously by age 4. Flexible deformities are managed with stretching, while stiffer cases in younger children may benefit from serial casting. Surgery (medial column lengthening or lateral column shortening osteotomies) is for older children (>7 years) with stiff deformities."
+    },
+    {
+      "topic": "Paediatric Rotational Abnormalities: Skewfoot",
+      "text": "Skewfoot is a complex condition with forefoot adduction and hindfoot valgus, typically a packaging disorder. Symptomatic cases are rare and difficult to treat non-operatively, often requiring combination osteotomies to correct both components."
+    },
+    {
+      "topic": "Paediatric Rotational Abnormalities: Examination of Lower Limb Deformities",
+      "text": "Examination of paediatric lower limb angular deformities involves assessing overall appearance (height, weight, scars, bowing), gait (limp, thrust, compensatory mechanisms), palpation (pelvic tilt, correctability of deformities), and range of motion. Full standing X-rays and CT scanograms are crucial for accurate assessment and planning, alongside a family history."
+    },
+    {
+      "topic": "Paediatric Lower Limb Deformities: Genu Varum and Blount's Disease",
+      "text": "Genu varum in children can be physiologic or pathological, with Blount's disease being the most common pathological cause. Blount's disease involves progressive varus and internal rotation deformity due to overload on the medial tibial physis, classified by Langenskold. Management aims to restore the mechanical axis, with non-operative treatment for mild cases and operative correction (osteotomy, physeal bar resection) for progressive or severe deformities. Physiologic bowing typically resolves spontaneously and is milder than Blount's disease."
+    },
+    {
+      "topic": "Paediatric Lower Limb Deformities: Genu Valgum",
+      "text": "Genu valgum can be physiologic up to age 7, with abnormal findings including valgus >15 degrees, progressive valgus, or intermalleolar distance >10cm. Causes include obesity, trauma (Cozen's fracture), rickets, and skeletal dysplasias like MED. Management depends on the cause and severity, ranging from observation to guided growth (tethering of the lateral physis) or hemiepiphysiodesis, with osteotomy for older children or severe deformities."
+    },
+    {
+      "topic": "Paediatric Lower Limb Deformities: Tibial Bowing",
+      "text": "Tibial bowing can be posteromedial (often physiologic due to intrauterine packaging) or anterolateral, which is strongly associated with congenital pseudoarthrosis of the tibia (CPT) and may require bracing or surgical intervention. Posteromedial bowing is usually self-limiting, though leg length discrepancy may require correction. Anterolateral bowing with pseudoarthrosis is a challenging condition often associated with NF1, managed with IM nailing, Ilizarov fixation, vascularized fibula transfer, or amputation."
+    },
+    {
+      "topic": "Paediatric Upper Limb Conditions: Brachial Plexus Birth Palsy",
+      "text": "Brachial Plexus Birth Palsy (BPBP) results from traction injury to the brachial plexus during birth. Erb's palsy (C5/6) is most common with the best prognosis, while Klumpke's (C8/T1) and total plexus injuries have poorer outcomes. Poor prognostic factors include pre-ganglionic injury and lack of biceps recovery by 5-6 months. Management involves observation for recovery, ROM exercises, and surgical options like nerve grafting or tendon transfers for persistent deficits. Paralytic posterior shoulder dislocation can occur with severe cases, potentially requiring shoulder fusion."
+    },
+    {
+      "topic": "Paediatric Upper Limb Conditions: Congenital Pseudoarthrosis of the Clavicle",
+      "text": "Congenital pseudoarthrosis of the clavicle results from failure of ossification centers to unite, presenting as a firm mass. Unlike tibial pseudoarthrosis, it rarely causes functional deficit or pain. Surgical excision of the pseudoarthrosis with ORIF and bone grafting has high union rates and is considered if appearance or function is compromised."
+    },
+    {
+      "topic": "Paediatric Upper Limb Conditions: Sprengel's Deformity",
+      "text": "Sprengel's deformity is a developmental disorder causing incomplete descent of the scapula, leading to hypoplastic shoulder musculature and dysfunction, particularly in abduction. It is associated with scoliosis, Klippel-Feil syndrome, and omovertebral bars (which require excision). Management involves non-operative observation for mild cases or the Woodward procedure (scapulothoracic release, omovertebral bar excision, and scapular translation) for most patients, often with clavicle osteotomy to prevent brachial plexus neuropraxia."
+    },
+    {
+      "topic": "Paediatric Upper Limb Conditions: Congenital Synostosis of the Forearm",
+      "text": "Congenital synostosis of the forearm is a failure of differentiation of the forearm bones, usually resulting in a fixed pronation deformity. It can be isolated or associated with other developmental anomalies. Surgery, such as rotational osteotomy, is rarely indicated and has a high complication rate."
+    },
+    {
+      "topic": "Paediatric Upper Limb Conditions: Trigger Finger/Thumb",
+      "text": "Trigger thumb is more common than trigger digits in children, presenting with painful triggering and a palpable nodule. Conservative management involves observation until age one, as spontaneous resolution can occur. Surgical release of the A1 pulley is indicated for persistent or painful cases, with care taken to avoid the digital nerve."
+    },
+    {
+      "topic": "Congenital Dislocations: Knee and Patella",
+      "text": "Congenital dislocation of the knee is a rare disorder, often associated with breech presentation or ACL deficiency. Management usually involves closed reduction and serial casting. Congenital dislocation of the patella is less common and presents with knee hyperextension and a laterally displaced patella, requiring surgical correction involving soft tissue releases and retinacular repair."
+    },
+    {
+      "topic": "Congenital Dislocations: Radial Head Dislocation",
+      "text": "Congenital radial head dislocation, most commonly anterior, is often associated with other anomalies like achondroplasia or Nail Patella Syndrome. It is usually an incidental finding, but may cause pain or reduced ROM in adolescence. Surgical options like radial head excision (after skeletal maturity) or annular ligament reconstruction are considered for symptomatic cases, often requiring equalization of forearm bone lengths."
+    },
+    {
+      "topic": "Chromosomal & Teratologic Disorders: Down's Syndrome",
+      "text": "Down's Syndrome (Trisomy 21) is the most common chromosomal disorder, associated with hypotonia, mental retardation, heart disease, and various orthopaedic manifestations. These include atlantoaxial instability (requiring screening and potential fusion), scoliosis, spondylolisthesis, hip dislocation, and foot deformities. Management focuses on addressing these specific orthopaedic issues, particularly spinal instability."
+    },
+    {
+      "topic": "Chromosomal & Teratologic Disorders: Turner's and Noonan's Syndromes",
+      "text": "Turner's syndrome (45, XO) in females presents with short stature, hypogonadism, webbed neck, cubitus valgum, and scoliosis. Noonan syndrome shares similar features but has normal sexual development and more severe scoliosis. Prader-Willi syndrome involves hypotonia, obesity, and intellectual impairment, with juvenile scoliosis being an orthopaedic concern. Rett's syndrome causes progressive spasticity and abnormal hand movements, while Beckwith-Wiedman syndrome features organomegaly and potential scoliosis or hemihypertrophy."
+    },
+    {
+      "topic": "Chromosomal & Teratologic Disorders: Nail Patella Syndrome",
+      "text": "Nail Patella Syndrome is an autosomal dominant disorder with four cardinal features: dysplastic nails, hypoplastic or absent patellae, conical iliac horns, and dysplastic radial heads. It can lead to future complications like radial head dislocation, elbow arthritis, anterior knee pain, and autoimmune nephropathy, requiring periodic screening for renal involvement and management of symptomatic orthopaedic issues."
+    },
+    {
+      "topic": "Paediatric Limb Length Discrepancy (LLD) Management",
+      "text": "LLD less than 2 cm is generally asymptomatic. True LLD must be differentiated from apparent LLD due to pelvic obliquity or contractures. Management aims to correct the limp and any psychologic distress. Growth prediction methods (Rule of Thumb, TW3 formula, Green & Anderson tables, Mosley graphs) help determine treatment. Options range from shoe raises for small discrepancies to epiphysiodesis, shortening, lengthening, or amputation for larger differences. Surgery is generally delayed until growth is predictable or near cessation."
+    },
+    {
+      "topic": "Useful Tables: Conditions Affecting Physis and Epiphysis",
+      "text": "Various conditions affect the physis and epiphysis: Epiphyseal involvement includes MED, SED, and Trevor's disease. Proliferative zone issues relate to Achondroplasia and Gigantism. Hypertrophic zone can be affected by SUFE and trauma. Provisional calcification zone by rickets and osteomyelitis."
+    },
+    {
+      "topic": "Differential Diagnosis of Intoeing",
+      "text": "Intoeing in children can stem from Metatarsus Adductus, Internal Tibial Torsion, Femoral Anteversion, Club Foot, or Cerebral Palsy. Assessing gait, limb alignment, and foot posture helps differentiate these causes, with most resolving spontaneously but some requiring intervention."
+    },
+    {
+      "topic": "Differential Diagnosis of Torticollis",
+      "text": "Torticollis, or wry neck, can be muscular (SCM contracture), acute idiopathic, congenital (occipitocervical anomalies), neurogenic, ocular, or due to atlanto-axial rotatory instability. Muscular torticollis is the most common orthopaedic cause, often linked to intrauterine factors."
+    },
+    {
+      "topic": "Causes of Paediatric Genu Valgum and Genu Varum",
+      "text": "Paediatric genu varum can be caused by Blount's disease, rickets, achondroplasia, and multiple hereditary osteochondromatosis. Genu valgum may be physiologic or pathological, associated with MED, cozen's fracture, rickets, or skeletal dysplasias. Identifying the underlying cause guides treatment."
+    },
+    {
+      "topic": "Perthes Disease: Catterall's Head at Risk Signs",
+      "text": "Catterall's 'Head at Risk' signs in Perthes disease predict a poorer outcome and include lateral subluxation, a horizontal physis, Gage's sign, calcification lateral to the epiphysis, and metaphyseal cysts. These signs indicate potential head collapse and deformation, necessitating intervention."
+    },
+    {
+      "topic": "Acceptable C-Spine Radiographic Measurements",
+      "text": "Normal C-spine measurements are crucial for assessing stability. ADI <5mm (child), PADI/SAC <14mm, Powers ratio <1, and Torg ratio <0.8 are important. Deviations can indicate instability, stenosis, or ligamentous injury, guiding treatment decisions."
+    },
+    {
+      "topic": "Incidence of Concurrent Spinal Trauma in C-Spine Fractures",
+      "text": "Concurrent spinal trauma is common in cervical spine fractures, with higher risks at higher levels (C1: 50%, C2: 30%, C3: 20%). This underscores the need for a complete spinal assessment in patients with cervical spine injuries to identify associated lesions."
+    },
+    {
+      "topic": "Orthopaedic Classifications: Cerebral Palsy Types",
+      "text": "Cerebral Palsy is classified by type (Spastic, Athetoid, Ataxic), affected limbs (Quadriplegic, Diplegic, Hemiplegic), and functional level (GMFCS 1-5). This classification is vital for tailoring orthopaedic interventions and predicting functional outcomes, aiming to improve mobility and quality of life."
+    },
+    {
+      "topic": "Orthopaedic Classifications: Perthes Disease - Herring Lateral Pillar Height",
+      "text": "Herring's classification of Perthes disease assesses lateral pillar height: Stage A (normal), B (>50%), B/C (50% with physeal narrowing), and C (<50%). This is a key prognostic indicator, as lateral pillar collapse significantly impacts the final shape of the femoral head and risk of early osteoarthritis."
+    },
+    {
+      "topic": "Orthopaedic Classifications: Spondylolisthesis (Wiltse & Myerding)",
+      "text": "Spondylolisthesis is classified by Wiltse (type) and Myerding (grade). Isthmic Type 2a (pars stress fracture) and dysplastic types are common. High-grade slips (>50%) and dysplastic types have a higher risk of progression and neurological compromise, often requiring surgical stabilization."
+    },
+    {
+      "topic": "Orthopaedic Classifications: Graf Classification of DDH",
+      "text": "Graf's classification of Developmental Dysplasia of the Hip (DDH) in infants uses alpha and beta angles from ultrasound. Type 1 is normal, Type 2 is borderline, Type 3 indicates subluxation, and Type 4 signifies dislocation. This guides early management strategies."
+    },
+    {
+      "topic": "Orthopaedic Classifications: Swanson's Classification of Congenital Hand Anomalies",
+      "text": "Swanson's classification categorizes congenital hand anomalies by aetiology: failure of formation, differentiation, duplication, overgrowth/undergrowth, and constriction bands. Syndromes like Madelung's and issues like thumb duplication (Wassel classification) are also considered."
+    },
+    {
+      "topic": "Orthopaedic Classifications: Wassel's Classification of Thumb Duplications",
+      "text": "Wassel's classification of thumb polydactyly describes types based on the specific bones duplicated or bifurcated (P1, P2, P3) and the pattern of duplication. Type 4 (duplicated P2) is most common. This guides surgical reconstruction for the most functional thumb form."
+    },
+    {
+      "topic": "Useful Tables: Genes and Inheritance Patterns in Orthopaedic Disease",
+      "text": "Many orthopaedic conditions have genetic links. Achondroplasia (FGFR3, AD), Cleidocranial Dysplasia (CBFA1, AD), Ehlers-Danlos (COL5A, AD), Neurofibromatosis (NF1, AD), and Pseudoachondroplasia (COMP, AD) are autosomal dominant. Recessive inheritance patterns are seen in conditions like Gauchers Disease (AR) and Diastrophic Dysplasia (AR)."
+    },
+    {
+      "topic": "Differential Diagnosis of Intoeing",
+      "text": "Intoeing in children can be due to Metatarsus Adductus, Internal Tibial Torsion, Femoral Anteversion, Club Foot, or Cerebral Palsy. Assessment of gait, limb alignment, and foot posture helps differentiate these conditions, most of which resolve spontaneously but may require intervention if persistent or symptomatic."
+    },
+    {
+      "topic": "Differential Diagnosis of Torticollis",
+      "text": "Torticollis, or wry neck, can be muscular (SCM contracture), acute idiopathic, congenital (occipitocervical anomalies), neurogenic, ocular, or due to atlanto-axial rotatory instability. Muscular torticollis is the most common orthopaedic cause, often presenting with a palpable SCM mass and associated facial asymmetry."
+    },
+    {
+      "topic": "Causes of Paediatric Genu Valgum and Genu Varum",
+      "text": "Paediatric genu varum can be caused by Blount's disease, rickets, achondroplasia, and multiple hereditary osteochondromatosis. Genu valgum may be physiologic or pathological, associated with MED, cozen's fracture, rickets, or other skeletal dysplasias. Identifying the underlying cause is critical for appropriate management."
+    },
+    {
+      "topic": "Perthes Disease: Catterall's Head at Risk Signs",
+      "text": "Catterall's 'Head at Risk' signs in Perthes disease predict a poorer outcome and include lateral subluxation, horizontal physis, Gage's sign, lateral calcification, and metaphyseal cysts. These indicate potential femoral head collapse and deformation, often requiring surgical intervention to maintain containment and prevent long-term deformity."
+    },
+    {
+      "topic": "Acceptable C-Spine Radiographic Measurements",
+      "text": "Acceptable C-spine measurements are crucial for assessing stability. Key parameters include ADI (<5mm in child), PADI/SAC (<14mm indicating stenosis), Powers ratio (<1), and Torg ratio (<0.8). Deviations suggest instability or stenosis, guiding management decisions, particularly regarding surgical intervention for myelopathy or instability."
+    },
+    {
+      "topic": "Incidence of Concurrent Spinal Trauma in C-Spine Fractures",
+      "text": "Concurrent spinal trauma is common in cervical spine fractures, with a higher incidence at higher levels (C1: 50%, C2: 30%, C3: 20%). This necessitates a thorough spinal assessment in all patients with cervical spine injuries to identify associated lesions that may affect management and prognosis."
+    },
+    {
+      "topic": "Differential Diagnosis of Intoeing",
+      "text": "Intoeing in children can be caused by Metatarsus Adductus, Internal Tibial Torsion, Femoral Anteversion, Club Foot, or Cerebral Palsy. Assessment of gait, limb alignment, and foot posture helps differentiate these conditions, with most resolving spontaneously but some requiring intervention if persistent or symptomatic."
+    },
+    {
+      "topic": "Differential Diagnosis of Torticollis",
+      "text": "Torticollis, or wry neck, can be muscular (SCM contracture), acute idiopathic, congenital (occipitocervical anomalies), neurogenic, ocular, or due to atlanto-axial rotatory instability. Muscular torticollis is the most common orthopaedic cause, often presenting with a palpable SCM mass and associated facial asymmetry due to prolonged abnormal head positioning."
+    },
+    {
+      "topic": "Causes of Paediatric Genu Valgum and Genu Varum",
+      "text": "Paediatric genu varum can be caused by Blount's disease, rickets, achondroplasia, and multiple hereditary osteochondromatosis. Genu valgum may be physiologic or pathological, associated with MED, cozen's fracture, rickets, or other skeletal dysplasias. Identifying the underlying cause is critical for appropriate management, which may involve observation, bracing, or surgical correction."
+    },
+    {
+      "topic": "Perthes Disease: Catterall's Head at Risk Signs",
+      "text": "Catterall's 'Head at Risk' signs in Perthes disease predict a poorer outcome and include lateral subluxation, horizontal physis, Gage's sign, lateral calcification, and metaphyseal cysts. These signs indicate potential head collapse and deformation, often requiring surgical intervention to maintain containment and prevent long-term deformity, such as coxa magna."
+    },
+    {
+      "topic": "Acceptable C-Spine Radiographic Measurements",
+      "text": "Acceptable C-spine measurements are crucial for assessing stability. Key parameters include ADI (<5mm in child), PADI/SAC (<14mm indicating stenosis), Powers ratio (<1), and Torg ratio (<0.8). Deviations suggest instability or stenosis, guiding management decisions, particularly regarding surgical intervention for myelopathy or instability, and informing surgical approach."
+    },
+    {
+      "topic": "Incidence of Concurrent Spinal Trauma in C-Spine Fractures",
+      "text": "Concurrent spinal trauma is common in cervical spine fractures, with higher risks at higher levels (C1: 50%, C2: 30%, C3: 20%). This necessitates a thorough spinal assessment in all patients with cervical spine injuries to identify associated lesions that may affect management and prognosis, such as ligamentous injury or vertebral body fractures."
+    },
+    {
+      "topic": "Orthopaedic Classifications: Cerebral Palsy Types",
+      "text": "Cerebral Palsy is classified by type (Spastic, Athetoid, Ataxic), limb involvement (Quadriplegic, Diplegic, Hemiplegic), and functional level (GMFCS 1-5). This classification is vital for tailoring orthopaedic interventions to improve mobility, manage spasticity, and enhance quality of life for affected individuals, ensuring appropriate therapeutic goals are set."
+    },
+    {
+      "topic": "Orthopaedic Classifications: Perthes Disease - Herring Lateral Pillar Height",
+      "text": "Herring's classification of Perthes disease assesses lateral pillar height: Stage A (normal), B (>50%), B/C (50% with physeal narrowing), and C (<50%). This is a key prognostic indicator, as lateral pillar collapse significantly impacts the final shape of the femoral head and the risk of early osteoarthritis, guiding treatment strategies to preserve joint congruity."
+    },
+    {
+      "topic": "Orthopaedic Classifications: Spondylolisthesis (Wiltse & Myerding)",
+      "text": "Spondylolisthesis is classified by Wiltse (type: dysplastic, isthmic, etc.) and Myerding (grade: 1-5 based on slippage). Isthmic Type 2a (pars stress fracture) and dysplastic types are common. High-grade slips and dysplastic types have a higher risk of progression and neurological compromise, often requiring surgical stabilization to prevent further slippage and nerve root compression."
+    },
+    {
+      "topic": "Orthopaedic Classifications: Cerebral Palsy Types",
+      "text": "Cerebral Palsy is classified by type (Spastic, Athetoid, Ataxic), limb involvement (Quadriplegic, Diplegic, Hemiplegic), and functional level (GMFCS 1-5). This classification is vital for tailoring orthopaedic interventions to improve mobility, manage spasticity, and enhance quality of life for affected individuals, ensuring appropriate therapeutic goals are set and interventions are effective."
+    },
+    {
+      "topic": "Orthopaedic Classifications: Perthes Disease - Herring Lateral Pillar Height",
+      "text": "Herring's classification of Perthes disease assesses lateral pillar height: Stage A (normal), B (>50%), B/C (50% with physeal narrowing), and C (<50%). This is a key prognostic indicator, as lateral pillar collapse significantly impacts the final shape of the femoral head and the risk of early osteoarthritis, guiding treatment strategies to preserve joint congruity and function."
+    },
+    {
+      "topic": "Orthopaedic Classifications: Spondylolisthesis (Wiltse & Myerding)",
+      "text": "Spondylolisthesis is classified by Wiltse (type: dysplastic, isthmic, etc.) and Myerding (grade: 1-5 based on slippage). Isthmic Type 2a (pars stress fracture) and dysplastic types are common. High-grade slips and dysplastic types have a higher risk of progression and neurological compromise, often requiring surgical stabilization to prevent further slippage and nerve root compression, thereby alleviating pain and functional limitations."
+    },
+    {
+      "topic": "Scheuermann's Kyphosis",
+      "text": "Scheuermann's kyphosis is a developmental disorder causing excessive thoracic kyphosis (>45Â°) with wedging of three consecutive vertebrae. It typically presents in adolescent boys with poor posture and back pain. Bracing may be used for milder curves near skeletal maturity, while surgery (posterior fusion with osteotomies) is indicated for kyphosis >75Â° or progressive curves."
+    },
+    {
+      "topic": "Paediatric Rotational Abnormalities: Femoral Torsion",
+      "text": "Femoral torsion refers to the physiological anteversion of the femur, which decreases with age. Excessive anteversion (>70Â° IR, <10Â° ER in older children) can cause intoeing, awkward gait, or anterior knee pain (miserable malalignment syndrome). Management is typically conservative, with surgery reserved for symptomatic older children or those with significant functional or psychological impact."
+    },
+    {
+      "topic": "Paediatric Lower Limb Deformities: Genu Varum and Blount's Disease",
+      "text": "Genu varum can be physiologic or pathological, with Blount's disease (medial tibial physeal overload) being the most common pathological cause. Blount's is progressive and more aggressive in infants. Evaluation involves X-rays to assess metaphyseal-diaphyseal angle (MDA), with MDA >16Â° suggesting Blount's. Management ranges from observation for physiologic bowing to osteotomy or hemiepiphysiodesis for Blount's disease."
+    },
+    {
+      "topic": "Paediatric Lower Limb Deformities: Genu Varum and Blount's Disease",
+      "text": "Genu varum can be physiologic or pathological, with Blount's disease being a common progressive condition due to medial tibial physeal overload. Evaluation includes X-rays to assess the metaphyseal-diaphyseal angle (MDA), with MDA >16Â° suggesting Blount's. Management ranges from observation for physiologic bowing to osteotomy or hemiepiphysiodesis for Blount's disease, aiming to correct alignment and prevent arthritis."
+    },
+    {
+      "topic": "Paediatric Lower Limb Deformities: Genu Varum and Blount's Disease",
+      "text": "Genu varum can be physiologic or pathological, with Blount's disease (medial tibial physeal overload) being a common progressive cause. Evaluation involves X-rays to assess the metaphyseal-diaphyseal angle (MDA), with MDA >16Â° suggesting Blount's. Management ranges from observation for physiologic bowing to osteotomy or hemiepiphysiodesis for Blount's disease, aiming to correct alignment and prevent arthritis."
+    },
+    {
+      "topic": "Hereditary Motor Sensory Neuropathies (HMSN)",
+      "text": "HMSN, including Charcot-Marie-Tooth disease, involves progressive distal motor and sensory deficits. HMSN Type 1 involves demyelination, while Type 2 involves axonal degeneration. Both typically cause cavovarus foot deformities and scoliosis, with management aiming to preserve flexibility through transfers and osteotomies, avoiding fusion where possible. HMSN Type 3 (Dejerine-Sottas) is a more severe infantile form. Guillain-BarrÃ© syndrome is an acute, self-limiting polyneuropathy."
+    },
+    {
+      "topic": "Useful Tables: SUFE Severity (Southwick Angle)",
+      "text": "The Southwick angle quantifies SUFE severity based on the difference in lateral epiphyseal angle between hips. Mild (<30Â°), Moderate (30-50Â°), and Severe (>50Â°) classifications guide management, with higher degrees of slip associated with poorer outcomes and increased AVN risk."
+    }
+  ]

@@ -1,0 +1,314 @@
+[
+    {
+      "topic": "Adamantinoma",
+      "text": "Adamantinoma is a rare, low-grade malignant tumor, typically found in young adults with a predilection for the tibia (90% diaphyseal). It may arise from cortical fibrous dysplasia and causes long-standing pain and swelling, with occasional soft tissue masses. Radiographically, it presents as multiple diaphyseal lytic areas with sclerosis, often with a \"soap bubble\" appearance. Management involves wide local excision and reconstruction, as chemotherapy and radiotherapy are not effective."
+    },
+    {
+      "topic": "Chondrosarcoma",
+      "text": "Chondrosarcomas are malignant tumors of cartilage, with subtypes including classic intramedullary, de-differentiated, clear cell, and mesenchymal chondrosarcoma. Intramedullary chondrosarcomas are more common in older patients (>45 years) and have a better prognosis if low grade. De-differentiated chondrosarcomas are aggressive and require wide resection combined with chemotherapy."
+    },
+    {
+      "topic": "Chordoma",
+      "text": "Chordomas are malignant tumors arising from notochordal remnants, typically affecting individuals over 40. They occur in the midline spine, primarily in the sacrum and cranio-occipital region, and can metastasize late to the lungs. Imaging shows a sacral mass with calcification and bony destruction. Management is wide excision, with radiotherapy for inadequate margins."
+    },
+    {
+      "topic": "Ewings Sarcoma",
+      "text": "Ewing's Sarcoma is a malignant bone tumor primarily affecting males under 20 years old. It is of unknown etiology but involves a translocation of the t(11;22) chromosome. Clinically, it presents with pain and fever, mimicking infection, and often forms a large soft tissue mass that metastasizes to the lungs and other bones. Radiographically, it shows purely lytic lesions with a \"moth-eaten\" appearance and concentric periosteal reaction (onion skin)."
+    },
+    {
+      "topic": "Fibrosarcoma",
+      "text": "Fibrosarcoma is a malignant tumor similar in features to osteosarcoma but without osteoid production. It typically affects individuals over 40 and presents with pain and swelling. Management involves chemotherapy-sensitive treatment, with outcome generally worse than osteosarcoma. Malignant fibrous histiocytoma (MFH) is also similar but lacks spindle cells and osteoid production."
+    },
+    {
+      "topic": "Lymphoma (Primary Lymphoma of bone)",
+      "text": "Primary lymphoma of bone can occur at any age but is more common in middle-aged adults and males. It presents as a large, warm, soft tissue mass with swollen, painful lymph nodes, weight loss, fever, and night pain. Imaging shows permeative lytic lesions with mottled appearance and high uptake on bone scan. Management includes multiagent chemotherapy and radiotherapy for chronic control."
+    },
+    {
+      "topic": "Malignant Bone Tumours",
+      "text": "Malignant bone tumors are classified by histological cell of origin: osteogenic (Osteosarcoma), chondrogenic (Chondrosarcoma), fibrogenic (Fibrosarcoma, MFH), notochordal (Chordoma), vascular (Haemangioendothelioma), hemopoietic (Lymphoma, Myeloma), miscellaneous (Ewing's Sarcoma, Adamantinoma), and metastatic bone disease. Osteosarcoma is the most common malignant bone tumor, typically affecting young adults and children, with intramedullary osteosarcoma being the most frequent subtype."
+    },
+    {
+      "topic": "Multiple Myeloma",
+      "text": "Multiple myeloma is the most common malignant bone tumor, typically affecting individuals over 50, more commonly men and those of black ethnicity. It arises from plasma cells and produces abnormal proteins, inhibiting osteoblasts and stimulating osteoclasts. Clinical features include bone pain, pathologic fractures (especially spine), renal failure, and hypercalcemia. Imaging shows punched-out lytic lesions, and bone scans are negative due to osteoblast inactivation."
+    },
+    {
+      "topic": "Orthopaedic Classifications: Chondrosarcoma Subtypes",
+      "text": "Chondrosarcoma subtypes include intramedullary (classic, de-differentiated, clear cell, mesenchymal), post-radiotherapy, and Paget's disease-associated. Prognosis correlates with grade; de-differentiated chondrosarcoma has the worst prognosis. Histologic features like 'soap bubble appearance' or 'chicken wire calcification' aid in diagnosis."
+    },
+    {
+      "topic": "Orthopaedic Classifications: Osteosarcoma Subtypes",
+      "text": "Osteosarcoma subtypes include intramedullary (classic, parosteal, periosteal, telangiectatic), post-radiotherapy, and Paget's disease-associated osteosarcomas. Intramedullary is most common, often around the knee, while parosteal is low-grade and on the bone surface. Prognosis correlates with grade, subtype, and presence of metastases."
+    },
+    {
+      "topic": "Osteosarcoma",
+      "text": "Classic intramedullary osteosarcoma has an unknown etiology but is associated with retinoblastoma gene and p53 translocation. It typically arises at the meta-diaphyseal junction, most commonly around the knee. Presentation includes short-history pain, a mass, and sometimes pathologic fracture. Imaging shows simultaneous bone formation and lysis, with Codman's triangle and sunray spicules. Management involves neo-adjuvant chemotherapy followed by wide or radical surgical resection."
+    },
+    {
+      "topic": "Useful Tables: Osteosarcoma Prognostic Indicators",
+      "text": "Poor prognostic indicators for osteosarcoma include high LDH and alkaline phosphatase levels, absence of anti-shock protein 90, pelvic location, pathologic fracture at presentation, poor tumor necrosis after chemotherapy, vascular invasion, recurrence, and metastases."
+    },
+    {
+      "topic": "Clear Cell Sarcoma",
+      "text": "Clear Cell Sarcoma is a rare soft tissue sarcoma affecting young adults (20-40 years), predominantly females. It involves translocation of chromosomes 12 and 22 and is the most common soft tissue sarcoma of the foot, often associated with tendon sheaths. It produces melanin, mimicking malignant melanoma of soft parts. Management is typically wide excision and radiotherapy."
+    },
+    {
+      "topic": "Liposarcoma",
+      "text": "Liposarcoma is the second most common soft tissue sarcoma, affecting older adults and typically arising in deep tissues. It can be low, intermediate, or high grade, with myxoid liposarcoma being the most common. Pathology shows signet cells. Management depends on grade, with low-grade tumors treated by marginal excision and high-grade tumors by wide excision with adjuvant therapy."
+    },
+    {
+      "topic": "Malignant Fibrous Histiocytoma (MFH)",
+      "text": "MFH is the most common sarcoma in older adults (>55 years), presenting as a slow-growing, painless mass that may cause systemic symptoms. It is characterized by haphazard, pleomorphic histiocytic cells and a storiform appearance. Management is chemo-sensitive, similar to osteosarcoma."
+    },
+    {
+      "topic": "Malignant Soft Tissue Tumours",
+      "text": "Malignant soft tissue tumors are called sarcomas and are classified by tissue of origin (e.g., liposarcoma, fibrosarcoma). They are more common in older patients, males, and have a centripetal growth pattern. Worrying clinical features include rapid growth, pain, large size (>5cm), and neurovascular symptoms. MRI is often indeterminate, requiring biopsy. Management typically involves wide excision and adjuvant therapy (except for Ewing's and rhabdomyosarcoma)."
+    },
+    {
+      "topic": "Neurofibrosarcoma (Peripheral Nerve Sheath Tumour)",
+      "text": "Neurofibrosarcomas arise from Schwann cells, often associated with the NF2 gene. They present as slow-growing, painless masses that may cause neurological symptoms. Imaging shows low T1 and high T2 signal. Management is typically wide excision with radiotherapy, with better survival for solitary lesions than those associated with NF1."
+    },
+    {
+      "topic": "Rhabdomyosarcoma",
+      "text": "Rhabdomyosarcoma is the most common soft tissue tumor of childhood, presenting as a fast-growing, painless mass. It is chemotherapy-sensitive and radiotherapy is used for incomplete margins. Outcomes are better in children than adults. Leiomyosarcoma is a smooth muscle tumor similar to rhabdomyosarcoma and often involves blood vessels."
+    },
+    {
+      "topic": "Synovial Sarcoma",
+      "text": "Synovial sarcoma is the most common soft tissue sarcoma in young adults (14-40 years), associated with SYT gene abnormality and t(X;18) translocation. It presents as a highly malignant, high-grade lesion, most commonly in the foot, and affects para-articular regions. Imaging shows low T1 and high T2 signal with calcifications. Management considers chemotherapy as an adjunct to surgery."
+    },
+    {
+      "topic": "Benign Bone Tumours",
+      "text": "Benign bone tumors are classified histologically into osteogenic (Osteoid Osteoma, Osteoblastoma), chondrogenic (Chondroma, Enchondroma, Chondroblastoma), fibrogenic (Non-ossifying Fibroma, Desmoplastic Fibroma, Chondromyxoid Fibroma), cystic (Unicameral Bone Cyst, Aneurysmal Bone Cyst), and of unknown origin (GCT, Langerhans cell histiocytosis). The Enneking system stages these tumors based on activity: Latent, Active, and Aggressive."
+    },
+    {
+      "topic": "Bone Tumours",
+      "text": "Bone tumors are classified as benign or malignant. Benign tumors include osteoid osteoma, osteoblastoma, chondroma, enchondroma, non-ossifying fibroma, and aneurysmal bone cysts. Malignant tumors include osteosarcoma, chondrosarcoma, fibrosarcoma, chordoma, lymphoma, myeloma, and metastatic bone disease. Osteosarcoma management involves chemotherapy and surgery."
+    },
+    {
+      "topic": "Orthopaedic Classifications: Bone Tumours (Enneking)",
+      "text": "Enneking's classification of bone tumors categorizes them by grade (low/high), compartment (intraosseous/extraosseous), and metastatic status (none, metastasis present). This framework guides treatment strategies, aiming for wide or radical resection based on tumor biology and extent."
+    },
+    {
+      "topic": "Osteoblastoma",
+      "text": "Osteoblastoma is a locally aggressive benign tumor, typically affecting young adults with long-standing pain. It can mimic malignant lesions and may occur in long bones, pelvis, or the spine. Management is typically surgical due to its locally aggressive nature, involving marginal resection or curettage and grafting."
+    },
+    {
+      "topic": "Osteofibrous Dysplasia",
+      "text": "Osteofibrous dysplasia is a benign tumor affecting the tibia, often associated with trisomy. It presents with anterior or anterolateral bowing and may cause pseudoarthrosis. Management is non-operative if asymptomatic, with intralesional curettage and grafting for symptomatic lesions."
+    },
+    {
+      "topic": "Osteoid Osteoma",
+      "text": "Osteoid Osteoma is a benign tumor characterized by a <1cm nidus with a surrounding lucent ring and sclerotic rim, often causing night pain responsive to NSAIDs. It is most common in the proximal femur, tibial diaphysis, and posterior spinal elements. Management includes NSAIDs, RF ablation, or surgical excision if other treatments fail."
+    },
+    {
+      "topic": "Tumour Like Lesions of Bone",
+      "text": "Tumor-like lesions of bone include fibrous dysplasia (abnormal bone formation, possibly related to gene mutations, characterized by \"alphabet soup\" appearance on XR), osteofibrous dysplasia (affecting the tibia), and Paget's disease of bone (disordered osteoclast/osteoblast activity). Benign tumors like bone islands (enostoses) are asymptomatic lesions of failed ossification."
+    },
+    {
+      "topic": "Useful Tables: Bone Tumour Classifications",
+      "text": "Bone tumors are classified by Enneking based on grade, compartment, and metastatic status. Osteosarcoma subtypes include intramedullary, parosteal, periosteal, telangiectatic, post-radiotherapy, and Paget's. Chondrosarcoma subtypes include intramedullary (classic, de-differentiated), clear cell, mesenchymal, and post-radiotherapy. Histologic features are key for diagnosis."
+    },
+    {
+      "topic": "Benign Bone Tumours",
+      "text": "Paraosteal osteomas are rare, benign, self-limiting tumors growing on the bone surface, similar to osteochondromas. They are histologically mature lamellar bone and can be associated with Gardener's syndrome. Bone islands (enostoses) are benign, asymptomatic lesions representing focal failure of endochondral ossification, often found incidentally in the proximal femur."
+    },
+    {
+      "topic": "Benign Bone Tumours",
+      "text": "Osteopikilosis is a hereditary autosomal dominant condition causing hundreds of small bone islands, often around joints. Enchondromas are benign intramedullary tumors of hyaline cartilage that can rarely transform into low-grade chondrosarcomas, typically occurring in the hands and long bones. Chondroblastomas are epiphyseal lesions with a chondroid matrix."
+    },
+    {
+      "topic": "Benign Bone Tumours",
+      "text": "Chondromyxoid Fibromas are rare, benign, locally aggressive tumors with a metaphyseal lytic lesion. They can mimic other lesions like ABC or GCT. Management involves intralesional curettage and grafting, with a 10% recurrence rate. Haemangiomas are benign vascular tumors, often asymptomatic, with characteristic \"jailbar\" appearance on X-ray. Non-ossifying fibromas are common in children and adolescents, representing excessive osteoclast activity during metaphyseal remodeling."
+    },
+    {
+      "topic": "Benign Bone Tumours",
+      "text": "Giant Cell Tumours (GCT) are benign but locally aggressive, typically affecting women aged 30-50. They often present with short-history pain and pathologic fractures. Imaging shows an eccentric lytic lesion, and they are classified according to Campanacci on X-ray. Management involves intralesional curettage and grafting, with a 15% recurrence rate."
+    },
+    {
+      "topic": "Benign Bone Tumours",
+      "text": "Benign bone tumors are classified histologically and by Enneking stage. Osteoid Osteomas are characterized by a nidus and night pain, managed with NSAIDs or excision. Osteoblastomas are locally aggressive and typically treated with marginal resection. Paraosteal osteomas grow on the bone surface, while bone islands are asymptomatic lesions of failed endochondral ossification."
+    },
+    {
+      "topic": "Benign Bone Tumours",
+      "text": "Osteopikilosis involves multiple bone islands, often associated with other conditions. Enchondromas are benign intramedullary tumors of hyaline cartilage that can rarely undergo malignant transformation. Chondroblastomas are epiphyseal lesions. Chondromyxoid fibromas are rare, locally aggressive metaphyseal lesions managed with intralesional curettage and grafting."
+    },
+    {
+      "topic": "Benign Bone Tumours",
+      "text": "Haemangiomas are benign vascular tumors, often asymptomatic, with characteristic \"jailbar\" appearance on X-ray. Non-ossifying fibromas are common in children and adolescents. Giant Cell Tumours are benign but locally aggressive, typically affecting women aged 30-50, and are managed with intralesional curettage and grafting."
+    },
+    {
+      "topic": "Malignant Bone Tumours",
+      "text": "Malignant bone tumors include osteosarcoma (most common, affecting young adults/children, treated with chemotherapy and surgery), chondrosarcoma (cartilage tumors, grade-dependent prognosis), fibrosarcoma (similar to osteosarcoma but no osteoid), chordoma (arising from notochord remnants, midline spine), lymphoma of bone (B-cell lymphoma), multiple myeloma (plasma cell dyscrasia), and metastatic bone disease."
+    },
+    {
+      "topic": "Malignant Bone Tumours",
+      "text": "Osteosarcoma features include Codman's triangle and sunray spicules on X-ray, with management involving neo-adjuvant chemotherapy and surgery. Chondrosarcomas have variable grades and prognoses, requiring wide resection for high-grade tumors. Fibrosarcomas are chemo-sensitive. Chordomas often occur in the sacrum and spine and require wide excision. Lymphoma of bone and multiple myeloma are systemic diseases treated with chemotherapy and radiotherapy."
+    },
+    {
+      "topic": "Multiple Myeloma",
+      "text": "Multiple myeloma is the most common malignant bone tumor, predominantly affecting men over 50, particularly Black individuals. It arises from plasma cells in the bone marrow, leading to abnormal protein production, osteoblast inhibition, and osteoclast stimulation. Clinical features include bone pain, pathologic fractures (especially spinal), renal failure, and hypercalcemia. Imaging reveals punched-out lytic lesions with no sclerotic rim, a 'pepper pot' skull appearance, and multi-site involvement. Bone scans are typically negative due to osteoblast inactivation."
+    },
+    {
+      "topic": "Benign Bone Tumours",
+      "text": "Benign bone tumors are classified histologically: osteogenic (Osteoid Osteoma, Osteoblastoma), chondrogenic (Chondroma, Enchondroma, Chondroblastoma), fibrogenic (Non-ossifying Fibroma, Desmoplastic Fibroma, Chondromyxoid Fibroma), cystic (Unicameral Bone Cyst, Aneurysmal Bone Cyst), and unknown origin (GCT, Langerhans cell histiocytosis). Osteoid Osteomas typically cause night pain relieved by NSAIDs and are managed with NSAIDs or RF ablation."
+    },
+    {
+      "topic": "Benign Bone Tumours",
+      "text": "Osteoblastomas are locally aggressive benign tumors, often presenting with long-standing pain, and are managed surgically. Paraosteal osteomas grow on the bone surface, while bone islands are asymptomatic lesions. Osteopikilosis causes multiple bone islands, and enchondromas are benign intramedullary tumors that can rarely undergo malignant transformation. Chondroblastomas are epiphyseal lesions."
+    },
+    {
+      "topic": "Benign Bone Tumours",
+      "text": "Chondromyxoid fibromas are rare, locally aggressive metaphyseal lesions. Haemangiomas are benign vascular tumors with characteristic \"jailbar\" appearance on X-ray. Non-ossifying fibromas are common in children and adolescents. Giant Cell Tumours are benign but locally aggressive, often presenting with pain and pathologic fractures."
+    },
+    {
+      "topic": "Malignant Bone Tumours",
+      "text": "Malignant bone tumors include osteosarcoma (most common, affects young patients, treated with chemotherapy and surgery), chondrosarcoma (grade-dependent prognosis), fibrosarcoma (similar to osteosarcoma but no osteoid), chordoma (midline spine tumors), lymphoma of bone (B-cell lymphoma), multiple myeloma (plasma cell disorder), and metastatic bone disease. Osteosarcoma management involves neo-adjuvant chemotherapy followed by surgery."
+    },
+    {
+      "topic": "Malignant Bone Tumours",
+      "text": "Chondrosarcomas have variable grades and prognoses. Fibrosarcomas are chemo-sensitive. Chordomas require wide excision. Lymphoma of bone and multiple myeloma are treated with chemotherapy and radiotherapy. Metastatic bone disease spreads via Batson's venous plexus or hematogenous seeding, commonly affecting the spine, pelvis, and proximal long bones."
+    },
+    {
+      "topic": "Malignant Bone Tumours",
+      "text": "Imaging characteristics of metastatic bone disease vary with tumor type: lytic (lung, thyroid, kidney, GI), sclerotic (prostate, bladder), or mixed (breast). Pathologic fractures are common. Diagnostic workup includes history, examination, laboratory tests (LDH, Alk Phos, myeloma screen), and imaging (X-ray, bone scan, MRI, CT)."
+    },
+    {
+      "topic": "Malignant Soft Tissue Tumours",
+      "text": "Malignant soft tissue tumors are called sarcomas and are classified by tissue of origin. They are more common in older patients and males. Worrying clinical features include rapid growth, pain, large size, and neurovascular symptoms. MRI scans are often indeterminate, requiring biopsy. Management includes wide local excision and adjuvant therapy (chemotherapy for Ewing's and rhabdomyosarcoma, radiotherapy for margins)."
+    },
+    {
+      "topic": "Malignant Soft Tissue Tumours",
+      "text": "Synovial sarcoma is the most common soft tissue sarcoma in young adults, associated with SYT gene abnormality and t(X;18) translocation. Clear cell sarcoma is a rare soft tissue sarcoma of the foot producing melanin. Epithelioid sarcoma is common in the hand and may be mistaken for benign lesions. MFH is the most common sarcoma in older adults and is chemo-sensitive."
+    },
+    {
+      "topic": "Malignant Soft Tissue Tumours",
+      "text": "Liposarcoma is the second most common soft tissue sarcoma. Rhabdomyosarcoma is the most common soft tissue tumor of childhood and is chemo-sensitive. Leiomyosarcoma is a smooth muscle tumor. Neurofibrosarcomas arise from Schwann cells and may be associated with NF1 or NF2. Angiosarcoma is highly malignant, rare, and often requires amputation due to vascular involvement."
+    },
+    {
+      "topic": "Bone Tumours",
+      "text": "Chondrosarcomas have variable grades and prognoses. Fibrosarcomas are similar to osteosarcoma but lack osteoid. Chordomas occur in the midline spine. Lymphoma and myeloma are systemic diseases. Metastatic bone disease spreads hematogenously or via venous plexuses. Imaging characteristics and diagnostic workup vary depending on the tumor type."
+    },
+    {
+      "topic": "Malignant Soft Tissue Tumours",
+      "text": "Malignant soft tissue tumors are sarcomas, typically affecting older adults and presenting with rapid growth, pain, and large size. Imaging is often indeterminate, requiring biopsy. Management includes wide local excision and adjuvant therapy (chemotherapy for Ewing's and rhabdomyosarcoma). Synovial sarcoma is common in young adults, while clear cell sarcoma is the most common soft tissue sarcoma of the foot."
+    },
+    {
+      "topic": "Malignant Soft Tissue Tumours",
+      "text": "Epithelioid sarcoma is common in the hand and may be mistaken for benign lesions. MFH is common in older adults and is chemo-sensitive. Liposarcoma is the second most common soft tissue sarcoma. Rhabdomyosarcoma is the most common soft tissue tumor of childhood. Neurofibrosarcomas arise from Schwann cells, and angiosarcomas are highly malignant with poor prognosis."
+    },
+    {
+      "topic": "Benign Bone Tumours",
+      "text": "Benign bone tumors are classified histologically and by Enneking stage. Osteoid Osteomas cause night pain and are managed with NSAIDs or RF ablation. Osteoblastomas are locally aggressive and treated surgically. Paraosteal osteomas grow on the bone surface, while bone islands are asymptomatic lesions. Osteopikilosis causes multiple bone islands, and enchondromas are intramedullary cartilage tumors that can rarely undergo malignant transformation."
+    },
+    {
+      "topic": "Benign Bone Tumours",
+      "text": "Chondroblastomas are epiphyseal lesions. Chondromyxoid fibromas are rare, locally aggressive metaphyseal tumors managed with curettage and grafting. Haemangiomas are benign vascular tumors with characteristic radiographic features. Non-ossifying fibromas are common in children and adolescents, representing excessive osteoclast activity. Giant Cell Tumours are locally aggressive and managed surgically."
+    },
+    {
+      "topic": "Malignant Bone Tumours",
+      "text": "Malignant bone tumors include osteosarcoma, chondrosarcoma, fibrosarcoma, chordoma, lymphoma, myeloma, and metastatic bone disease. Osteosarcoma, the most common malignant bone tumor, affects young patients and is treated with chemotherapy and surgery. Chondrosarcomas have variable grades and prognoses, requiring wide resection for high-grade tumors."
+    },
+    {
+      "topic": "Malignant Bone Tumours",
+      "text": "Fibrosarcomas are similar to osteosarcoma but lack osteoid. Chordomas occur in the midline spine. Lymphoma and myeloma are systemic diseases. Metastatic bone disease spreads via venous plexuses or hematogenous seeding, commonly affecting the spine and pelvis. Imaging characteristics and diagnostic workup depend on the tumor type."
+    },
+    {
+      "topic": "Malignant Soft Tissue Tumours",
+      "text": "Malignant soft tissue tumors are called sarcomas, typically affecting older adults and presenting with rapid growth and pain. MRI scans are often indeterminate, requiring biopsy. Management involves wide local excision and adjuvant therapy (chemotherapy for Ewing's and rhabdomyosarcoma). Synovial sarcoma is common in young adults, while clear cell sarcoma is the most common soft tissue sarcoma of the foot."
+    },
+    {
+      "topic": "Malignant Soft Tissue Tumours",
+      "text": "Epithelioid sarcoma is common in the hand. MFH is the most common sarcoma in older adults. Liposarcoma is the second most common soft tissue sarcoma. Rhabdomyosarcoma is the most common soft tissue tumor of childhood. Neurofibrosarcomas arise from Schwann cells, and angiosarcomas are highly malignant with poor prognosis."
+    },
+    {
+      "topic": "Bone Tumours",
+      "text": "Benign bone tumors are classified histologically and by Enneking stage. Osteoid Osteomas cause night pain and are managed with NSAIDs or excision. Osteoblastomas are locally aggressive and treated surgically. Paraosteal osteomas grow on the bone surface, while bone islands are asymptomatic lesions of failed ossification. Osteopikilosis causes multiple bone islands, and enchondromas can undergo malignant transformation."
+    },
+    {
+      "topic": "Bone Tumours",
+      "text": "Chondroblastomas are epiphyseal lesions. Chondromyxoid fibromas are rare, locally aggressive metaphyseal tumors managed with curettage. Haemangiomas are benign vascular tumors with characteristic radiographic findings. Non-ossifying fibromas are common in children. Giant Cell Tumours are locally aggressive and treated surgically."
+    },
+    {
+      "topic": "Malignant Bone Tumours",
+      "text": "Malignant bone tumors include osteosarcoma, chondrosarcoma, fibrosarcoma, chordoma, lymphoma, myeloma, and metastatic bone disease. Osteosarcoma is the most common malignant bone tumor, affecting young patients and treated with chemotherapy and surgery. Chondrosarcomas have variable grades and prognoses, requiring wide resection for high-grade tumors."
+    },
+    {
+      "topic": "Malignant Bone Tumours",
+      "text": "Fibrosarcomas are similar to osteosarcoma but lack osteoid. Chordomas occur in the midline spine. Lymphoma and myeloma are systemic diseases. Metastatic bone disease spreads hematogenously or via venous plexuses, commonly affecting the spine and pelvis. Imaging and diagnostic workup vary by tumor type."
+    },
+    {
+      "topic": "Malignant Soft Tissue Tumours",
+      "text": "Malignant soft tissue tumors are sarcomas, typically affecting older adults and presenting with rapid growth and pain. MRI scans are often indeterminate, requiring biopsy. Management includes wide local excision and adjuvant therapy (chemotherapy for Ewing's and rhabdomyosarcoma). Synovial sarcoma is common in young adults, while clear cell sarcoma is the most common soft tissue sarcoma of the foot."
+    },
+    {
+      "topic": "Bone Tumours",
+      "text": "Benign bone tumors are classified histologically and by Enneking stage. Osteoid Osteomas cause night pain and are managed with NSAIDs or excision. Osteoblastomas are locally aggressive and treated surgically. Paraosteal osteomas grow on the bone surface, while bone islands are asymptomatic lesions. Osteopikilosis causes multiple bone islands, and enchondromas can undergo malignant transformation."
+    },
+    {
+      "topic": "Bone Tumours",
+      "text": "Chondroblastomas are epiphyseal lesions. Chondromyxoid fibromas are rare, locally aggressive metaphyseal tumors managed with curettage and grafting. Haemangiomas are benign vascular tumors with characteristic radiographic findings. Non-ossifying fibromas are common in children. Giant Cell Tumours are locally aggressive and treated surgically."
+    },
+    {
+      "topic": "Benign Bone Tumours",
+      "text": "Benign bone tumors are classified histologically and by Enneking stage. Osteoid Osteomas typically cause night pain and are managed with NSAIDs or excision. Osteoblastomas are locally aggressive and treated surgically. Paraosteal osteomas grow on the bone surface, while bone islands are asymptomatic lesions. Osteopikilosis causes multiple bone islands, and enchondromas can undergo malignant transformation."
+    },
+    {
+      "topic": "Benign Bone Tumours",
+      "text": "Chondroblastomas are epiphyseal lesions. Chondromyxoid fibromas are rare, locally aggressive metaphyseal tumors managed with curettage and grafting. Haemangiomas are benign vascular tumors with characteristic radiographic findings. Non-ossifying fibromas are common in children and adolescents. Giant Cell Tumours are locally aggressive and treated surgically."
+    },
+    {
+      "topic": "Malignant Bone Tumours",
+      "text": "Fibrosarcomas resemble osteosarcomas but lack osteoid. Chordomas occur in the midline spine and can metastasize late. Lymphoma and myeloma are systemic diseases. Metastatic bone disease spreads hematogenously or via venous plexuses, commonly affecting the spine and pelvis. Imaging and diagnostic workup depend on the suspected tumor type."
+    },
+    {
+      "topic": "Malignant Soft Tissue Tumours",
+      "text": "Malignant soft tissue tumors are called sarcomas, typically affecting older adults and presenting with rapid growth and pain. MRI scans are often indeterminate, requiring biopsy. Management includes wide local excision and adjuvant therapy (chemotherapy for Ewing's and rhabdomyosarcoma). Synovial sarcoma is common in young adults and affects the foot, while clear cell sarcoma is also a soft tissue sarcoma of the foot."
+    },
+    {
+      "topic": "Malignant Soft Tissue Tumours",
+      "text": "Epithelioid sarcoma is common in the hand and may be mistaken for benign lesions. MFH is the most common sarcoma in older adults. Liposarcoma is the second most common soft tissue sarcoma. Rhabdomyosarcoma is the most common soft tissue tumor of childhood. Neurofibrosarcomas arise from Schwann cells, and angiosarcomas are highly malignant with poor prognosis."
+    },
+    {
+      "topic": "Malignant Bone Tumours",
+      "text": "Fibrosarcomas are similar to osteosarcoma but lack osteoid. Chordomas occur in the midline spine. Lymphoma and myeloma are systemic diseases. Metastatic bone disease spreads hematogenously or via venous plexes, commonly affecting the spine and pelvis. Imaging and diagnostic workup vary by tumor type."
+    },
+    {
+      "topic": "Bone Tumours",
+      "text": "Chondroblastomas are epiphyseal lesions. Chondromyxoid fibromas are rare, locally aggressive metaphyseal tumors managed with curettage and grafting."
+    },
+    {
+      "topic": "Bone Tumours",
+      "text": "Bone tumors are classified as benign or malignant. Benign tumors include osteoid osteoma, osteoblastoma, chondroma, enchondroma, non-ossifying fibroma, and aneurysmal bone cysts. Malignant tumors include osteosarcoma, chondrosarcoma, fibrosarcoma, chordoma, lymphoma, myeloma, and metastatic bone disease. Management strategies vary based on tumor type, grade, and location."
+    },
+    {
+      "topic": "Malignant Soft Tissue Tumours",
+      "text": "Malignant soft tissue tumors, or sarcomas, are classified by tissue of origin. They are more common in older patients and males, presenting with rapid growth and pain. MRI is often indeterminate, requiring biopsy. Management involves wide local excision and adjuvant therapy, with prognosis varying by tumor type and grade."
+    },
+    {
+      "topic": "Useful Tables: Bone Tumour Classifications",
+      "text": "Bone tumors are classified by Enneking (grade, compartment, metastasis) and by subtype (Osteosarcoma, Chondrosarcoma, etc.). Osteosarcoma subtypes include intramedullary, parosteal, periosteal, telangiectatic, and post-radiotherapy. Chondrosarcoma subtypes are intramedullary, de-differentiated, clear cell, mesenchymal, and post-radiotherapy. Prognosis correlates with grade and subtype."
+    },
+    {
+      "topic": "Useful Tables: Osteosarcoma Prognostic Indicators",
+      "text": "Poor prognostic factors for osteosarcoma include high LDH/alkaline phosphatase, absence of anti-shock protein 90, pelvic location, pathologic fracture, poor tumor necrosis post-chemo, vascular invasion, recurrence, and metastases. Early detection and aggressive treatment are key."
+    },
+    {
+      "topic": "Orthopaedic Classifications: Bone Tumours (Enneking)",
+      "text": "Enneking's classification of bone tumors categorizes them by grade (low/high), compartment (intraosseous/extraosseous), and metastatic status. This framework dictates treatment, aiming for wide or radical resection to achieve oncologic control while preserving function where possible."
+    },
+    {
+      "topic": "Orthopaedic Classifications: Osteosarcoma Subtypes",
+      "text": "Osteosarcoma subtypes include intramedullary (classic, parosteal, periosteal, telangiectatic), post-radiation, and Paget's disease-related. Intramedullary is most common, often around the knee. Prognosis varies by subtype, grade, and presence of metastases, with early diagnosis and multimodal treatment being crucial."
+    },
+    {
+      "topic": "Orthopaedic Classifications: Chondrosarcoma Subtypes",
+      "text": "Chondrosarcoma subtypes include intramedullary (classic, de-differentiated, clear cell, mesenchymal), post-radiation, and Paget's related. Prognosis is strongly correlated with histological grade. De-differentiated chondrosarcoma has the worst prognosis, often requiring more aggressive treatment."
+    },
+    {
+      "topic": "Useful Tables: Bone Tumour Classifications",
+      "text": "Bone tumors are classified by Enneking (grade, compartment, metastasis) and subtype (e.g., Osteosarcoma, Chondrosarcoma). Osteosarcoma subtypes include intramedullary, parosteal, periosteal, telangiectatic, and post-radiation. Chondrosarcoma subtypes include intramedullary, de-differentiated, clear cell, and mesenchymal. Prognosis correlates with grade and subtype."
+    },
+    {
+      "topic": "Useful Tables: Osteosarcoma Prognostic Indicators",
+      "text": "Poor prognostic factors for osteosarcoma include high LDH/alkaline phosphatase, absence of anti-shock protein 90, pelvic location, pathologic fracture, poor tumor necrosis post-chemo, vascular invasion, recurrence, and metastases. Early detection and aggressive treatment are crucial for better outcomes."
+    }
+  ]

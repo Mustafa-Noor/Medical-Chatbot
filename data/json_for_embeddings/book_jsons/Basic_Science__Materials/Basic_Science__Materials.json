@@ -1,0 +1,383 @@
+[
+    {
+      "topic": "Biology of Bone",
+      "text": "Bone is composed of approximately 90% matrix and 10% cellular components, including osteoblasts (secrete osteoid), osteocytes (maintain bone), bone lining cells, osteoclasts (resorb bone), and osteoprogenitor cells. Osteoblasts are formed from mesenchymal stem cells and are responsible for bone formation."
+    },
+    {
+      "topic": "Bone Cement",
+      "text": "Bone cement is composed of a liquid (monomer MMA, accelerator, inhibitor) and a powder (polymer PMMA, initiator, barium sulfate, antibiotics). Polymerization occurs upon mixing via an exothermic reaction, progressing through mixing, waiting (dough), working, hardening, and setting phases. Macroscopically, the stages are sandy, stringy, doughy, and final."
+    },
+    {
+      "topic": "Bone Cement Composition and Setting Phases",
+      "text": "Bone cement typically consists of a liquid monomer (MMA) and a powder polymer (PMMA), with accelerators and initiators. It undergoes distinct phases: Mixing, Waiting (dough), Working, and Hardening, with temperature influencing setting time. Proper technique is crucial to minimize porosity and maximize strength."
+    },
+    {
+      "topic": "Bone Formation",
+      "text": "Bone formation occurs through three types: enchondral, intramembranous, and appositional. Enchondral ossification, the main type, involves replacing a cartilage model with bone, as seen in long bone growth and callus formation. Intramembranous ossification forms bone directly from undifferentiated cells in membranes, seen in flat bones. Appositional ossification contributes to bone width."
+    },
+    {
+      "topic": "Bone Metabolism",
+      "text": "The body strives to maintain normal serum calcium, and imbalances in metabolic bone disorders reflect this effort. Calcium is primarily stored in bone as hydroxyapatite crystals. Vitamin D plays a crucial role in calcium and phosphate absorption, acting on the duodenum, bone, and parathyroid gland. PTH secretion is regulated by serum calcium and phosphate levels."
+    },
+    {
+      "topic": "Bone Remodelling",
+      "text": "Bone remodeling is a cyclic process involving cytokines (IL6) recruiting osteoclasts, which secrete enzymes to resorb bone. Factors within the bone, like IGF-1, then recruit osteoblasts to lay down osteoid, which is mineralized by hydroxyapatite. IL6 from osteoblasts then recruits osteoclasts, restarting the cycle. Bisphosphonates inhibit osteoclast activity and are resistant to metabolism."
+    },
+    {
+      "topic": "Bone remodeling",
+      "text": "Bone remodeling is a continuous process throughout life where osteoclasts and osteoblasts work in tandem. Osteoclasts dissolve the mineral from the bone matrix, and osteoblasts produce new bone, called osteoid, to fill the resorption pit. Some osteoblasts remain embedded within the bone matrix as osteocytes."
+    },
+    {
+      "topic": "Bone: Cortical bone remodeling"
+    },
+    {
+      "topic": "Bone matrix composition",
+      "text": "The bone matrix consists of organic and inorganic components. The organic matrix is primarily type I collagen, providing tensile strength, along with proteoglycans and other matrix proteins. The inorganic matrix is mainly calcium hydroxyapatite, which provides compressive strength."
+    },
+    {
+      "topic": "Bone: Osteoblast activity"
+    },
+    {
+      "topic": "Bone: Osteoclast function"
+    },
+    {
+      "topic": "Cell Cycle",
+      "text": "The cell cycle involves interphase (G1, S, G2) and mitosis (M). Cells in G0 are not dividing. DNA replication occurs in the S phase. Mitosis is cell division, resulting in two daughter nuclei. Understanding the cell cycle is relevant to non-sex cells."
+    },
+    {
+      "topic": "Cell Cycle Phases",
+      "text": "The cell cycle consists of Interphase (G1, S, G2) and Mitosis (M). G1 is for growth, S for DNA synthesis, G2 for further growth and preparation for mitosis. M phase involves nuclear division (mitosis) and cell division (cytokinesis). G0 is a quiescent state where cells exit the cycle."
+    },
+    {
+      "topic": "Evolution of Bone Cementing Techniques",
+      "text": "Bone cementing techniques have evolved significantly. Early methods involved finger packing. Second-generation techniques introduced cement guns and retrograde pressurization. Third-generation methods focus on reducing porosity (vacuum mixing), using pulse lavage, centralizers, and rough-stem finishes to improve cement mantle quality and implant fixation."
+    },
+    {
+      "topic": "Phases of Bone Cement Setting",
+      "text": "Bone cement undergoes distinct phases: Mixing (performed in vacuum to reduce porosity), Waiting (dough phase, viscosity increases), Working (manipulation time), and Hardening (complete hardening, influenced by temperature). Setting time is when cement reaches half its maximal heat."
+    },
+    {
+      "topic": "Useful Tables: Bone Cement Composition and Setting Phases",
+      "text": "Bone cement is typically a two-part mixture: a liquid monomer (MMA) with accelerator and inhibitor, and a powder polymer (PMMA) with initiator and dye. It undergoes phases of mixing, waiting (dough phase), working, and hardening, influenced by temperature. Proper mixing and manipulation are crucial for optimal strength and to avoid complications like porosity or premature setting."
+    },
+    {
+      "topic": "Biomaterials: Material definitions",
+      "text": "Materials are defined by their mechanical properties. Brittle materials (e.g., PMMA) undergo elastic deformation, while ductile materials (e.g., metal) undergo plastic deformation. Viscoelastic materials (e.g., bone, ligaments) exhibit time-rate dependent behavior."
+    },
+    {
+      "topic": "Biomaterials: Metals",
+      "text": "Metals used in orthopaedics include stainless steel, cobalt alloys, and titanium alloys. Fatigue failure occurs with cyclic loading below the ultimate tensile strength, while creep is progressive deformation under constant force. Corrosion is the chemical dissolving of metals."
+    },
+    {
+      "topic": "Ceramics",
+      "text": "Ceramics used in orthopaedics include bioinert materials like Alumina, Zircona, and Oxinium, and bioactive materials like Hydroxyapatite (HA) and Tricalcium Phosphate. Alumina is the most common ceramic, offering better quality. Zirconia is less used due to high fracture rates. Oxinium is oxidized zirconia. Hydroxyapatite is osteoconductive and promotes bone growth."
+    },
+    {
+      "topic": "Composition of Orthopaedic Metals",
+      "text": "Orthopaedic implants are made from various metals, each with distinct compositions and properties. Stainless Steel 316L contains iron, chromium, nickel, molybdenum, and low carbon. Titanium alloys (Ti-6Al-4V) are lightweight and strong. Cobalt-Chrome alloys offer high strength and corrosion resistance. Understanding these compositions is vital for implant selection and managing potential adverse reactions."
+    },
+    {
+      "topic": "Corrosion Types in Orthopaedic Implants",
+      "text": "Orthopaedic implants can undergo various types of corrosion: Uniform (affects entire surface), Galvanic (dissimilar metals create electrochemical gradient), Crevice (occurs in gaps), Pitting (localized corrosion), Fretting (combination of wear and corrosion), Intergranular (occurs at grain boundaries), Leaching (intra-granular corrosion), Inclusion (iatrogenic, due to retained fragments), and Stress corrosion (cyclic loading disrupts passive layer)."
+    },
+    {
+      "topic": "Implants and biotechnology",
+      "text": "Implants for fracture fixation are primarily made of stainless steel or titanium alloys, chosen for their strength, stiffness, ductility, and biocompatibility. Titanium offers superior corrosion resistance and fatigue strength compared to stainless steel. Surface properties and coatings can influence osseointegration and reduce infection rates. Future developments include biodegradable polymers and additive manufacturing for personalized implants, along with the use of growth factors to enhance bone regeneration."
+    },
+    {
+      "topic": "Locking plates",
+      "text": "Locking plates utilize screws that lock into the plate, creating a fixed-angle construct and eliminating the need for plate-to-bone compression for stability. This is particularly advantageous in poor bone stock (osteoporotic bone) and metaphyseal fractures, where conventional screws may loosen. Locking plates also facilitate minimally invasive plate osteosynthesis (MIPO) by reducing the requirement for precise contouring. They can provide absolute or relative stability depending on the application and screw type used, offering a significant improvement over conventional plating techniques."
+    },
+    {
+      "topic": "Orthopaedic Metallurgy",
+      "text": "Metals used in orthopaedics have crystalline structures with defects like grain boundaries, dislocations, and cracks that affect mechanical properties. Alloys are combinations of metals with improved properties. Ductility can be reduced by adding large metal ions or small ions like carbon. Nickel and chromium increase corrosion resistance, while cobalt and molybdenum increase strength. Manufacturing processes include machining and casting, with grain size influenced by cooling rate."
+    },
+    {
+      "topic": "Polyethylene",
+      "text": "Polyethylene, a polymer of ethylene, forms chains held by van der Waals forces. Its strength can be increased by increasing molecular weight, creating cross-links, reducing crystallinity, and optimizing manufacturing and sterilization methods. UHMWPE's strength and wear resistance are enhanced by increased chain length, number of chains, and amorphous proportion."
+    },
+    {
+      "topic": "Useful Tables: Mean Surface Roughness of Orthopaedic Materials",
+      "text": "The surface roughness of orthopaedic materials impacts articulation. Polished Exeter stems and ceramic heads have very low roughness (0.01-0.02), while polyethylene cups have higher roughness (2.0), and articular cartilage is around 3.0. This affects wear rates and friction."
+    },
+    {
+      "topic": "Useful Tables: Young's Modulus for Orthopaedic Materials",
+      "text": "Young's modulus quantifies material stiffness. Ceramics are the stiffest (250 GPa), followed by CoCr (225 GPa) and Titanium (100 GPa). Cortical bone is around 20 GPa, while PMMA is 2 GPa, and polyethylene is 1.5 GPa. Softer tissues like tendon (0.1 GPa) and cartilage (0.02 GPa) have much lower moduli."
+    },
+    {
+      "topic": "Orthopaedic Pharmacology",
+      "text": "Analgesics include opioids (mimic endogenous opioids, act on mu receptors via G proteins) and NSAIDs (inhibit prostaglandin production via COX enzymes). Paracetamol weakly inhibits COX and prostaglandins and has a central action. Local anesthetics block sodium channels in neurons, preventing action potential formation."
+    },
+    {
+      "topic": "Thromboembolic disease prophylaxis",
+      "text": "Prophylaxis for thromboembolic disease is recommended for all patients undergoing arthroplasty. Guidelines vary regarding the specific agents and duration of prophylaxis, considering factors such as bleeding risk, procedure type, and patient-specific risk factors."
+    },
+    {
+      "topic": "Useful Tables: Orthopaedic Pharmacology",
+      "text": "Key orthopaedic medications include analgesics (Paracetamol, NSAIDs), opioids, steroids (immunosuppressive, anti-inflammatory), local anesthetics (Na+ channel blockers), anticoagulants (Warfarin, Heparin, LMWH, Fondaparinaux, Rivaroxaban), antiplatelets (Aspirin), bisphosphonates (inhibit osteoclasts), Strontium (affects bone turnover), DMARDs (Methotrexate, Etanercept, Infliximab), and Penicillamine."
+    },
+    {
+      "topic": "Bias",
+      "text": "Bias is the introduction of systematic prejudice into a study that skews its results. Types of bias include selection, observational, recall, and publication bias. Stratifying before randomization can also introduce bias."
+    },
+    {
+      "topic": "Confounding Error",
+      "text": "A confounding error is a factor that skews study results but was not introduced, anticipated, or controllable by the observer."
+    },
+    {
+      "topic": "Correlation Tests",
+      "text": "Correlation tests measure the association between two variables, applicable to both parametric and non-parametric data. The value ranges from -1 to +1, indicating direct association. Pearson's correlation is used for parametric data, while Spearman's Rank Correlation is for non-parametric data."
+    },
+    {
+      "topic": "Epidemiologic tests",
+      "text": "Screening involves testing a large population for a disease of importance with low prevalence. WHO criteria for a screening test (1968) include the disease being important, having known incidence and natural history, available treatment, and the test being safe, inexpensive, cost-effective, sensitive, and specific."
+    },
+    {
+      "topic": "General Topics: Statistical Terminology",
+      "text": "Key statistical terms include Sensitivity (TP/TP+FN), Specificity (TN/TN+FP), PPV, NPV, Accuracy, Reliability, Odds Ratio, Validity, Prevalence, Incidence, P-value, Type 1 and Type 2 errors, and Power. Understanding these is essential for interpreting research findings and making evidence-based decisions in clinical practice."
+    },
+    {
+      "topic": "Non-Parametric Tests",
+      "text": "Non-parametric tests are used for discrete data and include Chi Squared (analyzes differences between two categorical groups), Mann Whitney U, and Fishers Exact Test (used for small sample sizes, n<5, as a substitute for Chi Squared)."
+    },
+    {
+      "topic": "P values, Errors and Power analysis",
+      "text": "The null hypothesis assumes observed differences are due to chance. A p-value indicates the probability that a difference is not due to chance, with a p-value < 0.05 typically used to reject the null hypothesis. Type 1 (alpha) errors are false positives (incorrectly rejecting the null hypothesis), while Type 2 (beta) errors are false negatives (incorrectly accepting the null hypothesis)."
+    },
+    {
+      "topic": "Parametric Tests",
+      "text": "Parametric tests include the Unpaired Student T Test (compares means of two independent, normally distributed groups with similar variance) and ANOVA (used for multiple observations or categories, where groups are not completely independent). The Paired T Test compares two observations in the same subject."
+    },
+    {
+      "topic": "QUALYS",
+      "text": "Quality-Adjusted Life Years (QUALYS) are used to assess the cost-effectiveness of therapies, considering life expectancy, costs, and time."
+    },
+    {
+      "topic": "Randomization",
+      "text": "Randomization reduces bias in studies by ensuring baseline characteristics of groups are similar, thereby avoiding confounding factors. Post-hoc power analysis can indicate the significance of positive findings."
+    },
+    {
+      "topic": "RCT Trial Phases",
+      "text": "RCTs progress through five phases: Pre-clinical (animal studies), Phase 1 (safety in healthy volunteers), Phase 2 (efficacy in a small patient group), Phase 3 (superiority against standard treatment), and Phase 4 (post-market surveillance)."
+    },
+    {
+      "topic": "Statistics",
+      "text": "Types of data include continuous (numeric, quantitative, e.g., age) and categorical (nominal, ordinal, qualitative, e.g., race). Parametric data typically follow a normal Gaussian distribution, where mean, median, and mode are similar. Non-parametric data are often skewed, with median or mode used to assess central tendency."
+    },
+    {
+      "topic": "Statistical Tests",
+      "text": "Deciding on an appropriate statistical test involves considering data distribution (normal/Gaussian vs. non-parametric), data type (discrete vs. continuous), number of variables, the research question (group differences vs. associations), and variance equality between groups."
+    },
+    {
+      "topic": "Study Design",
+      "text": "Study designs include retrospective, prospective, cross-sectional, longitudinal, observational, and experimental. The hierarchy of study types places RCTs and meta-analyses of RCTs at the highest level of evidence. Cohort studies are prospective observational designs with a control group, while case-control studies are retrospective."
+    },
+    {
+      "topic": "Survival Analysis",
+      "text": "Survival analysis plots outcome data against time to assess survival. Methods include the actuarial method (survival calculated at set time points) and the Kaplan-Meier Product Limit method (recalculates survival after each failure). Life table analysis combines both methods. Reliable survival analysis requires clearly defined endpoints, failure criteria, and consistent treatment of loss to follow-up and death."
+    },
+    {
+      "topic": "Survivorship Analysis for Joints",
+      "text": "Survivorship analysis determines the number of joints followed and the number of failures and censored patients on a yearly basis. Censored patients include those withdrawn or lost to follow-up. Survival calculations are based on surviving implants divided by patients at risk, with adjustments for censored patients."
+    },
+    {
+      "topic": "Useful Tables: Statistical Terminology",
+      "text": "Key statistical terms include Sensitivity (TP/TP+FN), Specificity (TN/TN+FP), PPV (TP/TP+FP), NPV (TN/TN+FN), Accuracy, Reliability (inter/intra-observer), Odds Ratio, Validity, Prevalence, Incidence, P-value, Type 1 & 2 errors, and Power. These terms are crucial for interpreting research and clinical data."
+    },
+    {
+      "topic": "Useful Tables: Statistical Tests",
+      "text": "Statistical tests used in research include the Student T-test (parametric, 2 variables), ANOVA (parametric, multiple variables), Chi-Squared test (non-parametric, discrete variables), Mann-Whitney U (non-parametric, continuous data), and Kruskal-Wallis (non-parametric, multiple variables). Yates' correction and Fisher's exact test are used for small sample sizes with Chi-Squared."
+    },
+    {
+      "topic": "Validity and Reliability",
+      "text": "Validity refers to how accurately a test measures what it is supposed to. Internal validity relates to the confidence in the cause-and-effect relationship, while external validity concerns the applicability of results to the general population. Reliability refers to the reproducibility of a test, assessed by intra-observer and inter-observer agreement. ROC curves illustrate the trade-off between sensitivity and specificity."
+    },
+    {
+      "topic": "General Topics: Statistical Terminology",
+      "text": "Key statistical terms include Sensitivity, Specificity, PPV, NPV, Accuracy, Reliability, Odds Ratio, Validity, Prevalence, and Incidence. Understanding these is essential for interpreting research findings, evaluating diagnostic tests, and making evidence-based clinical decisions, ensuring a scientific approach to patient care."
+    },
+    {
+      "topic": "General Topics: Statistical Terminology",
+      "text": "Key statistical terms include Sensitivity, Specificity, PPV, NPV, Accuracy, Reliability, Odds Ratio, Validity, Prevalence, and Incidence. Understanding these is essential for interpreting research findings, evaluating diagnostic tests, and making evidence-based clinical decisions in orthopaedics."
+    },
+    {
+      "topic": "Bone Metabolism",
+      "text": "Calcitonin reduces serum calcium by inhibiting osteoclast activity. Corticosteroids can decrease serum calcium by increasing renal excretion and reducing gut absorption, potentially leading to secondary hyperparathyroidism. Estrogen is bone-protective, inhibiting osteoclast absorption and bone production."
+    },
+    {
+      "topic": "Bone Metabolism",
+      "text": "Growth hormone increases gut calcium absorption and maintains bone stock. Thyroid hormones influence bone turnover, with hyperthyroidism leading to decreased bone density. Growth factors like BMPs and TGF-beta are osteoinductive, stimulating bone formation. Osteoporosis is characterized by reduced bone mass and micro-architectural deterioration, increasing fracture risk, and can be primary (Type 1: postmenopausal, Type 2: age-related) or secondary (steroids, immobilization)."
+    },
+    {
+      "topic": "Bone Cement",
+      "text": "The mechanical properties of cement include weak tensile strength, moderate shear strength, and strong compressive strength. It is brittle and highly notch-sensitive, acting as a grout rather than an adhesive. Factors affecting cement properties include atmospheric conditions (temperature/humidity), mixing technique (vacuum/centrifuge reduce porosity), and implantation technique (pressurization, retention of cancellous bone, avoiding voids)."
+    },
+    {
+      "topic": "Bone Cement",
+      "text": "Complications of bone cement use include heat generation (causing bone necrosis if the mantle is too thick), systemic effects (hypotension thought to be due to micro-embolization), and cement fracture due to crack propagation. Commonly used cements include Palacos R (zirconium dioxide, gentamicin impregnated) and Simplex P (barium sulfate, tobramycin impregnated)."
+    },
+    {
+      "topic": "Orthopaedic Metallurgy",
+      "text": "Forging is a common method of shaping metal implants, aligning grain boundaries and improving properties. Cold working increases strength and brittleness through plastic deformation, while hot working yields a more ductile material. Heat treatments like annealing, quenching, and tempering alter metal properties. Surface finishes like polished, matte, grit blasted, sintered beads, plasma spray, and porous metal improve performance."
+    },
+    {
+      "topic": "Orthopaedic Metallurgy",
+      "text": "Commonly used materials include 316L Stainless Steel (strong, ductile, corrosion-resistant) and Titanium 64 (less stiff than CoCr/Steel but fatigue resistant). Cobalt Chrome (CoCr) is widely used in TKA and THR due to its wear properties and biocompatibility. Tantalum, with its high porosity, allows rapid bone ingrowth and is desirable for revision surgery."
+    },
+    {
+      "topic": "Polyethylene",
+      "text": "Cross-linking polyethylene, often via gamma irradiation, improves wear rates and tensile strength by forming cross-links between chains. However, oxidation degrades polyethylene, especially in the presence of oxygen and free radicals. Better sterilization methods include gas plasma or ethylene oxide (minimizing oxidation) or gamma irradiation in inert gas (promoting cross-links)."
+    },
+    {
+      "topic": "Polyethylene",
+      "text": "Highly cross-linked UHMWPE, produced by prolonged irradiation, offers even better wear resistance. However, this degree of cross-linking can reduce fatigue resistance and fracture toughness. Polyethylene in TKR can fail due to fatigue fracture, while poorly positioned THR cups are susceptible to edge loading and fatigue wear. Polyethylene manufacturing methods include RAM bar extrusion, compression molding, and direct compression molding (gold standard)."
+    },
+    {
+      "topic": "Ceramics",
+      "text": "Ceramic manufacturing involves pressing powder into a cast, followed by sintering (hot isostatic pressing) to increase density, toughness, and strength. Other processes include platelet-like crystals and transformational toughening (using zircona). Good properties of ceramics include inertness, stiffness, hardness, low surface roughness, and scratch profile. Brittleness and weakness in tension are disadvantages."
+    },
+    {
+      "topic": "Ceramics",
+      "text": "Oxidized Zirconium (Oxinium) is a metallic alloy with a ceramic surface, offering hardness, smoothness, scratch resistance, inertness, and wettability, with reduced poly wear. Ceramic fracture can generate third bodies, leading to accelerated wear and osteolysis, necessitating synovectomy to clear debris. Revision may be required for Morse taper damage."
+    },
+    {
+      "topic": "Statistics",
+      "text": "Measures of spread/variability include interquartile range (describes deviation from the mean in 25% quartiles) and standard deviation (describes deviation of individual values from the mean, used in normal distributions). Variance is the standard deviation squared. Confidence intervals indicate the accuracy of a measurement."
+    },
+    {
+      "topic": "Epidemiologic tests",
+      "text": "Incidence refers to the number of new diagnoses in a defined population over time, often expressed as an incidence rate. Prevalence is the number of people with a condition at a given time (a snapshot). Sensitivity measures the test's ability to correctly identify those with the disease (true positives), minimizing false negatives (TP/(TP+FN)). Specificity measures the test's ability to correctly identify those without the disease (true negatives), minimizing false positives (TN/(TN+FP))."
+    },
+    {
+      "topic": "Epidemiologic tests",
+      "text": "Positive Predictive Value (PPV) is the likelihood that a positive test result is truly positive (TP/(TP+FP)). Negative Predictive Value (NPV) is the likelihood that a negative test result is truly negative (TN/(TN+FN)). Accuracy is the proportion of all true results (TP+TN)/(TP+FP+TN+FN). Odds Ratio, used in case-control studies, compares the likelihood of a positive finding in the study group versus the control group."
+    },
+    {
+      "topic": "Orthopaedic Pharmacology",
+      "text": "Glucocorticoids have anti-inflammatory and immunosuppressive effects, modifying gene transcription and suppressing macrophage function. Side effects are numerous, encapsulated by the mnemonic 'I WAS HOPPING MAD'. Anti-coagulants like warfarin (inhibits Vitamin K-dependent factors) and heparin (complexes with antithrombin III) are used to prevent clotting."
+    },
+    {
+      "topic": "Orthopaedic Pharmacology",
+      "text": "LMWH also complexes with antithrombin III but selectively inhibits factor 10a. Fondaparinaux is a synthetic pentasaccharide that selectively inhibits factor 10a. Rivaroxaban acts directly on factor 10a, while Dabigatran inhibits thrombin. Aspirin inhibits COX-1 and prostaglandin production, preventing platelet aggregation."
+    },
+    {
+      "topic": "Bone Remodelling",
+      "text": "Strontium has anabolic (increases bone formation) and catabolic (decreases bone resorption) effects. Anti-rheumatic drugs include non-disease modifying (steroids, cyclophosphamide) and disease-modifying agents (methotrexate, sulfasalazine, hydroxychloroquine), as well as biologic response modifiers (entanercept, infliximab, rituximab)."
+    },
+    {
+      "topic": "Statistics",
+      "text": "Data types are continuous (numeric, quantitative) and categorical (nominal, ordinal, qualitative). Parametric data follow a normal distribution, while non-parametric data are skewed. Statistical tests like the T test and ANOVA are used for parametric data, while Chi Squared, Mann Whitney U, and Fishers Exact Test are used for non-parametric data. Correlation tests measure associations between variables."
+    },
+    {
+      "topic": "Epidemiologic tests",
+      "text": "Screening tests should be important, have known incidence and natural history, available treatment, and be safe, inexpensive, sensitive, and specific. Incidence measures new cases over time, while prevalence measures existing cases at a given time. Sensitivity identifies true positives, and specificity identifies true negatives. Predictive values indicate the likelihood of a positive or negative result being correct."
+    },
+    {
+      "topic": "Survival Analysis",
+      "text": "Survival analysis plots outcomes against time, using methods like actuarial and Kaplan-Meier. It requires clearly defined endpoints and consistent treatment of loss to follow-up. Survivorship analysis tracks the number of implants followed, failures, and censored patients, recalculating survival based on patients at risk."
+    },
+    {
+      "topic": "Orthopaedic Pharmacology",
+      "text": "Analgesics include opioids (acting on CNS receptors) and NSAIDs (inhibiting prostaglandin production). Paracetamol has central action. Local anesthetics block sodium channels. Glucocorticoids have anti-inflammatory effects but numerous side effects. Anti-coagulants like warfarin and heparin prevent clotting by inhibiting specific factors or complexes."
+    },
+    {
+      "topic": "Bone Remodelling",
+      "text": "Bone remodeling is a continuous process involving osteoclasts (resorption) and osteoblasts (formation), regulated by hormones like PTH, Vitamin D, and calcitonin. Osteoporosis is characterized by reduced bone mass and micro-architectural deterioration, with primary (Type 1 and 2) and secondary causes. Management includes lifestyle modifications, medical treatments (bisphosphonates, HRT, calcitonin), and increasing bone density through exercise and recombinant PTH."
+    },
+    {
+      "topic": "Statistics",
+      "text": "Data can be continuous (numeric) or categorical (non-numeric). Parametric data follow a normal distribution, allowing use of T tests and ANOVA. Non-parametric tests (Chi Squared, Mann Whitney U, Fishers Exact) are used for skewed or categorical data. Correlation tests measure associations, with Pearson's for parametric and Spearman's for non-parametric data."
+    },
+    {
+      "topic": "Epidemiologic tests",
+      "text": "Screening tests must be important, common, have known incidence and natural history, available treatment, and be safe, sensitive, and specific. Incidence measures new cases, prevalence measures existing cases. Sensitivity identifies true positives, specificity true negatives. Predictive values assess the likelihood of a test result being correct. ROC curves illustrate sensitivity-trait relationships."
+    },
+    {
+      "topic": "Survival Analysis",
+      "text": "Survival analysis tracks outcomes over time using actuarial or Kaplan-Meier methods. Life table analysis combines both. Reliable survival analysis requires defined endpoints, clear failure criteria, and consistent handling of censored data. Survivorship analysis tracks implant performance yearly."
+    },
+    {
+      "topic": "Orthopaedic Pharmacology",
+      "text": "Analgesics include opioids (acting on CNS receptors) and NSAIDs (inhibiting prostaglandin synthesis via COX). Paracetamol has central action. Local anesthetics block sodium channels. Glucocorticoids have anti-inflammatory effects but numerous side effects. Anti-coagulants like warfarin and heparin prevent clotting by interfering with specific factors."
+    },
+    {
+      "topic": "Bone Remodelling",
+      "text": "Bone remodeling is a continuous process involving osteoclasts and osteoblasts, regulated by hormones. Osteoporosis results from reduced bone mass and micro-architectural deterioration. Management includes lifestyle modifications, bisphosphonates, HRT, and exercise. Different fixation methods and materials (metals, polyethylene, ceramics) are used in arthroplasty, each with specific properties and failure modes."
+    },
+    {
+      "topic": "Bone Metabolism",
+      "text": "Bone metabolism is regulated by calcium and phosphate homeostasis, influenced by Vitamin D, PTH, and calcitonin. Osteoblasts produce osteoid and RANKL, while osteoclasts resorb bone, regulated by RANKL and OPG. Bone matrix consists of inorganic (hydroxyapatite) and organic (collagen) components."
+    },
+    {
+      "topic": "Useful Tables: Bone Cement Composition and Setting Phases",
+      "text": "Bone cement typically consists of a liquid monomer (MMA) and a powder polymer (PMMA), with accelerators, initiators, and inhibitors. It undergoes distinct phases: Mixing, Waiting (dough), Working, and Hardening, influenced by temperature and handling techniques. Proper mixing is crucial to minimize porosity."
+    },
+    {
+      "topic": "Useful Tables: Statistical Terminology",
+      "text": "Key statistical terms include Sensitivity, Specificity, PPV, NPV, Accuracy, Reliability, Odds Ratio, Validity, Prevalence, Incidence, P-value, Type 1 and Type 2 errors, and Power. Understanding these is essential for interpreting research findings and making evidence-based decisions."
+    },
+    {
+      "topic": "Useful Tables: Statistical Tests",
+      "text": "Common statistical tests include the Student T-test and ANOVA for parametric data, and Chi-Squared, Mann-Whitney U, and Kruskal-Wallis for non-parametric data. These tests help determine the significance of observed differences between groups."
+    },
+    {
+      "topic": "Useful Tables: Orthopaedic Pharmacology",
+      "text": "Orthopaedic medications include analgesics (Paracetamol, NSAIDs, Opioids), anti-inflammatories (Steroids), anticoagulants (Warfarin, Heparin, LMWH), antiplatelets (Aspirin), bone metabolism modulators (Bisphosphonates, Strontium), DMARDs (Methotrexate, Etanercept, Infliximab), and local anesthetics. Understanding their mechanisms and indications is vital."
+    },
+    {
+      "topic": "Composition of Orthopaedic Metals",
+      "text": "Orthopaedic implants utilize metals like Stainless Steel 316L, Titanium alloys (Ti-6Al-4V), and Cobalt-Chrome alloys. Each metal has a specific composition and properties influencing its strength, corrosion resistance, and biocompatibility, guiding implant selection for different applications."
+    },
+    {
+      "topic": "Cell Cycle Phases",
+      "text": "The cell cycle comprises Interphase (G1, S, G2) and Mitosis (M). G1 is for growth, S for DNA synthesis, G2 for further growth and preparation for division. M phase involves nuclear and cellular division. G0 represents cells that have exited the cycle, like neurons."
+    },
+    {
+      "topic": "Corrosion Types in Orthopaedic Implants",
+      "text": "Orthopaedic implants are susceptible to various corrosion types: Uniform (overall surface attack), Galvanic (dissimilar metals), Crevice (in gaps), Pitting (localized), Fretting (wear + corrosion), Intergranular (at grain boundaries), Leaching (intra-granular), Inclusion (retained fragments), and Stress corrosion (cyclic loading). Understanding these is vital for implant longevity."
+    },
+    {
+      "topic": "Useful Tables: Young's Modulus for Orthopaedic Materials",
+      "text": "Young's modulus indicates material stiffness. Metals like Cobalt-Chrome (225 GPa) and Titanium (100 GPa) are much stiffer than bone (Cortical ~20 GPa, Cancellous ~1 GPa), polyethylene (1.5 GPa), or tendon (0.1 GPa). This property influences stress shielding and implant performance."
+    },
+    {
+      "topic": "Useful Tables: Orthopaedic Pharmacology",
+      "text": "Key orthopaedic drugs include analgesics (Paracetamol, NSAIDs, opioids), anti-inflammatories (steroids), anticoagulants (Warfarin, LMWH), antiplatelets (Aspirin), bone metabolism modulators (bisphosphonates), DMARDs (Methotrexate, TNF inhibitors), and local anesthetics. Understanding their mechanisms and indications is vital for patient management."
+    },
+    {
+      "topic": "Composition of Orthopaedic Metals",
+      "text": "Orthopaedic implants utilize metals like Stainless Steel 316L, Titanium alloys (Ti-6Al-4V), and Cobalt-Chrome alloys. Each metal has distinct compositional and mechanical properties influencing implant strength, corrosion resistance, and biocompatibility, guiding selection for optimal patient outcomes."
+    },
+    {
+      "topic": "Cell Cycle Phases",
+      "text": "The cell cycle comprises Interphase (G1, S, G2) and Mitosis (M). G1 involves cell growth, S phase DNA synthesis, and G2 prepares for division. M phase includes mitosis (nuclear division) and cytokinesis (cell division). G0 represents cells exiting the cycle, like neurons."
+    },
+    {
+      "topic": "Bone Cement Composition and Setting Phases",
+      "text": "Bone cement typically consists of a liquid monomer (MMA) and a powder polymer (PMMA), with accelerators and inhibitors. It undergoes distinct phases: Mixing, Waiting (dough), Working, and Hardening, influenced by temperature and handling. Proper mixing is vital to minimize porosity and maximize cement strength for implant fixation."
+    },
+    {
+      "topic": "Corrosion Types in Orthopaedic Implants",
+      "text": "Orthopaedic implants are susceptible to corrosion: Uniform (overall surface attack), Galvanic (dissimilar metals), Crevice (in gaps), Pitting (localized), Fretting (wear + corrosion), Intergranular (at grain boundaries), Leaching (intra-granular), Inclusion (retained fragments), and Stress corrosion (cyclic loading). Understanding these is vital for implant longevity and patient safety."
+    },
+    {
+      "topic": "Useful Tables: Orthopaedic Pharmacology",
+      "text": "Key orthopaedic drugs include analgesics (Paracetamol, NSAIDs, opioids), anti-inflammatories (steroids), anticoagulants (Warfarin, LMWH), antiplatelets (Aspirin), bone metabolism modulators (bisphosphonates), DMARDs (Methotrexate, TNF inhibitors), and local anesthetics. Understanding their mechanisms and indications is vital for patient management and optimizing surgical outcomes."
+    },
+    {
+      "topic": "Composition of Orthopaedic Metals",
+      "text": "Orthopaedic implants utilize metals like Stainless Steel 316L, Titanium alloys (Ti-6Al-4V), and Cobalt-Chrome alloys. Each metal has distinct compositional and mechanical properties influencing implant strength, corrosion resistance, and biocompatibility, guiding selection for optimal patient outcomes and minimizing adverse reactions like ion release."
+    },
+    {
+      "topic": "Cell Cycle Phases",
+      "text": "The cell cycle comprises Interphase (G1, S, G2) and Mitosis (M). G1 involves cell growth, S phase DNA synthesis, and G2 prepares for division. M phase includes mitosis (nuclear division) and cytokinesis (cell division). G0 represents cells exiting the cycle, like neurons, indicating their non-dividing state."
+    },
+    {
+      "topic": "Bone Cement Composition and Setting Phases",
+      "text": "Bone cement typically consists of a liquid monomer (MMA) and a powder polymer (PMMA), with accelerators and inhibitors. It undergoes distinct phases: Mixing, Waiting (dough), Working, and Hardening, influenced by temperature and handling. Proper mixing is vital to minimize porosity and maximize cement strength for implant fixation, reducing the risk of loosening and failure."
+    },
+    {
+      "topic": "Corrosion Types in Orthopaedic Implants",
+      "text": "Orthopaedic implants are susceptible to corrosion: Uniform (overall surface attack), Galvanic (dissimilar metals), Crevice (in gaps), Pitting (localized), Fretting (wear + corrosion), Intergranular (at grain boundaries), Leaching (intra-granular), Inclusion (retained fragments), and Stress corrosion (cyclic loading). Understanding these is vital for implant longevity and patient safety, minimizing adverse tissue reactions and implant failure."
+    }
+  ]
