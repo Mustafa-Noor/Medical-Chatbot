@@ -93,8 +93,8 @@ from langchain.schema import Document
 
 # ---- CONFIG ---- #
 BASE_DIR = os.path.dirname(__file__)
-INPUT_JSON_DIR = os.path.abspath(os.path.join(BASE_DIR, "..", "data", "json_for_embeddings", "book_jsons"))
-# INPUT_JSON_DIR = os.path.abspath(os.path.join(BASE_DIR, "..", "data", "structured_json"))
+#INPUT_JSON_DIR = os.path.abspath(os.path.join(BASE_DIR, "..", "data", "structured_json_books", "book_jsons"))
+INPUT_JSON_DIR = os.path.abspath(os.path.join(BASE_DIR, "..", "data", "structured_json"))
 OUTPUT_BASE_DIR = os.path.abspath(os.path.join(BASE_DIR, "..", "data", "embeddings"))
 EMBEDDING_MODEL = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
 
