@@ -61,3 +61,4 @@ coverage/
 # *.pdf
 PDFS/
 data/embeddings
+csv_embeddings/
