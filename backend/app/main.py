@@ -24,6 +24,7 @@ app.add_middleware(
 
 app.include_router(topics.router)
 app.include_router(auth.router)
+app.include_router(chat.router)
 
 @app.on_event("startup")
 async def on_startup():

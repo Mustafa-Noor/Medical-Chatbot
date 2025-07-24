@@ -30,7 +30,6 @@ class ChatMessageCreate(BaseModel):
     sender: SenderType
     message: str
     source: Optional[SourceType] = None
-    matched_qa_id: Optional[int] = None
 
 class ChatMessageOut(ChatMessageCreate):
     id: int
@@ -39,3 +38,14 @@ class ChatMessageOut(ChatMessageCreate):
     model_config = {
         "from_attributes": True
     }
+
+
+class ChatRequest(BaseModel):
+    session_id: Optional[int] = None
+    message: str
+    topic: Optional[str] = None  # Required only on first message
+
+class ChatResponse(BaseModel):
+    session_id: int
+    reply: str
+    source: SourceType

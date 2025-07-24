@@ -72,9 +72,7 @@ async def login_user(request: OAuth2PasswordRequestForm = Depends(), db: AsyncSe
             raise HTTPException(status_code=401, detail="Invalid credentials")
 
         #return UserOut.model_validate(db_user)
-        access_token = jwt_token.create_access_token(
-            data={"sub": db_user.username}
-        )
+        access_token = jwt_token.create_access_token(data={"sub": str(db_user.id)})
         return {
             "access_token": access_token,
             "token_type": "bearer",

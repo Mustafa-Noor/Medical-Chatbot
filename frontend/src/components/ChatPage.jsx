@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import API from "../services/api";
 import "./ChatPage.css";
 
 const ChatPage = () => {
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState("");
   const [topic, setTopic] = useState("");
+  const [sessionId, setSessionId] = useState(null);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -21,16 +22,20 @@ const ChatPage = () => {
     setMessages((prev) => [...prev, userMessage]);
 
     try {
-      const user_id = localStorage.getItem("user_id");
-      const response = await axios.post("http://localhost:8000/chat", {
-        user_id,
+      const response = await API.post("/chat/send-message", {
+        session_id: sessionId, // Can be null on first send
         topic,
-        question: input,
+        message: input,
       });
+
+      const newSessionId = response.data.session_id;
+      if (!sessionId && newSessionId) {
+        setSessionId(newSessionId); // Save session ID for future use
+      }
 
       const botMessage = {
         sender: "bot",
-        text: response.data.answer,
+        text: response.data.reply, // ✅ correct key based on backend
       };
       setMessages((prev) => [...prev, botMessage]);
     } catch (err) {
@@ -59,25 +64,25 @@ const ChatPage = () => {
 
   return (
     <div className="chat-wrapper">
-      {/* Sidebar */}
       <div className="sidebar">
         <h2>Chat History</h2>
-        <button onClick={handleLogout} className="logout-btn">Logout</button>
+        <button onClick={handleLogout} className="logout-btn">
+          Logout
+        </button>
       </div>
 
-      {/* Main Content */}
       <div className="main-content">
-        {/* Topic Bar */}
         <div className="topic-bar-wrapper">
           <div className="topic-bar-inner">
-            <button onClick={goBack} className="back-btn">← Back</button>
+            <button onClick={goBack} className="back-btn">
+              ← Back
+            </button>
             <div className="topic-title">
               Topic: {topic.replace(/__/g, ": ").replace(/_/g, " ")}
             </div>
           </div>
         </div>
 
-        {/* Chat Messages */}
         <div className="chat-box">
           {messages.map((msg, idx) => (
             <div
@@ -89,7 +94,6 @@ const ChatPage = () => {
           ))}
         </div>
 
-        {/* Chat Input */}
         <div className="chat-input-wrapper">
           <input
             type="text"
@@ -99,7 +103,9 @@ const ChatPage = () => {
             onKeyDown={handleKeyPress}
             placeholder="Type your question..."
           />
-          <button className="send-btn" onClick={handleSend}>Send</button>
+          <button className="send-btn" onClick={handleSend}>
+            Send
+          </button>
         </div>
       </div>
     </div>

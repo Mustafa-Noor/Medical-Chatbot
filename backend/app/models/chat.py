@@ -1,6 +1,6 @@
-from sqlalchemy import Column, Integer, String, Text, TIMESTAMP, ForeignKey, Enum as PgEnum
+from sqlalchemy import Column, Integer, String, Text, TIMESTAMP, ForeignKey, Enum as PgEnum, func
 from sqlalchemy.orm import relationship
-from app.db.database import Base
+from app.database import Base
 import enum
 
 class SenderType(str, enum.Enum):
@@ -29,5 +29,4 @@ class ChatMessage(Base):
     sender = Column(PgEnum(SenderType), nullable=False)
     message = Column(Text, nullable=False)
     source = Column(PgEnum(SourceType), nullable=True)
-    matched_qa_id = Column(Integer, nullable=True)
     created_at = Column(TIMESTAMP, server_default=func.now())
