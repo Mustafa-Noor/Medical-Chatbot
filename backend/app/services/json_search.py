@@ -9,38 +9,38 @@ from app.config import settings
 
 # ---- CONFIG ---- #
 EMBEDDING_MODEL = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
-FAISS_BASE_DIR = settings.CSV_EMBEDDINGS_DIR  # Make sure this is defined in your settings
-RELEVANCE_THRESHOLD = 0.8  # Lower is more relevant
+FAISS_JSON_DIR = settings.JSON_EMBEDDINGS_DIR  # e.g., "embeddings/json/"
+RELEVANCE_THRESHOLD = 0.8
 
 
-def list_available_topics():
-    """List all available FAISS folders (topics)."""
-    return [d for d in os.listdir(FAISS_BASE_DIR) if os.path.isdir(os.path.join(FAISS_BASE_DIR, d))]
+def list_available_json_topics():
+    """List available JSON-based FAISS folders (topics)."""
+    return [d for d in os.listdir(FAISS_JSON_DIR) if os.path.isdir(os.path.join(FAISS_JSON_DIR, d))]
 
 
-def load_vector_store(topic: str):
-    """Load a FAISS vector store for the given topic name."""
-    vector_path = os.path.join(FAISS_BASE_DIR, topic)
+def load_json_vector_store(topic: str):
+    """Load a FAISS vector store for the given JSON topic."""
+    vector_path = os.path.join(FAISS_JSON_DIR, topic)
     return FAISS.load_local(vector_path, EMBEDDING_MODEL, allow_dangerous_deserialization=True)
 
 
-def search_csv(topic: str, query: str, k: int = 3):
+def search_json(topic: str, query: str, k: int = 3):
     """
-    Search a FAISS CSV vector store for a given query and topic.
+    Search a FAISS JSON vector store for a given query and topic.
     
     Returns:
         {
-            "score": average_score,  # Between 0 (perfect) to 1+
+            "score": average_score,
             "docs": [ { "content": ..., "score": ..., "source": ... }, ... ]
         }
     """
     try:
-        db = load_vector_store(topic)
+        db = load_json_vector_store(topic)
         results = db.similarity_search_with_score(query, k=k)
         if not results:
             return {"score": 0.0, "docs": []}
 
-        # Filter by relevance threshold
+        # Filter by relevance
         filtered = [r for r in results if r[1] <= RELEVANCE_THRESHOLD]
         if not filtered:
             return {"score": 0.0, "docs": []}
@@ -58,9 +58,9 @@ def search_csv(topic: str, query: str, k: int = 3):
         return {"score": round(avg_score, 4), "docs": docs}
     
     except Exception as e:
-        print("Error in search_csv:", e)
+        print("Error in search_json:", e)
         return {"score": 0.0, "docs": [], "error": str(e)}
 
 
-# res = search_csv("Paediatrics", "What is chromosomes?")
+# res = search_json("Paediatrics", "What is your name?")
 # print(res)

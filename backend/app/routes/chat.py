@@ -19,7 +19,7 @@ router = APIRouter(
 async def send_message(
     request: ChatRequest,
     db: AsyncSession = Depends(get_db),
-    current_user=Depends(deps.get_current_user)  # or deps.get_current_user
+    current_user=Depends(deps.get_current_user)  
 ):
     # 1. Check if session_id is provided
     if request.session_id is not None:
