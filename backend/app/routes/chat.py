@@ -2,7 +2,7 @@ from fastapi import APIRouter, Depends, HTTPException, Query
 from sqlalchemy.ext.asyncio import AsyncSession
 from app.database import get_db
 from app.models.chat import ChatSession, ChatMessage, SenderType, SourceType
-from app.schemas.chat import ChatRequest, ChatResponse, ChatSessionOut
+from app.schemas.chat import ChatRequest, ChatResponse, ChatSessionOut, ChatMessageOut
 from app.security import deps
 from datetime import datetime
 from sqlalchemy import func
@@ -92,3 +92,30 @@ async def get_sessions(
     )
     sessions = result.scalars().all()
     return sessions
+
+
+@router.get("/messages", response_model=list[ChatMessageOut])
+async def get_messages_for_session(
+    session_id: int = Query(..., description="Session ID to fetch messages for"),
+    db: AsyncSession = Depends(get_db),
+    current_user=Depends(deps.get_current_user)
+):
+    # 1. Check if session belongs to user
+    result = await db.execute(
+        select(ChatSession)
+        .where(ChatSession.id == session_id)
+        .where(ChatSession.user_id == current_user.id)
+    )
+    session = result.scalar_one_or_none()
+    if not session:
+        raise HTTPException(status_code=404, detail="Session not found or not authorized")
+
+    # 2. Fetch messages in ascending order
+    result = await db.execute(
+        select(ChatMessage)
+        .where(ChatMessage.session_id == session_id)
+        .order_by(ChatMessage.created_at.asc())
+    )
+    messages = result.scalars().all()
+
+    return messages

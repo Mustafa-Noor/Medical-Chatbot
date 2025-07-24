@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import API from "../services/api";
 import "./ChatPage.css";
@@ -10,6 +10,7 @@ const ChatPage = () => {
   const [sessionId, setSessionId] = useState(null);
   const [sessions, setSessions] = useState([]);
   const navigate = useNavigate();
+  const chatEndRef = useRef(null); // ✅ Step 1: Create ref
 
   useEffect(() => {
     const storedTopic = localStorage.getItem("selected_topic");
@@ -34,7 +35,7 @@ const ChatPage = () => {
     try {
       const res = await API.get(`/chat/messages?session_id=${id}`);
       const msgs = res.data.map((msg) => ({
-        sender: msg.source === "user" ? "user" : "bot",
+        sender: msg.sender === "user" ? "user" : "bot",
         text: msg.message || msg.reply,
       }));
       setMessages(msgs);
@@ -93,6 +94,14 @@ const ChatPage = () => {
     navigate("/select-topic");
   };
 
+  const scrollToBottom = () => {
+    chatEndRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  useEffect(() => {
+    scrollToBottom(); // ✅ Step 3: Scroll on new messages
+  }, [messages]);
+
   return (
     <div className="chat-wrapper">
       <div className="sidebar">
@@ -132,6 +141,7 @@ const ChatPage = () => {
               {msg.text}
             </div>
           ))}
+          <div ref={chatEndRef} /> {/* ✅ Step 4: Scroll anchor */}
         </div>
 
         <div className="chat-input-wrapper">
