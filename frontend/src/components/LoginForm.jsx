@@ -1,26 +1,34 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom"; // ✅ ADD THIS
+import { useNavigate } from "react-router-dom";
 import API from "../services/api";
 import "./LoginRegister.css";
 
 function LoginForm() {
   const [form, setForm] = useState({ username: "", password: "" });
-  const navigate = useNavigate(); // ✅ ADD THIS
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    try {
-      const res = await API.post("/auth/login", new URLSearchParams(form));
 
-      // ✅ Save token and user_id if available
+    console.log("Base URL:", import.meta.env.VITE_API_URL);
+
+    try {
+      // ✅ Send as JSON — no need for formData or headers
+      const res = await API.post("/auth/login", {
+        username: form.username,
+        password: form.password,
+      });
+
+      // Save token and user_id
       localStorage.setItem("token", res.data.access_token);
       if (res.data.user_id) {
         localStorage.setItem("user_id", res.data.user_id);
       }
 
-      navigate("/select-topic"); // ✅ REDIRECT TO TOPIC SELECTION
+      navigate("/select-topic");
     } catch (err) {
       alert("Login failed. Please check your credentials.");
+      console.error("Login error:", err.response?.data || err.message);
     }
   };
 

@@ -7,24 +7,23 @@ from app.schemas.password import ForgotPasswordRequest, ResetPasswordRequest
 from app.models.user import User
 from sqlalchemy.future import select
 from app.security import hashing, jwt_token, deps
-from fastapi.security import OAuth2PasswordRequestForm
 from app.utils.send_email import send_reset_email
 from app.config import settings
 import os
 from dotenv import load_dotenv
+import traceback
 
 load_dotenv()
 
+# router = APIRouter(
+#     prefix="/auth",
+#     tags=["Authentication"]
+# )
 
-import traceback
-
-router = APIRouter(
-    prefix="/auth",
-    tags=["Authentication"]
-
-)
+router = APIRouter(tags=["Authentication"])
 
 
+# ✅ REGISTER
 @router.post("/register")
 async def register_user(user: UserCreate, db: AsyncSession = Depends(get_db)):
     try:
@@ -38,7 +37,7 @@ async def register_user(user: UserCreate, db: AsyncSession = Depends(get_db)):
         new_user = User(
             username=user.username,
             email=user.email,
-            password=hashing.hash_password(user.password)  # Hash the password before saving
+            password=hashing.hash_password(user.password)
         )
 
         db.add(new_user)
@@ -49,7 +48,6 @@ async def register_user(user: UserCreate, db: AsyncSession = Depends(get_db)):
 
     except HTTPException:
         raise
-
     except Exception as e:
         await db.rollback()
         print("ERROR:", e)
@@ -57,9 +55,9 @@ async def register_user(user: UserCreate, db: AsyncSession = Depends(get_db)):
         raise HTTPException(status_code=500, detail="Internal Server Error")
 
 
-
+# ✅ LOGIN with JSON
 @router.post("/login")
-async def login_user(request: OAuth2PasswordRequestForm = Depends(), db: AsyncSession = Depends(get_db)):
+async def login_user(request: UserLogin, db: AsyncSession = Depends(get_db)):
     try:
         stmt = select(User).where(User.username == request.username)
         result = await db.execute(stmt)
@@ -71,7 +69,6 @@ async def login_user(request: OAuth2PasswordRequestForm = Depends(), db: AsyncSe
         if not hashing.verify_password(request.password, db_user.password):
             raise HTTPException(status_code=401, detail="Invalid credentials")
 
-        #return UserOut.model_validate(db_user)
         access_token = jwt_token.create_access_token(
             data={"sub": db_user.username}
         )
@@ -81,15 +78,15 @@ async def login_user(request: OAuth2PasswordRequestForm = Depends(), db: AsyncSe
             "user_id": db_user.id
         }
 
-
     except HTTPException:
         raise
-
     except Exception as e:
         print("ERROR:", e)
         traceback.print_exc()
         raise HTTPException(status_code=500, detail="Internal Server Error")
 
+
+# ✅ CURRENT USER
 @router.get("/me", response_model=TokenData)
 async def get_current_user(current_user: TokenData = Depends(deps.get_current_user)):
     try:
@@ -102,6 +99,7 @@ async def get_current_user(current_user: TokenData = Depends(deps.get_current_us
         raise HTTPException(status_code=500, detail="Internal Server Error")
 
 
+# ✅ FORGOT PASSWORD
 @router.post("/forgot-password")
 async def forgot_password(
     request: ForgotPasswordRequest, db: AsyncSession = Depends(get_db)
@@ -115,10 +113,11 @@ async def forgot_password(
     token = jwt_token.create_reset_token(user.email)
     reset_link = f"{settings.FRONTEND_URL}/reset-password?token={token}"
 
-    await send_reset_email(user.email, reset_link)  # Make sure this is async
+    await send_reset_email(user.email, reset_link)
     return {"message": "Reset link sent to your email"}
 
 
+# ✅ RESET PASSWORD
 @router.post("/reset-password")
 async def reset_password(
     request: ResetPasswordRequest, db: AsyncSession = Depends(get_db)
@@ -134,7 +133,3 @@ async def reset_password(
     user.password = hashing.hash_password(request.new_password)
     await db.commit()
     return {"message": "Password reset successful"}
-
-
-
-

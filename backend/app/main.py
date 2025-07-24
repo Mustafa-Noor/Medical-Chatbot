@@ -4,8 +4,6 @@ from .database import engine, Base
 from fastapi.middleware.cors import CORSMiddleware
 from app.routes import auth, chat, topics
 
-
-
 app = FastAPI()
 
 origins = [
@@ -22,8 +20,11 @@ app.add_middleware(
     allow_headers=["*"],     # allow all headers
 )
 
-app.include_router(topics.router)
-app.include_router(auth.router)
+# app.include_router(topics.router)
+# app.include_router(auth.router)
+app.include_router(chat.router, prefix="/chat", tags=["Chat"])
+app.include_router(auth.router, prefix="/auth", tags=["Auth"])
+app.include_router(topics.router, prefix="/topics", tags=["Topics"])
 
 @app.on_event("startup")
 async def on_startup():

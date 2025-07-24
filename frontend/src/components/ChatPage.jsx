@@ -25,18 +25,22 @@ const ChatPage = () => {
       const response = await axios.post("http://localhost:8000/chat", {
         user_id,
         topic,
-        question: input,
+        query: input, // make sure this matches backend (`query`, not `question`)
       });
+
+      const { answer, source } = response.data;
 
       const botMessage = {
         sender: "bot",
-        text: response.data.answer,
+        text: answer,
+        source: source || "unknown",
       };
+
       setMessages((prev) => [...prev, botMessage]);
     } catch (err) {
       setMessages((prev) => [
         ...prev,
-        { sender: "bot", text: "Sorry, something went wrong." },
+        { sender: "bot", text: "Sorry, something went wrong.", source: "error" },
       ]);
       console.error("Chat error:", err);
     }
@@ -80,11 +84,11 @@ const ChatPage = () => {
         {/* Chat Messages */}
         <div className="chat-box">
           {messages.map((msg, idx) => (
-            <div
-              key={idx}
-              className={`chat-bubble ${msg.sender === "user" ? "user" : "bot"}`}
-            >
-              {msg.text}
+            <div key={idx} className={`chat-bubble ${msg.sender}`}>
+              <p>{msg.text}</p>
+              {msg.sender === "bot" && msg.source && (
+                <small className="source-tag">source: {msg.source}</small>
+              )}
             </div>
           ))}
         </div>
