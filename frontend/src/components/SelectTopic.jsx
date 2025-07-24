@@ -1,9 +1,10 @@
 // src/components/SelectTopic.jsx
 
 import React, { useEffect, useState } from "react";
-import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import "./SelectTopics.css"; // ✅ Import the styling
+import API from "../services/api";
+import "./SelectTopics.css";
+
 
 const SelectTopic = () => {
   const [topics, setTopics] = useState([]);
@@ -11,8 +12,7 @@ const SelectTopic = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios
-      .get("http://localhost:8000/topics")
+    API.get("/topics")
       .then((res) => {
         console.log("Fetched topics:", res.data);
         setTopics(res.data);
@@ -22,29 +22,16 @@ const SelectTopic = () => {
       });
   }, []);
 
-  const handleSubmit = async () => {
-    const userId = localStorage.getItem("user_id");
-    console.log("Clicked Continue:", { userId, selectedTopic });
 
-    if (!userId || !selectedTopic) {
-      console.warn("Missing user_id or topic");
+  const handleSubmit = () => {
+    if (!selectedTopic) {
+      console.warn("No topic selected");
       return;
     }
 
-    try {
-      const response = await axios.post("http://localhost:8000/topics/user/topic", {
-        user_id: userId,
-        topic: selectedTopic,
-      });
-
-      console.log("✅ Topic saved successfully:", response.data);
-
-      localStorage.setItem("selected_topic", selectedTopic);
-      console.log("Navigating to /chat...");
-      navigate("/chat");
-    } catch (err) {
-      console.error("❌ Error saving topic:", err);
-    }
+    localStorage.setItem("selected_topic", selectedTopic);
+    console.log("Topic saved to localStorage:", selectedTopic);
+    navigate("/chat");
   };
 
   return (
