@@ -8,12 +8,41 @@ const ChatPage = () => {
   const [input, setInput] = useState("");
   const [topic, setTopic] = useState("");
   const [sessionId, setSessionId] = useState(null);
+  const [sessions, setSessions] = useState([]);
   const navigate = useNavigate();
 
   useEffect(() => {
     const storedTopic = localStorage.getItem("selected_topic");
     setTopic(storedTopic || "");
   }, []);
+
+  useEffect(() => {
+    const fetchSessions = async () => {
+      try {
+        if (topic) {
+          const res = await API.get(`/chat/sessions?topic=${encodeURIComponent(topic)}`);
+          setSessions(res.data);
+        }
+      } catch (err) {
+        console.error("Error fetching sessions", err);
+      }
+    };
+    fetchSessions();
+  }, [topic]);
+
+  const handleSessionClick = async (id) => {
+    try {
+      const res = await API.get(`/chat/messages?session_id=${id}`);
+      const msgs = res.data.map((msg) => ({
+        sender: msg.source === "user" ? "user" : "bot",
+        text: msg.message || msg.reply,
+      }));
+      setMessages(msgs);
+      setSessionId(id);
+    } catch (err) {
+      console.error("Failed to load session messages", err);
+    }
+  };
 
   const handleSend = async () => {
     if (!input.trim()) return;
@@ -23,19 +52,21 @@ const ChatPage = () => {
 
     try {
       const response = await API.post("/chat/send-message", {
-        session_id: sessionId, // Can be null on first send
+        session_id: sessionId,
         topic,
         message: input,
       });
 
       const newSessionId = response.data.session_id;
       if (!sessionId && newSessionId) {
-        setSessionId(newSessionId); // Save session ID for future use
+        setSessionId(newSessionId);
+        const updatedSessions = await API.get(`/chat/sessions?topic=${encodeURIComponent(topic)}`);
+        setSessions(updatedSessions.data);
       }
 
       const botMessage = {
         sender: "bot",
-        text: response.data.reply, // ✅ correct key based on backend
+        text: response.data.reply,
       };
       setMessages((prev) => [...prev, botMessage]);
     } catch (err) {
@@ -65,7 +96,18 @@ const ChatPage = () => {
   return (
     <div className="chat-wrapper">
       <div className="sidebar">
-        <h2>Chat History</h2>
+        <h2>Chat Sessions</h2>
+        <div className="session-list">
+          {sessions.map((s) => (
+            <button
+              key={s.id}
+              className={`session-btn ${s.id === sessionId ? "active" : ""}`}
+              onClick={() => handleSessionClick(s.id)}
+            >
+              {s.title || `Session #${s.id}`}
+            </button>
+          ))}
+        </div>
         <button onClick={handleLogout} className="logout-btn">
           Logout
         </button>
@@ -74,9 +116,7 @@ const ChatPage = () => {
       <div className="main-content">
         <div className="topic-bar-wrapper">
           <div className="topic-bar-inner">
-            <button onClick={goBack} className="back-btn">
-              ← Back
-            </button>
+            <button onClick={goBack} className="back-btn">← Back</button>
             <div className="topic-title">
               Topic: {topic.replace(/__/g, ": ").replace(/_/g, " ")}
             </div>

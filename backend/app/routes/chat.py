@@ -1,8 +1,8 @@
-from fastapi import APIRouter, Depends, HTTPException
+from fastapi import APIRouter, Depends, HTTPException, Query
 from sqlalchemy.ext.asyncio import AsyncSession
 from app.database import get_db
 from app.models.chat import ChatSession, ChatMessage, SenderType, SourceType
-from app.schemas.chat import ChatRequest, ChatResponse
+from app.schemas.chat import ChatRequest, ChatResponse, ChatSessionOut
 from app.security import deps
 from datetime import datetime
 from sqlalchemy import func
@@ -74,3 +74,21 @@ async def send_message(
         reply=reply_text,
         source=reply_source,
     )
+
+
+@router.get("/sessions", response_model=list[ChatSessionOut])
+async def get_sessions(
+    topic: str = Query(..., description="Topic selected from dropdown"),
+    db: AsyncSession = Depends(get_db),
+    current_user=Depends(deps.get_current_user)
+):
+    result = await db.execute(
+        select(ChatSession)
+        .where(
+            ChatSession.user_id == current_user.id,
+            ChatSession.topic == topic
+        )
+        .order_by(ChatSession.created_at.desc())
+    )
+    sessions = result.scalars().all()
+    return sessions
