@@ -2,8 +2,10 @@ import React, { useEffect, useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import API from "../services/api";
 import "./ChatPage.css";
+import ReactMarkdown from "react-markdown";
 
 const ChatPage = () => {
+  const [isLoading, setIsLoading] = useState(false);
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState("");
   const [topic, setTopic] = useState("");
@@ -52,6 +54,8 @@ const ChatPage = () => {
 
     const userMessage = { sender: "user", text: input };
     setMessages((prev) => [...prev, userMessage]);
+    setInput("");
+    setIsLoading(true);
 
     try {
       const response = await API.post("/chat/send-message", {
@@ -67,20 +71,21 @@ const ChatPage = () => {
         setSessions(updatedSessions.data);
       }
 
+      setIsLoading(false); // 🟢 FIXED: move this before setting message
+
       const botMessage = {
         sender: "bot",
         text: response.data.reply,
       };
       setMessages((prev) => [...prev, botMessage]);
     } catch (err) {
+      setIsLoading(false); // Ensure it turns off on error too
       setMessages((prev) => [
         ...prev,
         { sender: "bot", text: "Sorry, something went wrong." },
       ]);
       console.error("Chat error:", err);
     }
-
-    setInput("");
   };
 
   const handleKeyPress = (e) => {
@@ -158,13 +163,20 @@ const ChatPage = () => {
         {/* Chat Area */}
         <div className="chat-box" ref={chatBoxRef}>
           {messages.map((msg, idx) => (
-            <div
-              key={idx}
-              className={`chat-bubble ${msg.sender === "user" ? "user" : "bot"}`}
-            >
-              {msg.text}
+            <div key={idx} className={`chat-bubble ${msg.sender}`}>
+              {msg.sender === "bot" ? (
+                <ReactMarkdown>{msg.text}</ReactMarkdown>
+              ) : (
+                msg.text
+              )}
             </div>
           ))}
+
+          {isLoading && (
+            <div className="chat-bubble bot loading">
+              Typing<span className="dot">.</span><span className="dot">.</span><span className="dot">.</span>
+            </div>
+          )}
         </div>
 
         {/* Input Bar */}

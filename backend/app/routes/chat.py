@@ -7,6 +7,7 @@ from app.security import deps
 from datetime import datetime
 from sqlalchemy import func
 from sqlalchemy.future import select
+from app.pipelines.graph import run_pipeline
 
 
 router = APIRouter(
@@ -53,10 +54,14 @@ async def send_message(
     await db.commit()
 
 
-    # here llm logic will be implemented
-    # 3. Generate bot reply (placeholder logic — replace with real bot logic)
-    reply_text = "This is a placeholder reply."  # Replace with actual logic
-    reply_source = SourceType.llm
+    # # here llm logic will be implemented
+    # # 3. Generate bot reply (placeholder logic — replace with real bot logic)
+    # reply_text = "This is a placeholder reply."  # Replace with actual logic
+
+
+    reply_text = run_pipeline(query=request.message, topic=request.topic)
+    reply_source = SourceType.llm  # or you can later pass info if source was CSV/JSON/LLM
+    
 
     # 4. Save assistant message
     bot_msg = ChatMessage(
