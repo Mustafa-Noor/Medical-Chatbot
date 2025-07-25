@@ -9,8 +9,10 @@ const ChatPage = () => {
   const [topic, setTopic] = useState("");
   const [sessionId, setSessionId] = useState(null);
   const [sessions, setSessions] = useState([]);
+  const [sidebarOpen, setSidebarOpen] = useState(true);
+
   const navigate = useNavigate();
-  const chatEndRef = useRef(null); // ✅ Step 1: Create ref
+  const chatBoxRef = useRef(null);
 
   useEffect(() => {
     const storedTopic = localStorage.getItem("selected_topic");
@@ -95,44 +97,66 @@ const ChatPage = () => {
   };
 
   const scrollToBottom = () => {
-    chatEndRef.current?.scrollIntoView({ behavior: "smooth" });
+    if (chatBoxRef.current) {
+      chatBoxRef.current.scrollTop = chatBoxRef.current.scrollHeight;
+    }
   };
 
   useEffect(() => {
-    scrollToBottom(); // ✅ Step 3: Scroll on new messages
+    scrollToBottom();
   }, [messages]);
 
-  return (
-    <div className="chat-wrapper">
-      <div className="sidebar">
-        <h2>Chat Sessions</h2>
-        <div className="session-list">
-          {sessions.map((s) => (
-            <button
-              key={s.id}
-              className={`session-btn ${s.id === sessionId ? "active" : ""}`}
-              onClick={() => handleSessionClick(s.id)}
-            >
-              {s.title || `Session #${s.id}`}
-            </button>
-          ))}
-        </div>
-        <button onClick={handleLogout} className="logout-btn">
-          Logout
-        </button>
-      </div>
+  const toggleSidebar = () => {
+    setSidebarOpen(!sidebarOpen);
+  };
 
-      <div className="main-content">
-        <div className="topic-bar-wrapper">
-          <div className="topic-bar-inner">
-            <button onClick={goBack} className="back-btn">← Back</button>
-            <div className="topic-title">
-              Topic: {topic.replace(/__/g, ": ").replace(/_/g, " ")}
+  return (
+    <div className={`chat-wrapper ${sidebarOpen ? "sidebar-open" : "sidebar-closed"}`}>
+      {/* Floating ☰ toggle button (when sidebar is closed) */}
+      {!sidebarOpen && (
+        <button className="toggle-sidebar-btn-floating" onClick={toggleSidebar}>
+          ☰
+        </button>
+      )}
+
+      {/* Sidebar */}
+      {sidebarOpen && (
+        <div className="sidebar">
+          <div className="sidebar-header">
+            <div className="sidebar-header-top">
+              <button onClick={goBack} className="back-btn">← Back</button>
+              <button className="toggle-sidebar-btn" onClick={toggleSidebar}>⨯</button>
             </div>
+            <h2>Chat Sessions</h2>
+          </div>
+
+          <div className="session-list">
+            {sessions.map((s) => (
+              <button
+                key={s.id}
+                className={`session-btn ${s.id === sessionId ? "active" : ""}`}
+                onClick={() => handleSessionClick(s.id)}
+              >
+                {s.title || `Session #${s.id}`}
+              </button>
+            ))}
+          </div>
+
+          <button onClick={handleLogout} className="logout-btn">Logout</button>
+        </div>
+      )}
+
+      {/* Main Content */}
+      <div className="main-content">
+        {/* Topic Title Bar */}
+        <div className="topic-bar-wrapper">
+          <div className="topic-title">
+            Topic: {topic.replace(/__/g, ": ").replace(/_/g, " ")}
           </div>
         </div>
 
-        <div className="chat-box">
+        {/* Chat Area */}
+        <div className="chat-box" ref={chatBoxRef}>
           {messages.map((msg, idx) => (
             <div
               key={idx}
@@ -141,9 +165,9 @@ const ChatPage = () => {
               {msg.text}
             </div>
           ))}
-          <div ref={chatEndRef} /> {/* ✅ Step 4: Scroll anchor */}
         </div>
 
+        {/* Input Bar */}
         <div className="chat-input-wrapper">
           <input
             type="text"
