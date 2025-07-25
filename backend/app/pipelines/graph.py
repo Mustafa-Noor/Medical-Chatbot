@@ -5,58 +5,113 @@ from app.services.llm_context import generate_response
 from app.schemas.search_state import SearchState
 
 
-builder = StateGraph(SearchState)
-
-# Node 1: CSV Search
 def csv_node(state: SearchState) -> SearchState:
+    """Search CSV data source"""
     result = search_csv(state.topic, state.query)
     state.csv_score = result["score"]
     state.csv_docs = result["docs"]
     return state
 
-# Node 2: JSON RAG Search
+
 def json_node(state: SearchState) -> SearchState:
+    """Search JSON data source"""
     result = search_json(state.topic, state.query)
     state.json_score = result["score"]
     state.json_docs = result["docs"]
     return state
 
-# Node 3: LLM Response Generator
-def llm_node(state: SearchState) -> SearchState:
-    context_docs = state.csv_docs if state.csv_docs else state.json_docs
-    context = "\n\n".join([doc.page_content for doc in context_docs])
+
+def llm_with_context_node(state: SearchState) -> SearchState:
+    """Generate LLM response using retrieved context"""
+    # Use CSV context if available, otherwise JSON context
+    if state.csv_docs:
+        context_docs = state.csv_docs
+        context = "\n\n".join([doc.page_content for doc in context_docs])
+    elif state.json_docs:
+        context_docs = state.json_docs
+        context = "\n\n".join([doc.page_content for doc in context_docs])
+    else:
+        context = ""
+    
     answer = generate_response(state.query, context)
     state.final_answer = answer
     return state
 
-# Conditional branching
-def check_csv(state: SearchState) -> str:
-    return "json" if state.csv_score is not None and state.csv_score < 0.5 else "llm"
 
-def check_json(state: SearchState) -> str:
-    return "llm" if state.json_score is not None and state.json_score < 0.8 else "direct"
+def llm_direct_node(state: SearchState) -> SearchState:
+    """Generate LLM response directly without context"""
+    # Pass query directly to LLM without any retrieved context
+    answer = generate_response(state.query, "")
+    state.final_answer = answer
+    return state
+
+
+def check_csv_score(state: SearchState) -> str:
+    """Route based on CSV score"""
+    if state.csv_score < 0.5:
+        # CSV score is low, use CSV results with LLM
+        return "llm_with_context"
+    else:
+        # CSV score is high, try JSON search
+        return "json"
+
+
+def check_json_score(state: SearchState) -> str:
+    """Route based on JSON score"""
+    if state.json_score < 0.8:
+        # JSON score is low, use JSON results with LLM
+        return "llm_with_context"
+    else:
+        # JSON score is high, go directly to LLM without context
+        return "llm_direct"
 
 
 # Build the graph
 builder = StateGraph(SearchState)
+
+# Add nodes
 builder.add_node("csv", csv_node)
 builder.add_node("json", json_node)
-builder.add_node("llm", llm_node)
+builder.add_node("llm_with_context", llm_with_context_node)
+builder.add_node("llm_direct", llm_direct_node)
 
+# Set entry point
 builder.set_entry_point("csv")
-builder.add_conditional_edges("csv", check_csv, {"json": "json", "llm": "llm"})
-builder.add_conditional_edges("json", check_json, {"llm": "llm", "direct": END})
-builder.add_edge("llm", END)
 
-# Compile and run
+# Add conditional edges
+builder.add_conditional_edges(
+    "csv", 
+    check_csv_score, 
+    {"llm_with_context": "llm_with_context", "json": "json"}
+)
+
+builder.add_conditional_edges(
+    "json", 
+    check_json_score, 
+    {"llm_with_context": "llm_with_context", "llm_direct": "llm_direct"}
+)
+
+# Add terminal edges
+builder.add_edge("llm_with_context", END)
+builder.add_edge("llm_direct", END)
+
+# Compile the graph
 app_graph = builder.compile()
 
-# Run with input query
-def run_pipeline(query: str, topic:str):
+
+def run_pipeline(query: str, topic: str) -> str:
     initial_state = SearchState(query=query, topic=topic)
     final_state = app_graph.invoke(initial_state)
-    return final_state["final_answer"]
+
+    # Ensure it's a SearchState, not dict
+    if isinstance(final_state, dict):
+        final_state = SearchState(**final_state)
+
+    return final_state.final_answer or "No answer generated."
 
 
-response = run_pipeline("What is distal radius?", "Distal_radius")
-print(response)
+
+# Example usage
+if __name__ == "__main__":
+    response = run_pipeline("What is distal radius?", "Distal_radius")
+    print(response)
