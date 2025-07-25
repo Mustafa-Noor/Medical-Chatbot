@@ -39,8 +39,10 @@ async def handle_chat(request: ChatRequest, db: AsyncSession, current_user) -> C
     await db.commit()
 
     # 3. Run pipeline to get reply
-    reply_text = run_pipeline(query=request.message, topic=request.topic)
-    reply_source = SourceType.llm
+    result = run_pipeline(query=request.message, topic=request.topic)
+    reply_text = result["answer"]
+    reply_source = SourceType(result["source"])  # Ensures it's a valid enum value
+
 
     # 4. Save assistant reply
     bot_msg = ChatMessage(

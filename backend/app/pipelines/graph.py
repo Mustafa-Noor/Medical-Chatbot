@@ -21,49 +21,85 @@ def json_node(state: SearchState) -> SearchState:
     return state
 
 
-def llm_with_context_node(state: SearchState) -> SearchState:
-    """Generate LLM response using retrieved context"""
-    # Use CSV context if available, otherwise JSON context
-    if state.csv_docs:
-        context_docs = state.csv_docs
-        context = "\n\n".join([doc.page_content for doc in context_docs])
-    elif state.json_docs:
-        context_docs = state.json_docs
-        context = "\n\n".join([doc.page_content for doc in context_docs])
-    else:
-        context = ""
+# def llm_with_context_node(state: SearchState) -> SearchState:
+#     """Generate LLM response using retrieved context"""
+#     # Use CSV context if available, otherwise JSON context
+#     if state.csv_docs:
+#         context_docs = state.csv_docs
+#         context = "\n\n".join([doc.page_content for doc in context_docs])
+#     elif state.json_docs:
+#         context_docs = state.json_docs
+#         context = "\n\n".join([doc.page_content for doc in context_docs])
+#     else:
+#         context = ""
     
-    answer = generate_response(state.query, context)
-    state.final_answer = answer
+#     answer = generate_response(state.query, context)
+#     state.final_answer = answer
+#     return state
+
+def llm_with_context_node(state: SearchState) -> SearchState:
+    print("DEBUG: Entered llm_with_context_node")
+
+    if state.csv_docs:
+        print("DEBUG: Using CSV docs for context")
+        context = "\n\n".join([doc.page_content for doc in state.csv_docs])
+        state.source = "csv"
+    elif state.json_docs:
+        print("DEBUG: Using JSON docs for context")
+        context = "\n\n".join([doc.page_content for doc in state.json_docs])
+        state.source = "rag"
+    else:
+        print("DEBUG: No docs found — falling back to LLM")
+        context = ""
+        state.source = "llm"
+
+    state.final_answer = generate_response(state.query, context)
     return state
 
+
+
+
+# def llm_direct_node(state: SearchState) -> SearchState:
+#     """Generate LLM response directly without context"""
+#     # Pass query directly to LLM without any retrieved context
+#     answer = generate_response(state.query, "")
+#     state.final_answer = answer
+#     return state
 
 def llm_direct_node(state: SearchState) -> SearchState:
-    """Generate LLM response directly without context"""
-    # Pass query directly to LLM without any retrieved context
     answer = generate_response(state.query, "")
     state.final_answer = answer
+    state.source = "llm"
     return state
 
 
-def check_csv_score(state: SearchState) -> str:
-    """Route based on CSV score"""
-    if state.csv_score < 0.5:
-        # CSV score is low, use CSV results with LLM
-        return "llm_with_context"
-    else:
-        # CSV score is high, try JSON search
-        return "json"
 
+# def check_csv_score(state: SearchState) -> str:
+#     """Route based on CSV score"""
+#     if state.csv_score < 0.5:
+#         # CSV score is low, use CSV results with LLM
+#         return "llm_with_context"
+#     else:
+#         # CSV score is high, try JSON search
+#         return "json"
+
+
+# def check_json_score(state: SearchState) -> str:
+#     """Route based on JSON score"""
+#     if state.json_score < 0.8:
+#         # JSON score is low, use JSON results with LLM
+#         return "llm_with_context"
+#     else:
+#         # JSON score is high, go directly to LLM without context
+#         return "llm_direct"
+
+def check_csv_score(state: SearchState) -> str:
+    print(f"DEBUG: CSV Score = {state.csv_score}")
+    return "llm_with_context" if state.csv_score < 0.5 else "json"
 
 def check_json_score(state: SearchState) -> str:
-    """Route based on JSON score"""
-    if state.json_score < 0.8:
-        # JSON score is low, use JSON results with LLM
-        return "llm_with_context"
-    else:
-        # JSON score is high, go directly to LLM without context
-        return "llm_direct"
+    print(f"DEBUG: JSON Score = {state.json_score}")
+    return "llm_with_context" if state.json_score < 0.8 else "llm_direct"
 
 
 # Build the graph
@@ -107,7 +143,16 @@ def run_pipeline(query: str, topic: str) -> str:
     if isinstance(final_state, dict):
         final_state = SearchState(**final_state)
 
-    return final_state.final_answer or "No answer generated."
+    print("DEBUG: Final Source =", final_state.source)  # ✅ Add this
+    print("DEBUG: Final Answer =", final_state.final_answer[:80])
+
+
+    # return final_state.final_answer or "No answer generated."
+    return {
+        "answer": final_state.final_answer or "No answer generated.",
+        "source": final_state.source or "llm"
+    }
+
 
 
 

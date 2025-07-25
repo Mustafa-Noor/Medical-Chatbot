@@ -11,7 +11,7 @@ from app.config import settings
 # ---- CONFIG ---- #
 EMBEDDING_MODEL = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
 FAISS_JSON_DIR = settings.JSON_EMBEDDINGS_DIR  # e.g., "embeddings/json/"
-RELEVANCE_THRESHOLD = 0.8
+RELEVANCE_THRESHOLD = 0.9
 
 
 def list_available_json_topics():
