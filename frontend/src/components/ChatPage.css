@@ -10,18 +10,68 @@
 /* Sidebar */
 .sidebar {
   width: 220px;
+  height: 100vh;
   background-color: #004d40;
   color: white;
-  padding: 20px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  z-index: 5;
+  padding: 20px;
+}
+
+.sidebar-header {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.sidebar-header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.back-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 0;
+  text-align: left;
 }
 
 .sidebar h2 {
   font-size: 18px;
   margin-bottom: 20px;
+}
+
+.session-list {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  overflow-y: auto;
+  margin-top: 10px;
+}
+
+.session-btn {
+  background: #eee;
+  border: none;
+  padding: 8px;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: left;
+}
+
+.session-btn:hover {
+  background: #ddd;
+}
+
+.session-btn.active {
+  background: #cce4ff;
+  font-weight: bold;
 }
 
 .logout-btn {
@@ -38,7 +88,7 @@
   background-color: #004d40;
 }
 
-/* Topic bar aligned after sidebar */
+/* Topic bar (top center) */
 .topic-bar-wrapper {
   position: relative;
   width: 100%;
@@ -50,35 +100,10 @@
   justify-content: center;
 }
 
-/* Inner flex container for layout */
-.topic-bar-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  padding: 0 20px;
-  box-sizing: border-box;
-}
-
-/* Back button */
-.back-btn {
-  background: none;
-  color: white;
-  border: none;
-  font-size: 15px;
-  cursor: pointer;
-  padding: 0;
-  margin: 0;
-}
-
-/* Topic title */
 .topic-title {
-  flex: 1;
-  text-align: center;
   font-size: 16px;
   font-weight: bold;
   color: white;
-  margin-right: 40px; /* balance visual center */
 }
 
 /* Main content */
@@ -87,11 +112,10 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
   position: relative;
 }
 
-/* Chat box */
+/* Chat messages area */
 .chat-box {
   flex: 1;
   padding: 20px;
@@ -101,8 +125,11 @@
   display: flex;
   flex-direction: column;
   gap: 12px;
-  margin-top: 45px; /* ensure it's pushed below the topic bar */
+  margin-top: 45px; /* keep this if you want it below topic bar */
+  align-self: center;
+  max-height: calc(100vh - 140px); /* adjust as needed */
 }
+
 
 /* Chat bubbles */
 .chat-bubble {
@@ -128,20 +155,20 @@
   border-top-left-radius: 0;
 }
 
-/* Input field */
+/* Chat input bar */
 .chat-input-wrapper {
   display: flex;
-  padding: 0;
-  border-top: none;
-  background-color: transparent; /* ⬅ removes white box */
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
   width: 100%;
-  max-width: 850px;
+  max-width: 100%;
   margin-bottom: 50px;
-  justify-content: center; /* optional: center input horizontally */
 }
 
 .chat-input {
   flex: 1;
+  max-width: 700px;
   padding: 12px 16px;
   font-size: 16px;
   border: 1px solid #ccc;
@@ -164,30 +191,56 @@
   background-color: #004d40;
 }
 
+/* Toggle sidebar button */
+.toggle-sidebar-btn {
+  background-color: #00796b;
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
 
-.session-list {
-  margin-top: 10px;
+.toggle-sidebar-btn-floating {
+  position: absolute;
+  top: 10px;
+  left: 15px;
+  z-index: 10;
+  background-color: #00796b;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  font-size: 18px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Sidebar open layout */
+/* .sidebar-open .main-content {
+  margin-left: 220px;
+} */
+
+/* Sidebar closed layout */
+.sidebar-closed .main-content {
+  margin-left: 0;
+  width: 100%;
+}
+
+/* Optional: animate layout */
+.chat-wrapper {
+  display: flex;
+  height: 100vh;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to right, #e0f7fa, #ffffff);
+  overflow: hidden;
+}
+
+.main-content {
+  flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  max-height: 300px;
-  overflow-y: auto;
+  transition: all 0.3s ease;
 }
 
-.session-btn {
-  background: #eee;
-  border: none;
-  padding: 8px;
-  border-radius: 5px;
-  cursor: pointer;
-  text-align: left;
-}
 
-.session-btn:hover {
-  background: #ddd;
-}
-
-.session-btn.active {
-  background: #cce4ff;
-  font-weight: bold;
-}
