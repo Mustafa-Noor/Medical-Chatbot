@@ -10,3 +10,4 @@ class SearchState(BaseModel):
     json_docs: Optional[List[Document]] = None
     final_answer: Optional[str] = None
     topic: str  # <-- Add this
+    source: Optional[str] = "llm"

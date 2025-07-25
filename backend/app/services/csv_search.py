@@ -11,7 +11,7 @@ from app.config import settings
 # ---- CONFIG ---- #
 EMBEDDING_MODEL = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
 FAISS_BASE_DIR = settings.CSV_EMBEDDINGS_DIR  # Make sure this is defined in your settings
-RELEVANCE_THRESHOLD = 0.8  # Lower is more relevant
+RELEVANCE_THRESHOLD = 0.9  # Lower is more relevant
 
 
 def list_available_topics():
@@ -38,6 +38,10 @@ def search_csv(topic: str, query: str, k: int = 3):
     try:
         db = load_vector_store(topic)
         results = db.similarity_search_with_score(query, k=k)
+        print("\n🔍 RAW FAISS RESULTS:")
+        for i, (doc, score) in enumerate(results):
+            print(f"{i+1}. Score: {score:.4f} | Text: {doc.page_content[:80]}...")
+
         if not results:
             return {"score": 0.0, "docs": []}
 
