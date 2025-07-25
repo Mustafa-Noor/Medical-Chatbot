@@ -1,15 +1,15 @@
 import os
 import uuid
 from groq import Groq
-from services.chat_service import handle_chat
 from fastapi import UploadFile
 from sqlalchemy.ext.asyncio import AsyncSession
 from app.config import settings
 from app.services.chat_service import handle_chat
+from app.schemas.chat import ChatRequest
 
 client = Groq(api_key=settings.Groq_key)
 
-async def process_voice_chat(audio_file: UploadFile, db: AsyncSession, current_user):
+async def process_voice_chat(audio_file: UploadFile, topic:str, db: AsyncSession, current_user):
     audio_id = str(uuid.uuid4())
     audio_path = f"temp_{audio_id}.wav"
     
@@ -30,12 +30,15 @@ async def process_voice_chat(audio_file: UploadFile, db: AsyncSession, current_u
     user_input = stt_response.text
 
     # 3. Chatbot logic
+    chat_request = ChatRequest(message=user_input, topic=topic)
+
     chat_response = await handle_chat(
-        request={"message": user_input},
+        request=chat_request,
         db=db,
         current_user=current_user
     )
-    chatbot_text = chat_response["response"]
+
+    chatbot_text = chat_response.reply
 
     # 4. Text-to-Speech
     output_audio_path = f"output_{audio_id}.wav"

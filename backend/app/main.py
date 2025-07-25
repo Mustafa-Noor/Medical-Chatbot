@@ -2,7 +2,7 @@ from fastapi import FastAPI
 from .routes import auth
 from .database import engine, Base
 from fastapi.middleware.cors import CORSMiddleware
-from app.routes import auth, chat, topics
+from app.routes import auth, chat, topics, voice
 
 
 
@@ -25,6 +25,7 @@ app.add_middleware(
 app.include_router(topics.router)
 app.include_router(auth.router)
 app.include_router(chat.router)
+app.include_router(voice.router)
 
 @app.on_event("startup")
 async def on_startup():
