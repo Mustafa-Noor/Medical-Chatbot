@@ -1,7 +1,7 @@
 import os
 from app.config import settings
 
-def get_topic_folders(embeddings_dir: str = settings.EMBEDDINGS_DIR) -> list[dict]:
+def get_topic_folders(embeddings_dir: str = settings.CSV_EMBEDDINGS_DIR) -> list[dict]:
     """
     Reads folders from the embeddings directory and returns them
     as a list of {value, label} dicts, sorted alphabetically.
