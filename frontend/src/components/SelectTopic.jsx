@@ -10,7 +10,24 @@ const SelectTopic = () => {
   const [selectedTopic, setSelectedTopic] = useState("");
   const navigate = useNavigate();
 
+  // useEffect(() => {
+  //   API.get("/topics")
+  //     .then((res) => {
+  //       console.log("Fetched topics:", res.data);
+  //       setTopics(res.data);
+  //     })
+  //     .catch((err) => {
+  //       console.error("Failed to fetch topics:", err);
+  //     });
+  // }, []);
+
   useEffect(() => {
+    const token = localStorage.getItem("token"); // instead of access_token
+    if (!token) {
+      console.warn("No token found. Not fetching topics.");
+      return; // Don't fetch topics if not logged in
+    }
+
     API.get("/topics")
       .then((res) => {
         console.log("Fetched topics:", res.data);
@@ -20,6 +37,7 @@ const SelectTopic = () => {
         console.error("Failed to fetch topics:", err);
       });
   }, []);
+
 
   const handleSubmit = () => {
     if (!selectedTopic) {

@@ -14,6 +14,7 @@ function LoginForm() {
 
       // ✅ Save token and user_id if available
       localStorage.setItem("token", res.data.access_token);
+  
       if (res.data.user_id) {
         localStorage.setItem("user_id", res.data.user_id);
       }

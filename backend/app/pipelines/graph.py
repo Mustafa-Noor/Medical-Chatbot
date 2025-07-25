@@ -111,7 +111,7 @@ def run_pipeline(query: str, topic: str) -> str:
 
 
 
-# Example usage
-if __name__ == "__main__":
-    response = run_pipeline("What is distal radius?", "Distal_radius")
-    print(response)
+# # Example usage
+# if __name__ == "__main__":
+#     response = run_pipeline("What is distal radius?", "Distal_radius")
+#     print(response)

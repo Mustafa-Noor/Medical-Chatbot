@@ -2,6 +2,7 @@ import os
 import sys
 from langchain_community.embeddings import HuggingFaceEmbeddings
 from langchain_community.vectorstores import FAISS
+from langchain.schema import Document
 
 # Load config
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
@@ -49,11 +50,20 @@ def search_json(topic: str, query: str, k: int = 3):
 
         docs = []
         for doc, score in filtered:
-            docs.append({
-                "content": doc.page_content,
-                "score": round(score, 4),
-                "source": doc.metadata.get("source", "Unknown")
-            })
+        #     docs.append({
+        #         "content": doc.page_content,
+        #         "score": round(score, 4),
+        #         "source": doc.metadata.get("source", "Unknown")
+        #     })
+
+            docs.append(Document(
+                page_content=doc.page_content,
+                metadata={
+                    "score": round(score, 4),
+                    "source": doc.metadata.get("source", "Unknown")
+                }
+            ))
+
 
         return {"score": round(avg_score, 4), "docs": docs}
     
