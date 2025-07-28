@@ -4,6 +4,7 @@ import API from "../services/api";
 import "./ChatPage.css";
 import ReactMarkdown from "react-markdown";
 import VoiceChatUI from "../components/VoiceChatUI";
+import { FaMicrophone, FaStop } from "react-icons/fa";
 
 const ChatPage = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -14,6 +15,10 @@ const ChatPage = () => {
   const [sessions, setSessions] = useState([]);
   const [sidebarOpen, setSidebarOpen] = useState(true);
   const [voiceMode, setVoiceMode] = useState(false);
+  const [voiceStatus, setVoiceStatus] = useState("Tap to speak");
+  const [isRecording, setIsRecording] = useState(false);
+  const mediaRecorderRef = useRef(null);
+  const audioChunksRef = useRef([]);
 
   const navigate = useNavigate();
   const chatBoxRef = useRef(null);
@@ -50,6 +55,48 @@ const ChatPage = () => {
       console.error("Failed to load session messages", err);
     }
   };
+
+  const startVoiceRecording = async () => {
+  try {
+    setVoiceStatus("Listening...");
+    setIsRecording(true);
+    const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+    const mediaRecorder = new MediaRecorder(stream);
+    mediaRecorderRef.current = mediaRecorder;
+    audioChunksRef.current = [];
+
+    mediaRecorder.ondataavailable = (e) => {
+      if (e.data.size > 0) {
+        audioChunksRef.current.push(e.data);
+      }
+    };
+
+    mediaRecorder.onstop = async () => {
+      setVoiceStatus("Sending to AI...");
+      const audioBlob = new Blob(audioChunksRef.current, { type: "audio/wav" });
+      await handleVoiceResponse(audioBlob);
+      setVoiceStatus("Listening done");
+      setIsRecording(false);
+    };
+
+    mediaRecorder.start();
+    setTimeout(() => {
+      if (mediaRecorder.state !== "inactive") {
+        mediaRecorder.stop();
+      }
+    }, 6000);
+  } catch (err) {
+    console.error("Voice recording failed:", err);
+    setVoiceStatus("Mic error");
+    setIsRecording(false);
+  }
+};
+
+const stopVoiceRecording = () => {
+  if (mediaRecorderRef.current && mediaRecorderRef.current.state !== "inactive") {
+    mediaRecorderRef.current.stop();
+  }
+};
 
   const handleSend = async () => {
     if (!input.trim()) return;
@@ -186,12 +233,6 @@ const ChatPage = () => {
           <div className="topic-title">
             Topic: {topic.replace(/__/g, ": ").replace(/_/g, " ")}
           </div>
-          <button
-            className="voice-mode-toggle"
-            onClick={() => setVoiceMode((prev) => !prev)}
-          >
-            {voiceMode ? "🛑 Exit Voice Mode" : "🎤 Voice Mode"}
-          </button>
         </div>
 
         <div className="chat-box" ref={chatBoxRef}>
@@ -212,22 +253,42 @@ const ChatPage = () => {
         </div>
 
         <div className="chat-input-wrapper">
-          {voiceMode ? (
-            <VoiceChatUI onSendAudio={handleVoiceResponse} />
-          ) : (
-            <>
-              <input
-                type="text"
-                className="chat-input"
-                value={input}
-                onChange={(e) => setInput(e.target.value)}
-                onKeyDown={handleKeyPress}
-                placeholder="Type your question..."
-              />
-              <button className="send-btn" onClick={handleSend}>Send</button>
-            </>
-          )}
-        </div>
+  <input
+    type="text"
+    className={`chat-input ${voiceMode ? "disabled" : ""}`}
+    value={voiceMode ? "🎙️ " + voiceStatus : input}
+    disabled={voiceMode}
+    onChange={(e) => setInput(e.target.value)}
+    onKeyDown={handleKeyPress}
+    placeholder={voiceMode ? "Voice mode active..." : "Type your question..."}
+  />
+
+  {voiceMode ? (
+    <>
+      <button
+        className="send-btn"
+        onClick={() => {
+          if (isRecording) {
+            stopVoiceRecording(); // defined below
+          } else {
+            startVoiceRecording(); // defined below
+          }
+        }}
+      >
+        {isRecording ? "Stop" : "Speak"}
+      </button>
+    </>
+  ) : (
+    <button className="send-btn" onClick={handleSend}>Send</button>
+  )}
+
+  <button
+    className="voice-btn"
+    onClick={() => setVoiceMode((prev) => !prev)}
+  >
+    {voiceMode ? "End Conversation" : "Start Conversation"}
+  </button>
+</div>
       </div>
     </div>
   );

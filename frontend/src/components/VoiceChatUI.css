@@ -1,0 +1,51 @@
+.waveform-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.waveform {
+  display: flex;
+  gap: 5px;
+  height: 30px;
+  margin-top: 10px;
+}
+
+.waveform span {
+  width: 5px;
+  height: 100%;
+  background-color: #4caf50;
+  animation: pulse 1s infinite ease-in-out;
+}
+
+.waveform span:nth-child(2) { animation-delay: 0.1s; }
+.waveform span:nth-child(3) { animation-delay: 0.2s; }
+.waveform span:nth-child(4) { animation-delay: 0.3s; }
+.waveform span:nth-child(5) { animation-delay: 0.4s; }
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scaleY(0.4);
+  }
+  50% {
+    transform: scaleY(1);
+  }
+}
+
+.icon-btn {
+  margin: 10px;
+  font-size: 20px;
+  background: none;
+  border: none;
+  color: #333;
+  cursor: pointer;
+}
+
+.voice-btn {
+  font-size: 24px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 50%;
+}

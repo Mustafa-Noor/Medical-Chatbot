@@ -6,6 +6,8 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from app.config import settings
 from app.services.chat_service import handle_chat
 from app.schemas.chat import ChatRequest
+from fastapi.responses import StreamingResponse
+from io import BytesIO
 
 
 client = Groq(api_key=settings.Groq_key)
@@ -48,9 +50,8 @@ async def process_voice_chat(audio_file: UploadFile, topic:str, db: AsyncSession
         input=chatbot_text,
         response_format="wav"
     )
-    
-    audio_stream = BytesIO()
-    tts_response.write_to_file(audio_stream)
+
+    audio_stream = BytesIO(tts_response.content)
     audio_stream.seek(0)
 
     # Return text + audio stream

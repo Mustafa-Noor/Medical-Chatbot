@@ -3,6 +3,7 @@ from fastapi.responses import FileResponse
 from sqlalchemy.ext.asyncio import AsyncSession
 from app.security import deps
 from app.pipelines.voice import process_voice_chat
+from fastapi.responses import StreamingResponse
 
 router = APIRouter(
     prefix="/voice",
