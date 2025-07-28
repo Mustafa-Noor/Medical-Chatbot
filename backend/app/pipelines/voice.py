@@ -51,8 +51,8 @@ async def process_voice_chat(audio_file: UploadFile, topic:str, db: AsyncSession
         response_format="wav"
     )
 
-    audio_stream = BytesIO(tts_response.content)
-    audio_stream.seek(0)
+    audio_bytes = tts_response.read()
+    audio_stream = BytesIO(audio_bytes)
 
     # Return text + audio stream
     return {

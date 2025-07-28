@@ -17,6 +17,7 @@ const ChatPage = () => {
   const [voiceMode, setVoiceMode] = useState(false);
   const [voiceStatus, setVoiceStatus] = useState("Tap to speak");
   const [isRecording, setIsRecording] = useState(false);
+  const [isSpeaking, setIsSpeaking] = useState(false);
   const mediaRecorderRef = useRef(null);
   const audioChunksRef = useRef([]);
 
@@ -159,7 +160,6 @@ const stopVoiceRecording = () => {
   const toggleSidebar = () => {
     setSidebarOpen(!sidebarOpen);
   };
-
   const handleVoiceResponse = async (audioBlob) => {
   const formData = new FormData();
   formData.append("audio", audioBlob);
@@ -170,19 +170,26 @@ const stopVoiceRecording = () => {
       headers: { "Content-Type": "multipart/form-data" },
     });
 
-    const audioBlob = await res.blob(); // receive streamed audio
+    const data = res.data;
+
+    // Decode base64 to audio blob
+    const binary = atob(data.audio_base64);
+    const bytes = new Uint8Array(binary.length);
+    for (let i = 0; i < binary.length; i++) {
+      bytes[i] = binary.charCodeAt(i);
+    }
+    const audioBlob = new Blob([bytes], { type: "audio/wav" });
     const audioUrl = URL.createObjectURL(audioBlob);
     const audio = new Audio(audioUrl);
 
-    // Extract headers
-    const chatbotText = res.headers.get("X-Text");
-    const userInput = res.headers.get("X-User-Input");
-
+    // Update chat UI
     setMessages((prev) => [
       ...prev,
-      { sender: "user", text: userInput },
-      { sender: "bot", text: chatbotText },
+      { sender: "user", text: data.user_input },
+      { sender: "bot", text: data.text },
     ]);
+    audio.onplay = () => setIsSpeaking(true);
+    audio.onended = () => setIsSpeaking(false);
     audio.play();
   } catch (err) {
     console.error("Voice chat error:", err);
@@ -192,6 +199,40 @@ const stopVoiceRecording = () => {
     ]);
   }
 };
+
+
+//   const handleVoiceResponse = async (audioBlob) => {
+//   const formData = new FormData();
+//   formData.append("audio", audioBlob);
+//   formData.append("topic", topic);
+
+//   try {
+//     const res = await API.post("/voice/voice-chat", formData, {
+//       headers: { "Content-Type": "multipart/form-data" },
+//     });
+
+//     const audioBlob = await res.blob(); // receive streamed audio
+//     const audioUrl = URL.createObjectURL(audioBlob);
+//     const audio = new Audio(audioUrl);
+
+//     // Extract headers
+//     const chatbotText = res.headers.get("X-Text");
+//     const userInput = res.headers.get("X-User-Input");
+
+//     setMessages((prev) => [
+//       ...prev,
+//       { sender: "user", text: userInput },
+//       { sender: "bot", text: chatbotText },
+//     ]);
+//     audio.play();
+//   } catch (err) {
+//     console.error("Voice chat error:", err);
+//     setMessages((prev) => [
+//       ...prev,
+//       { sender: "bot", text: "Voice processing failed." },
+//     ]);
+//   }
+// };
 
 
   return (
@@ -274,6 +315,7 @@ const stopVoiceRecording = () => {
             startVoiceRecording(); // defined below
           }
         }}
+        disabled={isSpeaking}
       >
         {isRecording ? "Stop" : "Speak"}
       </button>
