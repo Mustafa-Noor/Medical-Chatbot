@@ -14,6 +14,8 @@ class Settings:
     BASE_DIR: str = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     JSON_EMBEDDINGS_DIR: str = os.path.abspath(os.path.join(BASE_DIR, "../data/embeddings"))
     CSV_EMBEDDINGS_DIR: str = os.path.abspath(os.path.join(BASE_DIR, "../data/csv_embeddings"))
+
+    BASE_URL = "http://localhost:8000" 
     
 
 settings = Settings()

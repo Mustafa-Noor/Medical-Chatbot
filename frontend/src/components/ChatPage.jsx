@@ -114,34 +114,35 @@ const ChatPage = () => {
   };
 
   const handleVoiceResponse = async (audioBlob) => {
-    const formData = new FormData();
-    formData.append("audio", audioBlob);
-    formData.append("topic", topic);
+  const formData = new FormData();
+  formData.append("audio", audioBlob);
+  formData.append("topic", topic);
 
-    try {
-      const res = await API.post("/voice/voice-chat", formData, {
-        headers: { "Content-Type": "multipart/form-data" },
-      });
+  try {
+    const res = await API.post("/voice/voice-chat", formData, {
+      headers: { "Content-Type": "multipart/form-data" },
+    });
 
-      const { text, user_input, audio_path } = res.data;
+    const { text, user_input, audio_path } = res.data;
 
-      setMessages((prev) => [
-        ...prev,
-        { sender: "user", text: user_input },
-        { sender: "bot", text },
-      ]);
+    setMessages((prev) => [
+      ...prev,
+      { sender: "user", text: user_input },
+      { sender: "bot", text },
+    ]);
 
-      // Play response audio
-      const audio = new Audio(audio_path);
-      audio.play();
-    } catch (err) {
-      console.error("Voice chat error:", err);
-      setMessages((prev) => [
-        ...prev,
-        { sender: "bot", text: "Voice processing failed." },
-      ]);
-    }
-  };
+    // ✅ Use absolute URL to play audio
+    const audio = new Audio(`${API.defaults.baseURL}${audio_path}`);
+    audio.play();
+  } catch (err) {
+    console.error("Voice chat error:", err);
+    setMessages((prev) => [
+      ...prev,
+      { sender: "bot", text: "Voice processing failed." },
+    ]);
+  }
+};
+
 
   return (
     <div className={`chat-wrapper ${sidebarOpen ? "sidebar-open" : "sidebar-closed"}`}>

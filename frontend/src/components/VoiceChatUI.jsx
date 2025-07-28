@@ -40,7 +40,13 @@ const VoiceChatUI = ({ onSendAudio }) => {
           setStatus("✅ Done. Tap to speak again.");
           setIsSpeaking(false);
         };
-        audio.play();
+        try {
+        await audio.play(); // only one play call with error handling
+        } catch (err) {
+        console.error("Audio play failed:", err);
+        setStatus("❌ Couldn't play audio.");
+        setIsSpeaking(false);
+        }
       };
 
       mediaRecorder.start();
