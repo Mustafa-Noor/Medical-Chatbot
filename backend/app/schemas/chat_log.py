@@ -5,7 +5,7 @@ from datetime import datetime
 
 class AnswerSource(str, Enum):
     csv = "csv"
-    rag = "rag"
+    rag = "json"
     llm = "llm"
 
 class ChatLogCreate(BaseModel):

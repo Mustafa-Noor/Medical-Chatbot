@@ -11,7 +11,8 @@ from app.config import settings
 # ---- CONFIG ---- #
 EMBEDDING_MODEL = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
 FAISS_JSON_DIR = settings.JSON_EMBEDDINGS_DIR  # e.g., "embeddings/json/"
-RELEVANCE_THRESHOLD = 0.9
+RELEVANCE_THRESHOLD = 1.2
+
 
 
 def list_available_json_topics():
@@ -25,51 +26,97 @@ def load_json_vector_store(topic: str):
     return FAISS.load_local(vector_path, EMBEDDING_MODEL, allow_dangerous_deserialization=True)
 
 
-def search_json(topic: str, query: str, k: int = 3):
-    """
-    Search a FAISS JSON vector store for a given query and topic.
+# def search_json(topic: str, query: str, k: int = 3):
+#     """
+#     Search a FAISS JSON vector store for a given query and topic.
     
-    Returns:
-        {
-            "score": average_score,
-            "docs": [ { "content": ..., "score": ..., "source": ... }, ... ]
-        }
-    """
+#     Returns:
+#         {
+#             "score": average_score,
+#             "docs": [ { "content": ..., "score": ..., "source": ... }, ... ]
+#         }
+#     """
+#     try:
+#         db = load_json_vector_store(topic)
+#         results = db.similarity_search_with_score(query, k=k)
+#         if not results:
+#             return {"score": 0.0, "docs": []}
+
+#         # Filter by relevance
+#         filtered = [r for r in results if r[1] <= RELEVANCE_THRESHOLD]
+#         if not filtered:
+#             return {"score": 0.0, "docs": []}
+
+#         avg_score = sum(1 - score for _, score in filtered) / len(filtered)
+
+#         docs = []
+#         for doc, score in filtered:
+#         #     docs.append({
+#         #         "content": doc.page_content,
+#         #         "score": round(score, 4),
+#         #         "source": doc.metadata.get("source", "Unknown")
+#         #     })
+
+#             docs.append(Document(
+#                 page_content=doc.page_content,
+#                 metadata={
+#                     "score": round(score, 4),
+#                     "source": doc.metadata.get("source", "Unknown")
+#                 }
+#             ))
+
+
+#         return {"score": round(avg_score, 4), "docs": docs}
+    
+#     except Exception as e:
+#         print("Error in search_json:", e)
+#         return {"score": 0.0, "docs": [], "error": str(e)}
+
+def search_json(topic: str, query: str, k: int = 3):
     try:
-        db = load_json_vector_store(topic)
+        vector_path = os.path.join(FAISS_JSON_DIR, topic)
+        print(f"\n🔍 [JSON Search] Query: {query}")
+        print(f"📘 Topic: {topic}")
+        print(f"📁 Loading FAISS index from: {vector_path}")
+
+        db = FAISS.load_local(vector_path, EMBEDDING_MODEL, allow_dangerous_deserialization=True)
         results = db.similarity_search_with_score(query, k=k)
+
         if not results:
+            print("⚠️ No results returned.")
             return {"score": 0.0, "docs": []}
 
-        # Filter by relevance
+        print("📊 Top-k Results:")
+        for i, (doc, score) in enumerate(results):
+            print(f"  {i+1}. Score: {score:.4f} | Snippet: {doc.page_content[:80]}...")
+
         filtered = [r for r in results if r[1] <= RELEVANCE_THRESHOLD]
+        print(f"✅ Filtered Results (≤ {RELEVANCE_THRESHOLD}): {len(filtered)}")
+
         if not filtered:
+            print("⚠️ All results above relevance threshold.")
             return {"score": 0.0, "docs": []}
 
         avg_score = sum(1 - score for _, score in filtered) / len(filtered)
 
-        docs = []
-        for doc, score in filtered:
-        #     docs.append({
-        #         "content": doc.page_content,
-        #         "score": round(score, 4),
-        #         "source": doc.metadata.get("source", "Unknown")
-        #     })
-
-            docs.append(Document(
+        docs = [
+            Document(
                 page_content=doc.page_content,
                 metadata={
                     "score": round(score, 4),
                     "source": doc.metadata.get("source", "Unknown")
                 }
-            ))
+            )
+            for doc, score in filtered
+        ]
 
-
+        print(f"📈 Average Filtered Score: {avg_score:.4f}")
         return {"score": round(avg_score, 4), "docs": docs}
-    
+
     except Exception as e:
-        print("Error in search_json:", e)
+        print(f"❌ Error in search_json: {e}")
         return {"score": 0.0, "docs": [], "error": str(e)}
+
 
 
 # res = search_json("Paediatrics", "What is your name?")

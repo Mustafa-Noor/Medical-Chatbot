@@ -53,6 +53,7 @@ async def handle_chat(request: ChatRequest, db: AsyncSession, current_user) -> C
     )
     db.add(bot_msg)
     await db.commit()
+    # print("message response with source:", reply_text, reply_source)
 
     # 5. Return response
     return ChatResponse(
