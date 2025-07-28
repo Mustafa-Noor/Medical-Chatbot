@@ -16,10 +16,21 @@ async def voice_chat(
     db: AsyncSession = Depends(deps.get_db),
     current_user=Depends(deps.get_current_user)
 ):
-    result = await process_voice_chat(audio, topic, db, current_user)
 
-    return {
-        "text": result["text"],
-        "user_input": result["user_input"],
-        "audio_path": result["audio_path"]
-    }
+    result = await process_voice_chat(audio, topic, db, current_user)
+    
+    return StreamingResponse(
+        result["audio_stream"],
+        media_type="audio/wav",
+        headers={
+            "X-Text": result["text"],
+            "X-User-Input": result["user_input"]
+        }
+    )
+    # result = await process_voice_chat(audio, topic, db, current_user)
+
+    # return {
+    #     "text": result["text"],
+    #     "user_input": result["user_input"],
+    #     "audio_path": result["audio_path"]
+    # }

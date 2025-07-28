@@ -41,29 +41,48 @@ async def process_voice_chat(audio_file: UploadFile, topic:str, db: AsyncSession
 
     chatbot_text = chat_response.reply
 
-    # 4. Text-to-Speech
-    output_audio_filename = f"output_{audio_id}.wav"
-
-    # Create the full path using BASE_DIR
-    audio_dir = os.path.join(settings.BASE_DIR, "app", "static", "audio")
-    os.makedirs(audio_dir, exist_ok=True)  # Ensure folder exists
-
-    output_audio_path = os.path.join(audio_dir, output_audio_filename)
-
-    # Generate TTS audio
+    # 4. Generate TTS audio in-memory (no saving)
     tts_response = client.audio.speech.create(
         model="playai-tts",
         voice="Deedee-PlayAI",
         input=chatbot_text,
         response_format="wav"
     )
-    tts_response.write_to_file(output_audio_path)
+    
+    audio_stream = BytesIO()
+    tts_response.write_to_file(audio_stream)
+    audio_stream.seek(0)
 
-    # Return relative URL to frontend
-    audio_url = f"/static/audio/{output_audio_filename}"
-
+    # Return text + audio stream
     return {
         "text": chatbot_text,
-        "audio_path": audio_url,
-        "user_input": user_input
+        "user_input": user_input,
+        "audio_stream": audio_stream
     }
+
+    # 4. Text-to-Speech
+    # output_audio_filename = f"output_{audio_id}.wav"
+
+    # # Create the full path using BASE_DIR
+    # audio_dir = os.path.join(settings.BASE_DIR, "app", "static", "audio")
+    # os.makedirs(audio_dir, exist_ok=True)  # Ensure folder exists
+
+    # output_audio_path = os.path.join(audio_dir, output_audio_filename)
+
+    # # Generate TTS audio
+    # tts_response = client.audio.speech.create(
+    #     model="playai-tts",
+    #     voice="Deedee-PlayAI",
+    #     input=chatbot_text,
+    #     response_format="wav"
+    # )
+    # tts_response.write_to_file(output_audio_path)
+
+    # # Return relative URL to frontend
+    # audio_url = f"/static/audio/{output_audio_filename}"
+
+    # return {
+    #     "text": chatbot_text,
+    #     "audio_path": audio_url,
+    #     "user_input": user_input
+    # }

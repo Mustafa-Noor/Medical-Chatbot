@@ -3,7 +3,6 @@ from .routes import auth
 from .database import engine, Base
 from fastapi.middleware.cors import CORSMiddleware
 from app.routes import auth, chat, topics, voice
-from fastapi.staticfiles import StaticFiles
 
 app = FastAPI()
 
@@ -13,7 +12,6 @@ origins = [
     # add any deployment URLs here later (e.g., Netlify, Vercel)
 ]
 
-app.mount("/static", StaticFiles(directory="app/static"), name="static")
 
 app.add_middleware(
     CORSMiddleware,

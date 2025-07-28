@@ -31,23 +31,22 @@ const VoiceChatUI = ({ onSendAudio }) => {
       mediaRecorder.onstop = async () => {
         setStatus("⏳ Sending to AI...");
         const audioBlob = new Blob(audioChunksRef.current, { type: "audio/wav" });
-        const response = await onSendAudio(audioBlob);
 
-        setStatus("🔊 AI Speaking...");
-        setIsSpeaking(true);
-        const audio = new Audio(response.audioPath);
-        audio.onended = () => {
-          setStatus("✅ Done. Tap to speak again.");
-          setIsSpeaking(false);
-        };
         try {
-        await audio.play(); // only one play call with error handling
+            await onSendAudio(audioBlob);  // 👈 Let parent handle audio playback
+            setStatus("🔊 AI Speaking...");
+            setIsSpeaking(true);
         } catch (err) {
-        console.error("Audio play failed:", err);
-        setStatus("❌ Couldn't play audio.");
-        setIsSpeaking(false);
+            console.error("Voice processing failed:", err);
+            setStatus("❌ Couldn't process voice.");
+        } finally {
+            // Reset after delay (optional)
+            setTimeout(() => {
+            setStatus("✅ Done. Tap to speak again.");
+            setIsSpeaking(false);
+            }, 5000); // give audio time to play before resetting
         }
-      };
+        };
 
       mediaRecorder.start();
       setTimeout(() => {

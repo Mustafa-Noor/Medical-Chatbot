@@ -123,16 +123,19 @@ const ChatPage = () => {
       headers: { "Content-Type": "multipart/form-data" },
     });
 
-    const { text, user_input, audio_path } = res.data;
+    const audioBlob = await res.blob(); // receive streamed audio
+    const audioUrl = URL.createObjectURL(audioBlob);
+    const audio = new Audio(audioUrl);
+
+    // Extract headers
+    const chatbotText = res.headers.get("X-Text");
+    const userInput = res.headers.get("X-User-Input");
 
     setMessages((prev) => [
       ...prev,
-      { sender: "user", text: user_input },
-      { sender: "bot", text },
+      { sender: "user", text: userInput },
+      { sender: "bot", text: chatbotText },
     ]);
-
-    // ✅ Use absolute URL to play audio
-    const audio = new Audio(`${API.defaults.baseURL}${audio_path}`);
     audio.play();
   } catch (err) {
     console.error("Voice chat error:", err);
