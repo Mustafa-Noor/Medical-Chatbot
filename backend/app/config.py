@@ -10,6 +10,7 @@ class Settings:
     HF_Token: str = os.getenv("HF_TOKEN")
     Google_key = os.getenv("GOOGLE_API_KEY")
     Groq_key = os.getenv("GROQ_API_KEY")
+    Eleven_key = os.getenv("ELEVEN_LABS")
 
     BASE_DIR: str = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     JSON_EMBEDDINGS_DIR: str = os.path.abspath(os.path.join(BASE_DIR, "../data/embeddings"))

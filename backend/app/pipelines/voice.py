@@ -8,13 +8,16 @@ from app.services.chat_service import handle_chat
 from app.schemas.chat import ChatRequest
 from fastapi.responses import StreamingResponse
 from io import BytesIO
+from elevenlabs import ElevenLabs
 
 
-client = Groq(api_key=settings.Groq_key)
+
 
 async def process_voice_chat(audio_file: UploadFile, topic:str, db: AsyncSession, current_user):
     audio_id = str(uuid.uuid4())
     audio_path = f"temp_{audio_id}.wav"
+
+    client = Groq(api_key=settings.Groq_key)
     
     # 1. Save file
     with open(audio_path, "wb") as f:
@@ -43,23 +46,45 @@ async def process_voice_chat(audio_file: UploadFile, topic:str, db: AsyncSession
 
     chatbot_text = chat_response.reply
 
-    # 4. Generate TTS audio in-memory (no saving)
-    tts_response = client.audio.speech.create(
-        model="playai-tts",
-        voice="Deedee-PlayAI",
-        input=chatbot_text,
-        response_format="wav"
-    )
+    client = ElevenLabs(api_key=settings.Eleven_key)
 
-    audio_bytes = tts_response.read()
-    audio_stream = BytesIO(audio_bytes)
+    tts_generator = client.text_to_speech.convert(
+    voice_id="JBFqnCBsd6RMkjVDRZzb",     # Replace with desired voice ID
+    output_format="mp3_44100_128",      
+    text=chatbot_text,
+    model_id="eleven_multilingual_v2"
+)
 
-    # Return text + audio stream
+    # # 4. Generate TTS audio in-memory (no saving)
+    # tts_response = client.audio.speech.create(
+    #     model="playai-tts",
+    #     voice="Deedee-PlayAI",
+    #     input=chatbot_text,
+    #     response_format="wav"
+    # )
+
+    # Step 2: Join generator chunks to bytes
+    tts_audio_bytes = b"".join(tts_generator)
+
+    # Step 3: Wrap in BytesIO
+    audio_stream = BytesIO(tts_audio_bytes)
+
+    # Step 4: Return result
     return {
         "text": chatbot_text,
         "user_input": user_input,
         "audio_stream": audio_stream
     }
+
+    # audio_bytes = tts_response.read()
+    # audio_stream = BytesIO(audio_bytes)
+
+    # # Return text + audio stream
+    # return {
+    #     "text": chatbot_text,
+    #     "user_input": user_input,
+    #     "audio_stream": audio_stream
+    # }
 
     # 4. Text-to-Speech
     # output_audio_filename = f"output_{audio_id}.wav"

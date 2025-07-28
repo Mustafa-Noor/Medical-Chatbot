@@ -19,3 +19,4 @@ faiss-cpu
 cryptography
 google-generativeai
 langgraph
+elevenlabs
