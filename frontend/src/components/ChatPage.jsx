@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import API from "../services/api";
 import "./ChatPage.css";
 import ReactMarkdown from "react-markdown";
+import VoiceChatUI from "../components/VoiceChatUI";
 
 const ChatPage = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -12,6 +13,7 @@ const ChatPage = () => {
   const [sessionId, setSessionId] = useState(null);
   const [sessions, setSessions] = useState([]);
   const [sidebarOpen, setSidebarOpen] = useState(true);
+  const [voiceMode, setVoiceMode] = useState(false);
 
   const navigate = useNavigate();
   const chatBoxRef = useRef(null);
@@ -71,20 +73,16 @@ const ChatPage = () => {
         setSessions(updatedSessions.data);
       }
 
-      setIsLoading(false); // 🟢 FIXED: move this before setting message
-
-      const botMessage = {
-        sender: "bot",
-        text: response.data.reply,
-      };
+      const botMessage = { sender: "bot", text: response.data.reply };
       setMessages((prev) => [...prev, botMessage]);
     } catch (err) {
-      setIsLoading(false); // Ensure it turns off on error too
       setMessages((prev) => [
         ...prev,
         { sender: "bot", text: "Sorry, something went wrong." },
       ]);
       console.error("Chat error:", err);
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -115,16 +113,44 @@ const ChatPage = () => {
     setSidebarOpen(!sidebarOpen);
   };
 
+  const handleVoiceResponse = async (audioBlob) => {
+    const formData = new FormData();
+    formData.append("audio", audioBlob);
+    formData.append("topic", topic);
+
+    try {
+      const res = await API.post("/voice/voice-chat", formData, {
+        headers: { "Content-Type": "multipart/form-data" },
+      });
+
+      const { text, user_input, audio_path } = res.data;
+
+      setMessages((prev) => [
+        ...prev,
+        { sender: "user", text: user_input },
+        { sender: "bot", text },
+      ]);
+
+      // Play response audio
+      const audio = new Audio(audio_path);
+      audio.play();
+    } catch (err) {
+      console.error("Voice chat error:", err);
+      setMessages((prev) => [
+        ...prev,
+        { sender: "bot", text: "Voice processing failed." },
+      ]);
+    }
+  };
+
   return (
     <div className={`chat-wrapper ${sidebarOpen ? "sidebar-open" : "sidebar-closed"}`}>
-      {/* Floating ☰ toggle button (when sidebar is closed) */}
       {!sidebarOpen && (
         <button className="toggle-sidebar-btn-floating" onClick={toggleSidebar}>
           ☰
         </button>
       )}
 
-      {/* Sidebar */}
       {sidebarOpen && (
         <div className="sidebar">
           <div className="sidebar-header">
@@ -151,16 +177,19 @@ const ChatPage = () => {
         </div>
       )}
 
-      {/* Main Content */}
       <div className="main-content">
-        {/* Topic Title Bar */}
         <div className="topic-bar-wrapper">
           <div className="topic-title">
             Topic: {topic.replace(/__/g, ": ").replace(/_/g, " ")}
           </div>
+          <button
+            className="voice-mode-toggle"
+            onClick={() => setVoiceMode((prev) => !prev)}
+          >
+            {voiceMode ? "🛑 Exit Voice Mode" : "🎤 Voice Mode"}
+          </button>
         </div>
 
-        {/* Chat Area */}
         <div className="chat-box" ref={chatBoxRef}>
           {messages.map((msg, idx) => (
             <div key={idx} className={`chat-bubble ${msg.sender}`}>
@@ -171,7 +200,6 @@ const ChatPage = () => {
               )}
             </div>
           ))}
-
           {isLoading && (
             <div className="chat-bubble bot loading">
               Typing<span className="dot">.</span><span className="dot">.</span><span className="dot">.</span>
@@ -179,19 +207,22 @@ const ChatPage = () => {
           )}
         </div>
 
-        {/* Input Bar */}
         <div className="chat-input-wrapper">
-          <input
-            type="text"
-            className="chat-input"
-            value={input}
-            onChange={(e) => setInput(e.target.value)}
-            onKeyDown={handleKeyPress}
-            placeholder="Type your question..."
-          />
-          <button className="send-btn" onClick={handleSend}>
-            Send
-          </button>
+          {voiceMode ? (
+            <VoiceChatUI onSendAudio={handleVoiceResponse} />
+          ) : (
+            <>
+              <input
+                type="text"
+                className="chat-input"
+                value={input}
+                onChange={(e) => setInput(e.target.value)}
+                onKeyDown={handleKeyPress}
+                placeholder="Type your question..."
+              />
+              <button className="send-btn" onClick={handleSend}>Send</button>
+            </>
+          )}
         </div>
       </div>
     </div>

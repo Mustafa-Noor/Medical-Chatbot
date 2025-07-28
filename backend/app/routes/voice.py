@@ -1,4 +1,4 @@
-from fastapi import APIRouter, File, UploadFile, Depends, Query
+from fastapi import APIRouter, File, UploadFile, Depends, Query, Form
 from fastapi.responses import FileResponse
 from sqlalchemy.ext.asyncio import AsyncSession
 from app.security import deps
@@ -12,7 +12,7 @@ router = APIRouter(
 @router.post("/voice-chat")
 async def voice_chat(
     audio: UploadFile = File(...),
-    topic: str = Query(...),
+    topic: str = Form(...),
     db: AsyncSession = Depends(deps.get_db),
     current_user=Depends(deps.get_current_user)
 ):

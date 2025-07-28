@@ -264,4 +264,24 @@
 }
 
 
+.voice-btn {
+  margin-left: 8px;
+  background-color: #e0f7fa;
+  border: none;
+  padding: 8px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.voice-btn:hover {
+  background-color: #b2ebf2;
+}
+
+.voice-btn svg {
+  font-size: 18px;
+}
+
+
+
 
