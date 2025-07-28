@@ -20,6 +20,7 @@ def call_llm(prompt: str) -> str:
     """
     try:
         response = model.generate_content(prompt)
+        print("DEBUG: LLM response received", response.text)
         return response.text.strip()
     except Exception as e:
         return f"Error: {str(e)}"
