@@ -69,3 +69,10 @@
 .auth-form a:hover {
   text-decoration: underline;
 }
+
+
+.error-msg {
+  color: rgb(153, 53, 53);
+  margin-top: 5px;
+  font-size: 0.9rem;
+}
