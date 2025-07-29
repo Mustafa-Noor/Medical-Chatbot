@@ -38,8 +38,12 @@ const VoiceChatUI = forwardRef(({ onSendAudio }, ref) => {
         setIsRecording(false);
         setShowConfirm(true);
         setStatus("✅ Ready to send or cancel");
-      };
 
+        // ✅ This sends the audio to ChatPage
+        if (onSendAudio) {
+          onSendAudio(recordedAudioRef.current);
+        }
+      };
       mediaRecorder.start();
 
       // Auto stop after 6 seconds
@@ -87,34 +91,8 @@ const VoiceChatUI = forwardRef(({ onSendAudio }, ref) => {
     startRecording,
   }));
 
-  return (
-    <div className="voice-feedback inline-flex items-center gap-2 ml-3">
-      {isRecording && (
-        <div className="text-red-600 font-semibold animate-pulse">{status}</div>
-      )}
-      {showConfirm && (
-        <div className="flex gap-2">
-          <button
-            className="bg-green-600 text-white p-3 rounded-full shadow hover:bg-green-700"
-            onClick={sendAudio}
-            disabled={isSpeaking}
-          >
-            <FaCheck />
-          </button>
-          <button
-            className="bg-red-600 text-white p-3 rounded-full shadow hover:bg-red-700"
-            onClick={cancelAudio}
-            disabled={isSpeaking}
-          >
-            <FaTimes />
-          </button>
-        </div>
-      )}
-      {!isRecording && !showConfirm && status && (
-        <p className="text-sm text-gray-500">{status}</p>
-      )}
-    </div>
-  );
+  return null;
+
 });
 
 export default VoiceChatUI;

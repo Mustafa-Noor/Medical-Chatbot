@@ -18,7 +18,7 @@ const ChatPage = () => {
   const [isRecording, setIsRecording] = useState(false);
   const [showConfirm, setShowConfirm] = useState(false);
   const [recordedAudio, setRecordedAudio] = useState(null);
-
+  const [isVoiceProcessing, setIsVoiceProcessing] = useState(false);
 
 
   const navigate = useNavigate();
@@ -58,47 +58,19 @@ const ChatPage = () => {
     }
   };
 
-  // const handleSend = async () => {
-  //   if (!input.trim()) return;
-
-  //   const userMessage = { sender: "user", text: input };
-  //   setMessages((prev) => [...prev, userMessage]);
-  //   setInput("");
-  //   setIsLoading(true);
-
-  //   try {
-  //     const response = await API.post("/chat/send-message", {
-  //       session_id: sessionId,
-  //       topic,
-  //       message: input,
-  //     });
-
-  //     const newSessionId = response.data.session_id;
-  //     if (!sessionId && newSessionId) {
-  //       setSessionId(newSessionId);
-  //       const updatedSessions = await API.get(`/chat/sessions?topic=${encodeURIComponent(topic)}`);
-  //       setSessions(updatedSessions.data);
-  //     }
-
-  //     const botMessage = { sender: "bot", text: response.data.reply };
-  //     setMessages((prev) => [...prev, botMessage]);
-  //   } catch (err) {
-  //     setMessages((prev) => [
-  //       ...prev,
-  //       { sender: "bot", text: "Sorry, something went wrong." },
-  //     ]);
-  //     console.error("Chat error:", err);
-  //   } finally {
-  //     setIsLoading(false);
-  //   }
-  // };
-
-  const handleSend = async () => {
-  // If voice recording is confirmed
+const handleSend = async () => {
+  // ✅ If sending recorded voice
   if (recordedAudio) {
     const formData = new FormData();
     formData.append("audio", recordedAudio);
     formData.append("topic", topic);
+
+    // ✅ Clear input and recording state BEFORE sending
+    setInput("");
+    setRecordedAudio(null);
+    setShowConfirm(false);
+    setIsRecording(false);
+    setIsVoiceProcessing(true);
 
     try {
       const res = await API.post("/voice/voice-chat", formData, {
@@ -119,7 +91,7 @@ const ChatPage = () => {
 
       setMessages((prev) => [
         ...prev,
-        { sender: "user", text: data.user_input },
+        { sender: "user", text: data.user_input || "[Voice message]" },
         { sender: "bot", text: data.text },
       ]);
       audio.play();
@@ -130,19 +102,18 @@ const ChatPage = () => {
         { sender: "bot", text: "Voice processing failed." },
       ]);
     } finally {
-      setRecordedAudio(null);
-      setInput("");
+    setIsVoiceProcessing(false);  // ✅ END showing "Processing..."
     }
 
     return;
   }
 
-  // Text message fallback
-  if (!input.trim()) return;
+  // ✅ If sending normal text message
+  if (!input.trim() || input === "🎙️ Recorded. Press Send") return;
 
   const userMessage = { sender: "user", text: input };
   setMessages((prev) => [...prev, userMessage]);
-  setInput("");
+  setInput(""); // ✅ Clear right after sending
   setIsLoading(true);
 
   try {
@@ -236,6 +207,21 @@ const ChatPage = () => {
     }
   };
 
+  const deleteSession = async (id) => {
+  try {
+    await API.delete(`/chat/session/${id}`);
+    setSessions((prev) => prev.filter((s) => s.id !== id));
+    if (id === sessionId) {
+      setSessionId(null);
+      setMessages([]);
+    }
+  } catch (err) {
+    console.error("Failed to delete session:", err);
+    alert("Failed to delete session.");
+  }
+};
+
+
   return (
     <div className={`chat-wrapper ${sidebarOpen ? "sidebar-open" : "sidebar-closed"}`}>
       {!sidebarOpen && (
@@ -256,13 +242,21 @@ const ChatPage = () => {
 
           <div className="session-list">
             {sessions.map((s) => (
-              <button
-                key={s.id}
-                className={`session-btn ${s.id === sessionId ? "active" : ""}`}
-                onClick={() => handleSessionClick(s.id)}
-              >
-                {s.title || `Session #${s.id}`}
-              </button>
+              <div key={s.id} className="session-row">
+                <button
+                  className={`session-btn ${s.id === sessionId ? "active" : ""}`}
+                  onClick={() => handleSessionClick(s.id)}
+                >
+                  {s.title || `Session #${s.id}`}
+                </button>
+                <button
+                  className="delete-btn"
+                  onClick={() => deleteSession(s.id)}
+                  title="Delete session"
+                >
+                  🗑️
+                </button>
+              </div>
             ))}
           </div>
 
@@ -292,6 +286,11 @@ const ChatPage = () => {
               Typing<span className="dot">.</span><span className="dot">.</span><span className="dot">.</span>
             </div>
           )}
+          {isVoiceProcessing && (
+            <div className="chat-bubble bot loading">
+              Processing voice<span className="dot">.</span><span className="dot">.</span><span className="dot">.</span>
+            </div>
+          )}
         </div>
 
         <div className="chat-input-wrapper">
@@ -316,6 +315,7 @@ const ChatPage = () => {
             onChange={(e) => setInput(e.target.value)}
             onKeyDown={handleKeyPress}
             disabled={isRecording || recordedAudio !== null}
+            placeholder="Type your question..."    
           />
 
           <button className="send-btn" onClick={handleSend}>Send</button>
@@ -335,6 +335,7 @@ const ChatPage = () => {
               className="voice-btn"
               onClick={() => {
                 setIsRecording(true);
+                setShowConfirm(true);
                 voiceRef.current?.startRecording();
               }}
               title="Tap to speak"
@@ -372,7 +373,6 @@ const ChatPage = () => {
           <VoiceChatUI
             ref={voiceRef}
             onSendAudio={(blob) => {
-              setShowConfirm(true);
               setRecordedAudio(blob);
             }}
             onCancel={() => {
