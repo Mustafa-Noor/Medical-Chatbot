@@ -22,3 +22,5 @@ langgraph
 elevenlabs
 qdrant-client
 more_itertools
+langchain-qdrant
+langchain-huggingface

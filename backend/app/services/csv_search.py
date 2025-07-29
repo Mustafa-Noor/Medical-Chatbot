@@ -133,8 +133,8 @@
 
 import os
 import sys
-from langchain_community.embeddings import HuggingFaceEmbeddings
-from langchain_community.vectorstores import Qdrant
+from langchain_huggingface import HuggingFaceEmbeddings
+from langchain_qdrant import Qdrant
 from langchain.schema import Document
 from qdrant_client import QdrantClient
 from qdrant_client.http.models import Distance, VectorParams
@@ -174,6 +174,7 @@ def search_csv(topic: str, query: str, k: int = 3):
     Search a Qdrant CSV vector store for a given query and topic.
     Only returns results if the top result exactly matches the query string.
     """
+    topic = topic + "_csv"
     try:
         print(f"\n🔍 [CSV Search - Qdrant] Query: {query}")
         print(f"📘 Topic: {topic}")
@@ -192,7 +193,10 @@ def search_csv(topic: str, query: str, k: int = 3):
         # Check exact match on top document
         top_doc, top_score = results[0]
         top_question = top_doc.metadata.get("question", "").strip().lower()
-        if top_question != query.strip().lower():
+        query_normalized = query.strip().lower()
+
+        # Accept top result if score is good enough or question matches
+        if top_question != query_normalized and top_score > RELEVANCE_THRESHOLD:
             print("❌ Top result is not an exact match. Skipping CSV.")
             return {"score": 0.0, "docs": []}
 
@@ -201,18 +205,22 @@ def search_csv(topic: str, query: str, k: int = 3):
 
         avg_score = sum(1 - score for _, score in filtered) / len(filtered)
 
-        docs = [
-            Document(
-                page_content=doc.page_content,
-                metadata={
-                    "score": round(score, 4),
-                    "topic": doc.metadata.get("topic", "Unknown"),
-                    "subtopic": doc.metadata.get("subtopic", ""),
-                    "question": doc.metadata.get("question", "")
-                }
-            )
-            for doc, score in filtered
-        ]
+        docs = []
+        for doc, score in filtered:
+            if isinstance(doc.page_content, str) and doc.page_content.strip():
+                docs.append(
+                    Document(
+                        page_content=doc.page_content,
+                        metadata={
+                            "score": round(score, 4),
+                            "topic": doc.metadata.get("topic", "Unknown"),
+                            "subtopic": doc.metadata.get("subtopic", ""),
+                            "question": doc.metadata.get("question", "")
+                        }
+                    )
+                )
+            else:
+                print(f"⚠️ Skipped invalid doc with empty or None page_content: {doc.metadata}")
 
         print(f"📈 Average Filtered Score: {avg_score:.4f}")
         return {"score": round(avg_score, 4), "docs": docs}

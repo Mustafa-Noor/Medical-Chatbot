@@ -126,8 +126,8 @@
 import os
 import sys
 from typing import List
-from langchain_community.embeddings import HuggingFaceEmbeddings
-from langchain_community.vectorstores import Qdrant
+from langchain_huggingface import HuggingFaceEmbeddings
+from langchain_qdrant import Qdrant
 from langchain.schema import Document
 from qdrant_client import QdrantClient
 
@@ -162,6 +162,8 @@ def load_json_vector_store(topic: str):
 
 
 def search_json(topic: str, query: str, k: int = 3):
+
+    topic = topic.replace("_", " ")
     try:
         print(f"\n🔍 [QDRANT Search] Query: {query}")
         print(f"📘 Topic (Collection): {topic}")

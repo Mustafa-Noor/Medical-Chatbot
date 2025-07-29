@@ -9,7 +9,7 @@ class SenderType(str, Enum):
 
 class SourceType(str, Enum):
     csv = "csv"
-    rag = "json"
+    rag = "rag"
     llm = "llm"
 
 class ChatSessionCreate(BaseModel):
