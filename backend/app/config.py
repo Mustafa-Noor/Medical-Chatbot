@@ -12,6 +12,9 @@ class Settings:
     Groq_key = os.getenv("GROQ_API_KEY")
     Eleven_key = os.getenv("ELEVEN_LABS")
 
+    Qdrant_key = os.getenv("QDRANT_KEY")
+    Qdrant_url = os.getenv("QDRANT_URL")
+
     BASE_DIR: str = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     JSON_EMBEDDINGS_DIR: str = os.path.abspath(os.path.join(BASE_DIR, "../data/embeddings"))
     CSV_EMBEDDINGS_DIR: str = os.path.abspath(os.path.join(BASE_DIR, "../data/csv_embeddings"))

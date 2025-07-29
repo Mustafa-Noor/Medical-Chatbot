@@ -20,3 +20,5 @@ cryptography
 google-generativeai
 langgraph
 elevenlabs
+qdrant-client
+more_itertools
