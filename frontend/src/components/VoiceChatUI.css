@@ -1,3 +1,6 @@
+/* VoiceChatUI.css */
+
+/* For waveform animation (if you want to add that visual in future) */
 .waveform-wrapper {
   display: flex;
   flex-direction: column;
@@ -32,6 +35,7 @@
   }
 }
 
+/* Optional icon buttons */
 .icon-btn {
   margin: 10px;
   font-size: 20px;
@@ -41,11 +45,47 @@
   cursor: pointer;
 }
 
+/* ✅ Final mic button style */
 .voice-btn {
-  font-size: 24px;
+  font-size: 20px;
   background-color: #4caf50;
   color: white;
-  border: none;
   padding: 10px;
+  border: none;
   border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+}
+
+.voice-btn:hover {
+  background-color: #43a047;
+}
+
+.voice-btn:active {
+  background-color: #388e3c;
+}
+
+.voice-feedback {
+  display: flex;
+  align-items: center;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.voice-feedback.voice-inline {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.voice-feedback .text-red-600 {
+  color: red;
+}
+
+.voice-feedback .text-sm {
+  font-size: 0.85rem;
 }

@@ -288,6 +288,47 @@
   color: #888;
   cursor: not-allowed;
 }
+.voice-mode-bar {
+  flex: 1;
+  max-width: 700px;
+  padding: 12px 16px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 999px;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 10px;
+}
+
+
+.confirm-buttons {
+  display: flex;
+  gap: 6px;
+  margin-left: 8px;
+  align-items: center;
+}
+
+.confirm-btn {
+  padding: 8px;
+  border: none;
+  border-radius: 50%;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.confirm-btn.success {
+  background-color: #4caf50;
+  color: white;
+}
+
+.confirm-btn.cancel {
+  background-color: #f44336;
+  color: white;
+}
+
+
 
 
 

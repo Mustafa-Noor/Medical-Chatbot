@@ -128,4 +128,4 @@ def search_csv(topic: str, query: str, k: int = 3):
 
 
 # res = search_csv("Paediatrics", "What is chromosomes?")
-# print(res)
+# print(res) 
