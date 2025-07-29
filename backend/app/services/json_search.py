@@ -1,8 +1,10 @@
 import os
 import sys
+from typing import List
 from langchain_community.embeddings import HuggingFaceEmbeddings
-from langchain_community.vectorstores import FAISS
+from langchain_community.vectorstores import Qdrant
 from langchain.schema import Document
+from qdrant_client import QdrantClient
 
 # Load config
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
@@ -10,76 +12,41 @@ from app.config import settings
 
 # ---- CONFIG ---- #
 EMBEDDING_MODEL = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
-FAISS_JSON_DIR = settings.JSON_EMBEDDINGS_DIR  # e.g., "embeddings/json/"
 RELEVANCE_THRESHOLD = 1.2
 
+# Qdrant client setup
+qdrant_client = QdrantClient(
+    url=settings.Qdrant_url,
+    api_key=settings.Qdrant_key,
+)
 
 
-def list_available_json_topics():
-    """List available JSON-based FAISS folders (topics)."""
-    return [d for d in os.listdir(FAISS_JSON_DIR) if os.path.isdir(os.path.join(FAISS_JSON_DIR, d))]
+def list_available_json_topics() -> List[str]:
+    """List available Qdrant collections (ignoring -csv collections)."""
+    collections = qdrant_client.get_collections().collections
+    return [c.name for c in collections if not c.name.endswith("csv")]
 
 
 def load_json_vector_store(topic: str):
-    """Load a FAISS vector store for the given JSON topic."""
-    vector_path = os.path.join(FAISS_JSON_DIR, topic)
-    return FAISS.load_local(vector_path, EMBEDDING_MODEL, allow_dangerous_deserialization=True)
+    """Load a Qdrant vector store for the given topic."""
+    return Qdrant(
+        client=qdrant_client,
+        collection_name=topic,
+        embeddings=EMBEDDING_MODEL,
+    )
 
-
-# def search_json(topic: str, query: str, k: int = 3):
-#     """
-#     Search a FAISS JSON vector store for a given query and topic.
-    
-#     Returns:
-#         {
-#             "score": average_score,
-#             "docs": [ { "content": ..., "score": ..., "source": ... }, ... ]
-#         }
-#     """
-#     try:
-#         db = load_json_vector_store(topic)
-#         results = db.similarity_search_with_score(query, k=k)
-#         if not results:
-#             return {"score": 0.0, "docs": []}
-
-#         # Filter by relevance
-#         filtered = [r for r in results if r[1] <= RELEVANCE_THRESHOLD]
-#         if not filtered:
-#             return {"score": 0.0, "docs": []}
-
-#         avg_score = sum(1 - score for _, score in filtered) / len(filtered)
-
-#         docs = []
-#         for doc, score in filtered:
-#         #     docs.append({
-#         #         "content": doc.page_content,
-#         #         "score": round(score, 4),
-#         #         "source": doc.metadata.get("source", "Unknown")
-#         #     })
-
-#             docs.append(Document(
-#                 page_content=doc.page_content,
-#                 metadata={
-#                     "score": round(score, 4),
-#                     "source": doc.metadata.get("source", "Unknown")
-#                 }
-#             ))
-
-
-#         return {"score": round(avg_score, 4), "docs": docs}
-    
-#     except Exception as e:
-#         print("Error in search_json:", e)
-#         return {"score": 0.0, "docs": [], "error": str(e)}
 
 def search_json(topic: str, query: str, k: int = 3):
     try:
-        vector_path = os.path.join(FAISS_JSON_DIR, topic)
-        print(f"\n🔍 [JSON Search] Query: {query}")
-        print(f"📘 Topic: {topic}")
-        print(f"📁 Loading FAISS index from: {vector_path}")
+        print(f"\n🔍 [QDRANT Search] Query: {query}")
+        print(f"📘 Topic (Collection): {topic}")
 
-        db = FAISS.load_local(vector_path, EMBEDDING_MODEL, allow_dangerous_deserialization=True)
+        db = Qdrant(
+            client=qdrant_client,
+            collection_name=topic,
+            embeddings=EMBEDDING_MODEL,
+        )
+
         results = db.similarity_search_with_score(query, k=k)
 
         if not results:
@@ -119,5 +86,5 @@ def search_json(topic: str, query: str, k: int = 3):
 
 
 
-# res = search_json("Paediatrics", "What is your name?")
+# res = search_json("Paediatrics", "what is chromosomes?")
 # print(res)

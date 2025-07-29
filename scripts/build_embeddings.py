@@ -85,18 +85,95 @@
 #     asyncio.run(process_all_topics())
 
 
+# import os
+# import json
+# from langchain_community.embeddings import HuggingFaceEmbeddings
+# from langchain_community.vectorstores import FAISS
+# from langchain.schema import Document
+
+# # ---- CONFIG ---- #
+# BASE_DIR = os.path.dirname(__file__)
+# #INPUT_JSON_DIR = os.path.abspath(os.path.join(BASE_DIR, "..", "data", "structured_json_books", "book_jsons"))
+# INPUT_JSON_DIR = os.path.abspath(os.path.join(BASE_DIR, "..", "data", "structured_json"))
+# OUTPUT_BASE_DIR = os.path.abspath(os.path.join(BASE_DIR, "..", "data", "embeddings"))
+# EMBEDDING_MODEL = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
+
+# # ---- HELPERS ---- #
+# def load_json_entries(json_file: str) -> list[Document]:
+#     with open(json_file, "r", encoding="utf-8") as f:
+#         entries = json.load(f)
+
+#     documents = []
+#     for entry in entries:
+#         if isinstance(entry, dict):
+#             topic = entry.get("topic", "").strip()
+#             text = entry.get("text", "").strip()
+#             if topic and text:
+#                 doc = Document(page_content=text, metadata={"topic": topic, "source": os.path.basename(json_file)})
+#                 documents.append(doc)
+#         else:
+#             print(f"[⚠️] Skipped non-dict entry in {json_file}: {type(entry)}")
+#     return documents
+
+# def save_to_faiss(folder_name: str, documents: list[Document]):
+#     folder_safe_name = folder_name.replace(" ", "_")
+#     persist_dir = os.path.join(OUTPUT_BASE_DIR, folder_safe_name)
+#     os.makedirs(persist_dir, exist_ok=True)
+#     db = FAISS.from_documents(documents, EMBEDDING_MODEL)
+#     db.save_local(persist_dir)
+#     print(f"[✅] Saved FAISS index for '{folder_name}' to {persist_dir}")
+
+# # ---- MAIN ---- #
+# def process_all_folders():
+#     if not os.path.isdir(INPUT_JSON_DIR):
+#         print(f"[❌] Input directory not found: {INPUT_JSON_DIR}")
+#         return
+
+#     for root, dirs, files in os.walk(INPUT_JSON_DIR):
+#         for file in files:
+#             if file.endswith(".json"):
+#                 file_path = os.path.join(root, file)
+#                 parent_folder = os.path.basename(os.path.dirname(file_path))  # Get folder name where JSON is located
+#                 print(f"\n📄 Processing: {file_path} (Folder: {parent_folder})")
+
+#                 try:
+#                     docs = load_json_entries(file_path)
+#                     if docs:
+#                         save_to_faiss(parent_folder, docs)
+#                 except Exception as e:
+#                     print(f"[⚠️] Failed to process {file_path}: {e}")
+
+# if __name__ == "__main__":
+#     process_all_folders()
+
+
 import os
 import json
 from langchain_community.embeddings import HuggingFaceEmbeddings
-from langchain_community.vectorstores import FAISS
+from langchain_community.vectorstores import Qdrant
 from langchain.schema import Document
+from qdrant_client import QdrantClient
+from qdrant_client.http.models import Distance, VectorParams
+from more_itertools import chunked  # ✅ for batching
 
 # ---- CONFIG ---- #
 BASE_DIR = os.path.dirname(__file__)
-#INPUT_JSON_DIR = os.path.abspath(os.path.join(BASE_DIR, "..", "data", "structured_json_books", "book_jsons"))
-INPUT_JSON_DIR = os.path.abspath(os.path.join(BASE_DIR, "..", "data", "structured_json"))
-OUTPUT_BASE_DIR = os.path.abspath(os.path.join(BASE_DIR, "..", "data", "embeddings"))
+INPUT_JSON_DIR = os.path.abspath(os.path.join(BASE_DIR, "..", "data", "structured_json_books", "book_jsons"))
+#INPUT_JSON_DIR = os.path.abspath(os.path.join(BASE_DIR, "..", "data", "structured_json"))
 EMBEDDING_MODEL = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
+
+
+# ✅ Qdrant Cloud Configuration
+QDRANT_URL = "https://33acd362-b59a-41a7-819c-98238df488d1.us-east4-0.gcp.cloud.qdrant.io"
+QDRANT_API_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2Nlc3MiOiJtIn0.c-7a3RnZ-gujNMLWO0iz7W5DR2u4RDlt4oHUL1dn2IM"
+VECTOR_SIZE = 384  # Must match embedding dimension
+
+# ---- INIT QDRANT CLIENT ---- #
+qdrant_client = QdrantClient(
+    url=QDRANT_URL,
+    api_key=QDRANT_API_KEY,
+    timeout=30.0  # ✅ Increased timeout
+)
 
 # ---- HELPERS ---- #
 def load_json_entries(json_file: str) -> list[Document]:
@@ -109,19 +186,43 @@ def load_json_entries(json_file: str) -> list[Document]:
             topic = entry.get("topic", "").strip()
             text = entry.get("text", "").strip()
             if topic and text:
-                doc = Document(page_content=text, metadata={"topic": topic, "source": os.path.basename(json_file)})
+                doc = Document(
+                    page_content=text,
+                    metadata={"topic": topic, "source": os.path.basename(json_file)}
+                )
                 documents.append(doc)
         else:
             print(f"[⚠️] Skipped non-dict entry in {json_file}: {type(entry)}")
     return documents
 
-def save_to_faiss(folder_name: str, documents: list[Document]):
-    folder_safe_name = folder_name.replace(" ", "_")
-    persist_dir = os.path.join(OUTPUT_BASE_DIR, folder_safe_name)
-    os.makedirs(persist_dir, exist_ok=True)
-    db = FAISS.from_documents(documents, EMBEDDING_MODEL)
-    db.save_local(persist_dir)
-    print(f"[✅] Saved FAISS index for '{folder_name}' to {persist_dir}")
+def save_to_qdrant(collection_name: str, documents: list[Document]):
+    # Ensure collection exists
+    try:
+        qdrant_client.get_collection(collection_name)
+    except Exception:
+        qdrant_client.recreate_collection(
+            collection_name=collection_name,
+            vectors_config=VectorParams(size=VECTOR_SIZE, distance=Distance.COSINE),
+        )
+
+    batch_size = 10
+    total_uploaded = 0
+
+    for i, batch in enumerate(chunked(documents, batch_size)):
+        try:
+            _ = Qdrant.from_documents(
+                documents=batch,
+                embedding=EMBEDDING_MODEL,
+                collection_name=collection_name,
+                url=QDRANT_URL,
+                api_key=QDRANT_API_KEY,
+            )
+            total_uploaded += len(batch)
+            print(f"[✅] Uploaded batch {i+1} ({len(batch)} docs)")
+        except Exception as e:
+            print(f"[❌] Batch {i+1} failed: {e}")
+
+    print(f"[🎉] Uploaded total {total_uploaded} documents to collection '{collection_name}'")
 
 # ---- MAIN ---- #
 def process_all_folders():
@@ -133,15 +234,17 @@ def process_all_folders():
         for file in files:
             if file.endswith(".json"):
                 file_path = os.path.join(root, file)
-                parent_folder = os.path.basename(os.path.dirname(file_path))  # Get folder name where JSON is located
-                print(f"\n📄 Processing: {file_path} (Folder: {parent_folder})")
+                parent_folder = os.path.basename(os.path.dirname(file_path))  # Folder = collection name
+                print(f"\n📄 Processing: {file_path} (Collection: {parent_folder})")
 
                 try:
                     docs = load_json_entries(file_path)
                     if docs:
-                        save_to_faiss(parent_folder, docs)
+                        save_to_qdrant(parent_folder, docs)
                 except Exception as e:
                     print(f"[⚠️] Failed to process {file_path}: {e}")
 
 if __name__ == "__main__":
     process_all_folders()
+
+
