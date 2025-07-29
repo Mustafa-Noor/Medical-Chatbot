@@ -304,18 +304,23 @@
 
 
 .confirm-buttons {
+  position: absolute;
+  right: 70px; /* adjust to shift left of Send */
+  top: 50%;
+  transform: translateY(-50%);
   display: flex;
-  gap: 6px;
-  margin-left: 8px;
-  align-items: center;
+  gap: 4px;
+  z-index: 10;
 }
 
 .confirm-btn {
-  padding: 8px;
+  padding: 6px 8px;
   border: none;
-  border-radius: 50%;
-  font-size: 14px;
+  background: white;
+  border-radius: 6px;
   cursor: pointer;
+  font-size: 16px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.15);
 }
 
 .confirm-btn.success {
@@ -327,6 +332,47 @@
   background-color: #f44336;
   color: white;
 }
+
+
+.chat-input-wrapper {
+  position: relative;
+}
+
+.session-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4px;
+}
+
+.session-btn {
+  flex: 1;
+  background: #eee;
+  border: none;
+  padding: 8px;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: left;
+}
+
+.session-btn.active {
+  background: #cce4ff;
+  font-weight: bold;
+}
+
+.delete-btn {
+  background: transparent;
+  border: none;
+  color: red;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 0 4px;
+}
+
+.delete-btn:hover {
+  color: darkred;
+}
+
 
 
 

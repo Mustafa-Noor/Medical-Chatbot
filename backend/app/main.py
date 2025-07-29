@@ -3,6 +3,12 @@ from .routes import auth
 from .database import engine, Base
 from fastapi.middleware.cors import CORSMiddleware
 from app.routes import auth, chat, topics, voice
+import logging
+
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s - %(levelname)s - %(message)s",
+)
 
 app = FastAPI()
 

@@ -8,6 +8,7 @@ from datetime import datetime
 from sqlalchemy import func
 from sqlalchemy.future import select
 from app.services.chat_service import handle_chat
+from sqlalchemy import delete
 
 
 router = APIRouter(
@@ -69,6 +70,31 @@ async def get_messages_for_session(
     messages = result.scalars().all()
 
     return messages
+
+
+@router.delete("/session/{session_id}")
+async def delete_chat_session(
+    session_id: int,
+    db: AsyncSession = Depends(get_db),
+    current_user=Depends(deps.get_current_user)
+):
+    # Check if session exists and belongs to user
+    result = await db.execute(
+        select(ChatSession).where(
+            ChatSession.id == session_id,
+            ChatSession.user_id == current_user.id
+        )
+    )
+    session = result.scalar_one_or_none()
+    if not session:
+        raise HTTPException(status_code=404, detail="Session not found or not authorized")
+
+    # Delete session and cascade messages if relationship is set up
+    await db.delete(session)
+    await db.commit()
+
+    return {"message": "Session deleted successfully"}
+
 
 
 
