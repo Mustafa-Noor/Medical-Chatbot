@@ -62,5 +62,5 @@ coverage/
 PDFS/
 data/embeddings
 csv_embeddings/
-data/
-scripts/
+/data/
+/scripts/
