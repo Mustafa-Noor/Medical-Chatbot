@@ -294,14 +294,6 @@ const handleSend = async () => {
         </div>
 
         <div className="chat-input-wrapper">
-          {/* <input
-            type="text"
-            className="chat-input"
-            value={input}
-            onChange={(e) => setInput(e.target.value)}
-            onKeyDown={handleKeyPress}
-            placeholder="Type your question..."
-          /> */}
           <input
             type="text"
             className="chat-input"
@@ -317,32 +309,6 @@ const handleSend = async () => {
             disabled={isRecording || recordedAudio !== null}
             placeholder="Type your question..."    
           />
-
-          <button className="send-btn" onClick={handleSend}>Send</button>
-          {/* <button
-            className="voice-btn"
-            onClick={() => {
-              setIsVoiceMode(true);
-              voiceRef.current?.startRecording();
-            }}
-            title="Tap to speak"
-          >
-            <FaMicrophone />
-          </button>
-          <VoiceChatUI ref={voiceRef} onSendAudio={handleVoiceResponse} /> */}
-          {!showConfirm && (
-            <button
-              className="voice-btn"
-              onClick={() => {
-                setIsRecording(true);
-                setShowConfirm(true);
-                voiceRef.current?.startRecording();
-              }}
-              title="Tap to speak"
-            >
-              <FaMicrophone />
-            </button>
-          )}
 
           {showConfirm && (
             <div className="confirm-buttons">
@@ -368,6 +334,32 @@ const handleSend = async () => {
                 ❌
               </button>
             </div>
+          )}
+
+          <button className="send-btn" onClick={handleSend}>Send</button>
+          {/* <button
+            className="voice-btn"
+            onClick={() => {
+              setIsVoiceMode(true);
+              voiceRef.current?.startRecording();
+            }}
+            title="Tap to speak"
+          >
+            <FaMicrophone />
+          </button>
+          <VoiceChatUI ref={voiceRef} onSendAudio={handleVoiceResponse} /> */}
+          {!showConfirm && (
+            <button
+              className="voice-btn"
+              onClick={() => {
+                setIsRecording(true);
+                setShowConfirm(true);
+                voiceRef.current?.startRecording();
+              }}
+              title="Tap to speak"
+            >
+              <FaMicrophone />
+            </button>
           )}
 
           <VoiceChatUI

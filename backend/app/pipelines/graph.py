@@ -1,8 +1,13 @@
 from langgraph.graph import StateGraph, END
-from app.services.csv_search import search_csv
-from app.services.json_search import search_json
-from app.services.llm_context import generate_response
-from app.schemas.search_state import SearchState
+# from app.services.csv_search import search_csv
+# from app.services.json_search import search_json
+# from app.services.llm_context import generate_response
+# from app.schemas.search_state import SearchState
+
+from ..services.csv_search import search_csv
+from ..services.json_search import search_json
+from ..services.llm_context import generate_response
+from ..schemas.search_state import SearchState
 
 
 def csv_node(state: SearchState) -> SearchState:
@@ -172,7 +177,9 @@ def run_pipeline(query: str, topic: str) -> str:
     }
 
 
-
+if __name__ == "__main__":
+    print("\n[🧠 LangGraph Decision Flow]")
+    print(app_graph.get_graph().print_ascii())
 
 # # Example usage
 # if __name__ == "__main__":
