@@ -11,6 +11,7 @@ function LoginForm() {
     e.preventDefault();
     try {
       const res = await API.post("/auth/login", new URLSearchParams(form));
+      console.log(res)
 
       // ✅ Save token and user_id if available
       localStorage.setItem("token", res.data.access_token);
