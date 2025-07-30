@@ -19,6 +19,8 @@ const ChatPage = () => {
   const [showConfirm, setShowConfirm] = useState(false);
   const [recordedAudio, setRecordedAudio] = useState(null);
   const [isVoiceProcessing, setIsVoiceProcessing] = useState(false);
+  const [isSpeaking, setIsSpeaking] = useState(false);
+
 
 
   const navigate = useNavigate();
@@ -64,6 +66,7 @@ const handleSend = async () => {
     const formData = new FormData();
     formData.append("audio", recordedAudio);
     formData.append("topic", topic);
+    if (sessionId) formData.append("session_id", sessionId);
 
     // ✅ Clear input and recording state BEFORE sending
     setInput("");
@@ -94,7 +97,21 @@ const handleSend = async () => {
         { sender: "user", text: data.user_input || "[Voice message]" },
         { sender: "bot", text: data.text },
       ]);
+      const newSessionId = data.session_id;
+      if (!sessionId && newSessionId) {
+        setSessionId(newSessionId);
+        const updatedSessions = await API.get(`/chat/sessions?topic=${encodeURIComponent(topic)}`);
+        setSessions(updatedSessions.data);
+      }
+
+      setIsSpeaking(true); // 🔒 Lock input
+
       audio.play();
+
+      audio.onended = () => {
+        setIsSpeaking(false); // 🔓 Unlock input
+      };
+
     } catch (err) {
       console.error("Voice chat error:", err);
       setMessages((prev) => [
@@ -116,12 +133,16 @@ const handleSend = async () => {
   setInput(""); // ✅ Clear right after sending
   setIsLoading(true);
 
+    
   try {
     const response = await API.post("/chat/send-message", {
       session_id: sessionId,
       topic,
       message: input,
     });
+
+    
+    console.log("Response session_id:", response.data.session_id);
 
     const newSessionId = response.data.session_id;
     if (!sessionId && newSessionId) {
@@ -197,7 +218,15 @@ const handleSend = async () => {
         { sender: "user", text: data.user_input },
         { sender: "bot", text: data.text },
       ]);
+      
+      setIsSpeaking(true); // 🔒 Lock input
+
       audio.play();
+
+      audio.onended = () => {
+        setIsSpeaking(false); // 🔓 Unlock input
+      };
+
     } catch (err) {
       console.error("Voice chat error:", err);
       setMessages((prev) => [
@@ -294,14 +323,6 @@ const handleSend = async () => {
         </div>
 
         <div className="chat-input-wrapper">
-          {/* <input
-            type="text"
-            className="chat-input"
-            value={input}
-            onChange={(e) => setInput(e.target.value)}
-            onKeyDown={handleKeyPress}
-            placeholder="Type your question..."
-          /> */}
           <input
             type="text"
             className="chat-input"
@@ -314,35 +335,9 @@ const handleSend = async () => {
             }
             onChange={(e) => setInput(e.target.value)}
             onKeyDown={handleKeyPress}
-            disabled={isRecording || recordedAudio !== null}
+            disabled={isRecording || recordedAudio !== null || isSpeaking} 
             placeholder="Type your question..."    
           />
-
-          <button className="send-btn" onClick={handleSend}>Send</button>
-          {/* <button
-            className="voice-btn"
-            onClick={() => {
-              setIsVoiceMode(true);
-              voiceRef.current?.startRecording();
-            }}
-            title="Tap to speak"
-          >
-            <FaMicrophone />
-          </button>
-          <VoiceChatUI ref={voiceRef} onSendAudio={handleVoiceResponse} /> */}
-          {!showConfirm && (
-            <button
-              className="voice-btn"
-              onClick={() => {
-                setIsRecording(true);
-                setShowConfirm(true);
-                voiceRef.current?.startRecording();
-              }}
-              title="Tap to speak"
-            >
-              <FaMicrophone />
-            </button>
-          )}
 
           {showConfirm && (
             <div className="confirm-buttons">
@@ -368,6 +363,33 @@ const handleSend = async () => {
                 ❌
               </button>
             </div>
+          )}
+
+          <button className="send-btn" onClick={handleSend}>Send</button>
+          {/* <button
+            className="voice-btn"
+            onClick={() => {
+              setIsVoiceMode(true);
+              voiceRef.current?.startRecording();
+            }}
+            title="Tap to speak"
+          >
+            <FaMicrophone />
+          </button>
+          <VoiceChatUI ref={voiceRef} onSendAudio={handleVoiceResponse} /> */}
+          {!showConfirm && (
+            <button
+              className="voice-btn"
+              onClick={() => {
+                setIsRecording(true);
+                setShowConfirm(true);
+                voiceRef.current?.startRecording();
+              }}
+              title="Tap to speak"
+              disabled={isSpeaking}
+            >
+              <FaMicrophone />
+            </button>
           )}
 
           <VoiceChatUI

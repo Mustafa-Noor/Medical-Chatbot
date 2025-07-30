@@ -15,7 +15,7 @@ from io import BytesIO
 
 
 
-async def process_voice_chat(audio_file: UploadFile, topic: str, db: AsyncSession, current_user):
+async def process_voice_chat(audio_file: UploadFile, topic: str, db: AsyncSession, current_user, session_id: str | None = None):
     print("🚨 Voice reached")
     logger.info("🎤================= VOICE PIPELINE START =================")
     logger.info("🚨 Voice pipeline has been entered!")
@@ -24,7 +24,7 @@ async def process_voice_chat(audio_file: UploadFile, topic: str, db: AsyncSessio
     audio_bytes = await audio_file.read()
 
     # Optional: save to disk for logging/debug
-    audio_path = f"temp_{uuid.uuid4()}.wav"
+    audio_path = f"/tmp/temp_{uuid.uuid4()}.wav"
     with open(audio_path, "wb") as f:
         f.write(audio_bytes)
     logger.info(f"💾 Audio saved to {audio_path}")
@@ -54,7 +54,7 @@ async def process_voice_chat(audio_file: UploadFile, topic: str, db: AsyncSessio
 
     # 3. Run chat pipeline
     logger.info("🧠 [Running Chat Pipeline]")
-    chat_request = ChatRequest(message=user_input, topic=topic)
+    chat_request = ChatRequest(message=user_input, topic=topic, session_id=session_id)
 
     chat_response = await handle_chat(
         request=chat_request,

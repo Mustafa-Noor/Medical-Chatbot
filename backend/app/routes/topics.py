@@ -6,7 +6,7 @@ import os
 
 router = APIRouter(prefix="/topics", tags=["Topics"])
 
-@router.get("/")
+@router.get("")
 def get_topics(current_user: dict = Depends(deps.get_current_user)):
     try:
         topics = get_folders.get_topic_folders()
