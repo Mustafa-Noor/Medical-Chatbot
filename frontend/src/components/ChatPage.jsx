@@ -19,6 +19,8 @@ const ChatPage = () => {
   const [showConfirm, setShowConfirm] = useState(false);
   const [recordedAudio, setRecordedAudio] = useState(null);
   const [isVoiceProcessing, setIsVoiceProcessing] = useState(false);
+  const [isSpeaking, setIsSpeaking] = useState(false);
+
 
 
   const navigate = useNavigate();
@@ -94,7 +96,15 @@ const handleSend = async () => {
         { sender: "user", text: data.user_input || "[Voice message]" },
         { sender: "bot", text: data.text },
       ]);
+
+      setIsSpeaking(true); // 🔒 Lock input
+
       audio.play();
+
+      audio.onended = () => {
+        setIsSpeaking(false); // 🔓 Unlock input
+      };
+
     } catch (err) {
       console.error("Voice chat error:", err);
       setMessages((prev) => [
@@ -197,7 +207,15 @@ const handleSend = async () => {
         { sender: "user", text: data.user_input },
         { sender: "bot", text: data.text },
       ]);
+      
+      setIsSpeaking(true); // 🔒 Lock input
+
       audio.play();
+
+      audio.onended = () => {
+        setIsSpeaking(false); // 🔓 Unlock input
+      };
+
     } catch (err) {
       console.error("Voice chat error:", err);
       setMessages((prev) => [
@@ -306,7 +324,7 @@ const handleSend = async () => {
             }
             onChange={(e) => setInput(e.target.value)}
             onKeyDown={handleKeyPress}
-            disabled={isRecording || recordedAudio !== null}
+            disabled={isRecording || recordedAudio !== null || isSpeaking} 
             placeholder="Type your question..."    
           />
 
@@ -357,6 +375,7 @@ const handleSend = async () => {
                 voiceRef.current?.startRecording();
               }}
               title="Tap to speak"
+              disabled={isSpeaking}
             >
               <FaMicrophone />
             </button>
