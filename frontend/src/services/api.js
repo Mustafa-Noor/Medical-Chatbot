@@ -43,7 +43,7 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: import.meta.env.VITE_API_BASE_URL || "http://localhost:8000",
+  baseURL: "https://MustafaNoor-Medical-backend-api.hf.space",
 });
 
 // Attach Authorization token
