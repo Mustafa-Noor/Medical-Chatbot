@@ -16,20 +16,20 @@ logging.basicConfig(
 
 app = FastAPI()
 
-origins = [
-    "http://localhost:3000",  # React dev server
-    "http://127.0.0.1:3000",
-    # add any deployment URLs here later (e.g., Netlify, Vercel)
-]
-
+# origins = [
+#     "http://localhost:3000",
+#     "http://127.0.0.1:3000",
+#     "https://medical-chatbot-cyan.vercel.app",  # Add your deployed frontend here
+# ]
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # or ["*"] for all (not recommended in prod)
-    allow_credentials=True,
-    allow_methods=["*"],     # allow all HTTP methods
-    allow_headers=["*"],     # allow all headers
+    allow_origins=["*"],         # Allow all origins
+    allow_credentials=True,      # Allow cookies, authorization headers, etc.
+    allow_methods=["*"],         # Allow all HTTP methods (GET, POST, etc.)
+    allow_headers=["*"],         # Allow all headers
 )
+
 
 app.include_router(topics.router)
 app.include_router(auth.router)
@@ -40,9 +40,6 @@ app.include_router(voice.router)
 async def on_startup():
     async with engine.begin() as conn:
         await conn.run_sync(Base.metadata.create_all)
-        import os
-        os.environ["TRANSFORMERS_CACHE"] = "/app/cache"
-        os.environ["HF_HOME"] = "/app/cache"
 
 @app.get("/")
 async def read_root():

@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom"; // ✅ ADD THIS
 import API from "../services/api";
 import "./LoginRegister.css";
+import { Link } from "react-router-dom";
 
 function LoginForm() {
   const [form, setForm] = useState({ username: "", password: "" });
@@ -11,6 +12,7 @@ function LoginForm() {
     e.preventDefault();
     try {
       const res = await API.post("/auth/login", new URLSearchParams(form));
+      console.log(res)
 
       // ✅ Save token and user_id if available
       localStorage.setItem("token", res.data.access_token);
@@ -45,7 +47,7 @@ function LoginForm() {
         />
         <button type="submit">Login</button>
         <p>
-          Don't have an account? <a href="/register">Register here</a>
+          Don't have an account? <Link to="/register">Register here</Link>
         </p>
         <p>
           <a href="/forgot-password">Forgot your password?</a>
