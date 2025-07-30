@@ -1,3 +1,7 @@
+import os
+os.environ["TRANSFORMERS_CACHE"] = "/tmp/huggingface"
+os.environ["HF_HOME"] = "/tmp/huggingface"
+
 from fastapi import FastAPI
 from .routes import auth
 from .database import engine, Base
@@ -36,6 +40,9 @@ app.include_router(voice.router)
 async def on_startup():
     async with engine.begin() as conn:
         await conn.run_sync(Base.metadata.create_all)
+        import os
+        os.environ["TRANSFORMERS_CACHE"] = "/app/cache"
+        os.environ["HF_HOME"] = "/app/cache"
 
 @app.get("/")
 async def read_root():

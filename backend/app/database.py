@@ -5,7 +5,7 @@ from .config import settings
 
 DATABASE_URL = settings.Database_URL
 
-engine = create_async_engine(DATABASE_URL, echo=True)
+engine = create_async_engine(DATABASE_URL,connect_args={"ssl": True}, echo=True)
 AsyncSessionLocal = async_sessionmaker(bind=engine, expire_on_commit=False)
 Base = declarative_base()
 

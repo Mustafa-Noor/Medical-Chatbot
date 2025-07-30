@@ -24,3 +24,5 @@ qdrant-client
 more_itertools
 langchain-qdrant
 langchain-huggingface
+gradio
+groq
