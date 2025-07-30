@@ -50,7 +50,7 @@ function LoginForm() {
           Don't have an account? <Link to="/register">Register here</Link>
         </p>
         <p>
-          <a href="/forgot-password">Forgot your password?</a>
+          <Link to="/forgot-password">Forgot your password?</Link>
         </p>
       </form>
     </div>

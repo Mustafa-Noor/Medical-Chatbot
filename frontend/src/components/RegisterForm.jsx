@@ -1,6 +1,8 @@
 import { useState } from "react";
 import API from "../services/api";
 import "./LoginRegister.css"; // shared styling file
+import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function RegisterForm() {
   const [form, setForm] = useState({
@@ -47,7 +49,9 @@ function RegisterForm() {
     try {
       await API.post("/auth/register", form);
       alert("Registered successfully! Please login.");
-      window.location.href = "/login";
+      const navigate = useNavigate();
+      navigate("/login");
+      // window.location.href = "/login";
     } catch (err) {
       setError("Registration failed. Try again.");
     }
@@ -88,7 +92,7 @@ function RegisterForm() {
 
         <button type="submit">Register</button>
         <p>
-          Already have an account? <a href="/login">Login here</a>
+          Already have an account? <Link to="/login">Login here</Link>
         </p>
       </form>
     </div>
