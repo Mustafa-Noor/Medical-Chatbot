@@ -6,6 +6,7 @@ from fastapi import HTTPException
 from app.models.chat import ChatSession, ChatMessage, SenderType, SourceType
 from app.schemas.chat import ChatRequest, ChatResponse
 from app.pipelines.graph import run_pipeline
+from app.utils.llm import call_llm
 
 async def handle_chat(request: ChatRequest, db: AsyncSession, current_user) -> ChatResponse:
     # 1. Get or create chat session
@@ -38,8 +39,41 @@ async def handle_chat(request: ChatRequest, db: AsyncSession, current_user) -> C
     db.add(user_msg)
     await db.commit()
 
+    result = await db.execute(
+    select(ChatMessage)
+    .where(ChatMessage.session_id == session.id)
+    .order_by(ChatMessage.id.desc())
+    .limit(6)
+    )
+
+    recent_messages = list(reversed(result.scalars().all()))
+
+    print("recent messages: ", recent_messages)
+
+
+    memory_pairs = [
+        f"{'User' if m.sender == SenderType.user else 'Assistant'}: {m.message}"
+        for m in recent_messages
+    ]
+
+    # Decide context strategy
+    if len(memory_pairs) < 6:  # Less than 3 turns
+        memory = "\n".join(memory_pairs)
+    else:
+        # Summarize previous messages using your normal `call_llm`
+        summary_prompt = f"""
+    You are a summarization assistant. Summarize the following medical conversation between a user and an assistant:
+
+    {"\n".join(memory_pairs)}
+
+    Summarized Context:
+    """
+        memory = call_llm(summary_prompt)
+
+
+    print("memeory:" , memory)
     # 3. Run pipeline to get reply
-    result = run_pipeline(query=request.message, topic=request.topic)
+    result = run_pipeline(query=request.message, topic=request.topic, memory = memory)
     reply_text = result["answer"]
     reply_source = SourceType(result["source"])  # Ensures it's a valid enum value
 

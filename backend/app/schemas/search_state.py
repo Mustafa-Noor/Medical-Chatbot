@@ -11,3 +11,4 @@ class SearchState(BaseModel):
     final_answer: Optional[str] = None
     topic: str  # <-- Add this
     source: Optional[str] = "llm"
+    memory: Optional[str] = ""

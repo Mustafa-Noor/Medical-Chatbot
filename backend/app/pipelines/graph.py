@@ -40,20 +40,26 @@ def json_node(state: SearchState) -> SearchState:
 def llm_with_context_node(state: SearchState) -> SearchState:
     print("DEBUG: Entered llm_with_context_node")
 
+    # 🧠 Combine memory context with knowledge context
+    memory_context = state.memory or ""  # memory or summarised memory
+    knowledge_context = ""
+
     if state.csv_docs:
-        print("DEBUG: Using CSV docs for context")
-        context = "\n\n".join([doc.page_content for doc in state.csv_docs])
+        print("DEBUG: Using CSV docs for knowledge context")
+        knowledge_context = "\n\n".join([doc.page_content for doc in state.csv_docs])
         state.source = "csv"
+
     elif state.json_docs:
-        print("DEBUG: Using JSON docs for context")
-        context = "\n\n".join([doc.page_content for doc in state.json_docs])
+        print("DEBUG: Using JSON docs for knowledge context")
+        knowledge_context = "\n\n".join([doc.page_content for doc in state.json_docs])
         state.source = "rag"
+
     else:
-        print("DEBUG: No docs found — falling back to LLM")
-        context = ""
+        print("DEBUG: No docs found — fallback to LLM")
         state.source = "llm"
 
-    state.final_answer = generate_response(state.query, context)
+
+    state.final_answer = generate_response(state.query, knowledge_context, memory_context)
     return state
 
 
@@ -67,7 +73,7 @@ def llm_with_context_node(state: SearchState) -> SearchState:
 #     return state
 
 def llm_direct_node(state: SearchState) -> SearchState:
-    answer = generate_response(state.query, "")
+    answer = generate_response(state.query, "", state.memory)
     state.final_answer = answer
     state.source = "llm"
     return state
@@ -153,19 +159,18 @@ builder.add_edge("llm_direct", END)
 app_graph = builder.compile()
 
 
-def run_pipeline(query: str, topic: str) -> str:
-    initial_state = SearchState(query=query, topic=topic)
+def run_pipeline(query: str, topic: str, memory:str) -> dict:
+    initial_state = SearchState(query=query, topic=topic, memory = memory)
+    print("🧵 Initial SearchState:\n", initial_state.dict())
+    print("🧠 Memory passed into initial state:\n", memory)
     final_state = app_graph.invoke(initial_state)
 
-    # Ensure it's a SearchState, not dict
     if isinstance(final_state, dict):
         final_state = SearchState(**final_state)
 
-    print("DEBUG: Final Source =", final_state.source)  # ✅ Add this
+    print("DEBUG: Final Source =", final_state.source)
     print("DEBUG: Final Answer =", final_state.final_answer[:80])
 
-
-    # return final_state.final_answer or "No answer generated."
     return {
         "answer": final_state.final_answer or "No answer generated.",
         "source": final_state.source or "llm"
@@ -174,7 +179,6 @@ def run_pipeline(query: str, topic: str) -> str:
 
 
 
-# Example usage
-if __name__ == "__main__":
-    response = run_pipeline("what is the metatatarsal fracture?", "5th_metatarsal_fracture")
-    print(response)
+
+# response = run_pipeline("what is the metatatarsal fracture?", "5th_metatarsal_fracture")
+# print(response)
