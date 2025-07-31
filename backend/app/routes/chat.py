@@ -44,6 +44,19 @@ async def get_sessions(
     sessions = result.scalars().all()
     return sessions
 
+@router.get("/sessions/all", response_model=list[ChatSessionOut])
+async def get_all_sessions(
+    db: AsyncSession = Depends(get_db),
+    current_user=Depends(deps.get_current_user)
+):
+    result = await db.execute(
+        select(ChatSession)
+        .where(ChatSession.user_id == current_user.id)
+        .order_by(ChatSession.created_at.desc())
+    )
+    sessions = result.scalars().all()
+    return sessions
+
 
 @router.get("/messages", response_model=list[ChatMessageOut])
 async def get_messages_for_session(

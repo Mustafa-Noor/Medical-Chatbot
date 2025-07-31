@@ -5,8 +5,10 @@ import "./ChatPage.css";
 import ReactMarkdown from "react-markdown";
 import VoiceChatUI from "../components/VoiceChatUI";
 import { FaMicrophone } from "react-icons/fa";
+import { useLocation } from "react-router-dom";
 
 const ChatPage = () => {
+  const location = useLocation();
   const [isLoading, setIsLoading] = useState(false);
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState("");
@@ -26,11 +28,28 @@ const ChatPage = () => {
   const navigate = useNavigate();
   const chatBoxRef = useRef(null);
   const voiceRef = useRef();
+  
 
   useEffect(() => {
     const storedTopic = localStorage.getItem("selected_topic");
     setTopic(storedTopic || "");
   }, []);
+
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    const sessionIdFromUrl = params.get("sessionId");
+    const topicFromUrl = params.get("topic");
+
+    if (topicFromUrl) {
+      setTopic(topicFromUrl);
+      localStorage.setItem("selected_topic", topicFromUrl);
+    }
+
+    if (sessionIdFromUrl) {
+      setSessionId(sessionIdFromUrl);
+      handleSessionClick(sessionIdFromUrl); // Make sure handleSessionClick is defined
+    }
+  }, [location.search]);
 
   useEffect(() => {
     const fetchSessions = async () => {

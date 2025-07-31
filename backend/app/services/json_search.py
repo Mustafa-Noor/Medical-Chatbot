@@ -1,212 +1,119 @@
-# import os
-# import sys
-# from langchain_community.embeddings import HuggingFaceEmbeddings
-# from langchain_community.vectorstores import FAISS
-# from langchain.schema import Document
-
-# # Load config
-# sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
-# from app.config import settings
-
-# # ---- CONFIG ---- #
-# EMBEDDING_MODEL = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
-# FAISS_JSON_DIR = settings.JSON_EMBEDDINGS_DIR  # e.g., "embeddings/json/"
-# RELEVANCE_THRESHOLD = 1.2
-
-
-
-# def list_available_json_topics():
-#     """List available JSON-based FAISS folders (topics)."""
-#     return [d for d in os.listdir(FAISS_JSON_DIR) if os.path.isdir(os.path.join(FAISS_JSON_DIR, d))]
-
-
-# def load_json_vector_store(topic: str):
-#     """Load a FAISS vector store for the given JSON topic."""
-#     vector_path = os.path.join(FAISS_JSON_DIR, topic)
-#     return FAISS.load_local(vector_path, EMBEDDING_MODEL, allow_dangerous_deserialization=True)
-
-
-# # def search_json(topic: str, query: str, k: int = 3):
-# #     """
-# #     Search a FAISS JSON vector store for a given query and topic.
-    
-# #     Returns:
-# #         {
-# #             "score": average_score,
-# #             "docs": [ { "content": ..., "score": ..., "source": ... }, ... ]
-# #         }
-# #     """
-# #     try:
-# #         db = load_json_vector_store(topic)
-# #         results = db.similarity_search_with_score(query, k=k)
-# #         if not results:
-# #             return {"score": 0.0, "docs": []}
-
-# #         # Filter by relevance
-# #         filtered = [r for r in results if r[1] <= RELEVANCE_THRESHOLD]
-# #         if not filtered:
-# #             return {"score": 0.0, "docs": []}
-
-# #         avg_score = sum(1 - score for _, score in filtered) / len(filtered)
-
-# #         docs = []
-# #         for doc, score in filtered:
-# #         #     docs.append({
-# #         #         "content": doc.page_content,
-# #         #         "score": round(score, 4),
-# #         #         "source": doc.metadata.get("source", "Unknown")
-# #         #     })
-
-# #             docs.append(Document(
-# #                 page_content=doc.page_content,
-# #                 metadata={
-# #                     "score": round(score, 4),
-# #                     "source": doc.metadata.get("source", "Unknown")
-# #                 }
-# #             ))
-
-
-# #         return {"score": round(avg_score, 4), "docs": docs}
-    
-# #     except Exception as e:
-# #         print("Error in search_json:", e)
-# #         return {"score": 0.0, "docs": [], "error": str(e)}
-
-# def search_json(topic: str, query: str, k: int = 3):
-#     try:
-#         vector_path = os.path.join(FAISS_JSON_DIR, topic)
-#         print(f"\n🔍 [JSON Search] Query: {query}")
-#         print(f"📘 Topic: {topic}")
-#         print(f"📁 Loading FAISS index from: {vector_path}")
-
-#         db = FAISS.load_local(vector_path, EMBEDDING_MODEL, allow_dangerous_deserialization=True)
-#         results = db.similarity_search_with_score(query, k=k)
-
-#         if not results:
-#             print("⚠️ No results returned.")
-#             return {"score": 0.0, "docs": []}
-
-#         print("📊 Top-k Results:")
-#         for i, (doc, score) in enumerate(results):
-#             print(f"  {i+1}. Score: {score:.4f} | Snippet: {doc.page_content[:80]}...")
-
-#         filtered = [r for r in results if r[1] <= RELEVANCE_THRESHOLD]
-#         print(f"✅ Filtered Results (≤ {RELEVANCE_THRESHOLD}): {len(filtered)}")
-
-#         if not filtered:
-#             print("⚠️ All results above relevance threshold.")
-#             return {"score": 0.0, "docs": []}
-
-#         avg_score = sum(1 - score for _, score in filtered) / len(filtered)
-
-#         docs = [
-#             Document(
-#                 page_content=doc.page_content,
-#                 metadata={
-#                     "score": round(score, 4),
-#                     "source": doc.metadata.get("source", "Unknown")
-#                 }
-#             )
-#             for doc, score in filtered
-#         ]
-
-#         print(f"📈 Average Filtered Score: {avg_score:.4f}")
-#         return {"score": round(avg_score, 4), "docs": docs}
-
-#     except Exception as e:
-#         print(f"❌ Error in search_json: {e}")
-#         return {"score": 0.0, "docs": [], "error": str(e)}
-
-
-
-# res = search_json("Paediatrics", "What is your name?")
-# print(res)
-
-
 import os
-import sys
 from typing import List
-from langchain_huggingface import HuggingFaceEmbeddings
-from langchain_qdrant import Qdrant
+import numpy as np
 from langchain.schema import Document
 from qdrant_client import QdrantClient
-
-# Load config
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
+from langchain.vectorstores import Qdrant
+from sklearn.metrics.pairwise import cosine_similarity
+import google.generativeai as genai
 from app.config import settings
 
-# ---- CONFIG ---- #
-EMBEDDING_MODEL = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
-RELEVANCE_THRESHOLD = 1.2
+# --- Gemini Embeddings Setup --- #
+genai.configure(api_key=settings.Google_key)
+EMBEDDING_MODEL = "models/embedding-001"
+SIMILARITY_THRESHOLD = 0.7  # Adjust this based on desired cutoff
 
-# Qdrant client setup
+# --- Qdrant Setup --- #
 qdrant_client = QdrantClient(
     url=settings.Qdrant_url,
     api_key=settings.Qdrant_key,
 )
 
 
+def embed_with_gemini(text: str) -> List[float]:
+    """Embed a string using Gemini embeddings."""
+    response = genai.embed_content(
+        model=EMBEDDING_MODEL,
+        content=text,
+        task_type="retrieval_query"
+    )
+    return response["embedding"]
+
+
 def list_available_json_topics() -> List[str]:
-    """List available Qdrant collections (ignoring -csv collections)."""
+    """List Qdrant collections (excluding -csv collections)."""
     collections = qdrant_client.get_collections().collections
     return [c.name for c in collections if not c.name.endswith("csv")]
 
 
-def load_json_vector_store(topic: str):
-    """Load a Qdrant vector store for the given topic."""
-    return Qdrant(
-        client=qdrant_client,
-        collection_name=topic,
-        embeddings=EMBEDDING_MODEL,
-    )
-
-
 def search_json(topic: str, query: str, k: int = 3):
-
-    topic = topic.replace("_", " ")
     try:
         print(f"\n🔍 [QDRANT Search] Query: {query}")
         print(f"📘 Topic (Collection): {topic}")
 
-        db = Qdrant(
-            client=qdrant_client,
+        # Embed the query
+        query_vector = np.array(embed_with_gemini(query)).reshape(1, -1)
+
+        # Fetch all vectors and payloads from the collection
+        points = qdrant_client.scroll(
             collection_name=topic,
-            embeddings=EMBEDDING_MODEL,
-        )
+            with_vectors=True,
+            with_payload=True,
+            limit=500  # adjust based on size
+        )[0]
 
-        results = db.similarity_search_with_score(query, k=k)
+        vectors = []
+        payloads = []
+        for p in points:
+            if p.vector is not None and p.payload is not None:
+                vectors.append(p.vector)
+                payloads.append(p.payload)
 
-        if not results:
-            print("⚠️ No results returned.")
+        if not vectors:
+            print("⚠️ No vectors found in the collection.")
             return {"score": 0.0, "docs": []}
 
-        print("📊 Top-k Results:")
-        for i, (doc, score) in enumerate(results):
-            print(f"  {i+1}. Score: {score:.4f} | Snippet: {doc.page_content[:80]}...")
+        # Compute cosine similarity
+        vector_matrix = np.array(vectors)
+        similarities = cosine_similarity(query_vector, vector_matrix)[0]
 
-        filtered = [r for r in results if r[1] <= RELEVANCE_THRESHOLD]
-        print(f"✅ Filtered Results (≤ {RELEVANCE_THRESHOLD}): {len(filtered)}")
+        # Pair with payloads and sort by similarity
+        ranked = sorted(zip(payloads, similarities), key=lambda x: x[1], reverse=True)
+
+        # Filter based on threshold
+        filtered = [(payload, score) for payload, score in ranked if score >= SIMILARITY_THRESHOLD]
+        print(f"✅ Filtered Results (≥ {SIMILARITY_THRESHOLD}): {len(filtered)}")
 
         if not filtered:
-            print("⚠️ All results above relevance threshold.")
+            print("⚠️ No relevant documents found.")
             return {"score": 0.0, "docs": []}
 
-        avg_score = sum(1 - score for _, score in filtered) / len(filtered)
+        avg_score = sum(score for _, score in filtered) / len(filtered)
 
         docs = [
             Document(
-                page_content=doc.page_content,
+                page_content=payload.get("page_content", ""),
                 metadata={
-                    "score": round(score, 4),
-                    "source": doc.metadata.get("source", "Unknown")
+                    "similarity": round(score, 4),
+                    "source": payload.get("source", "Unknown"),
+                    **{k: v for k, v in payload.items() if k not in ("page_content", "source")}
                 }
             )
-            for doc, score in filtered
+            for payload, score in filtered[:k]
         ]
 
-        print(f"📈 Average Filtered Score: {avg_score:.4f}")
+         # 🧠 Print snippets of top results
+        print("\n🧠 Top Relevant Snippets:")
+        for i, (payload, score) in enumerate(filtered[:k]):
+            # Try multiple keys in fallback order
+            content = (
+                payload.get("page_content")
+                or payload.get("text")
+                or payload.get("content")
+                or payload.get("chunk")
+                or ""
+            )
+            snippet = content[:200].replace("\n", " ").strip()
+            print(f"{i+1}. ({score:.4f}) {snippet if snippet else '[Empty snippet]'}...")
+
+        print(f"\n📈 Average Similarity Score: {avg_score:.4f}")
         return {"score": round(avg_score, 4), "docs": docs}
 
     except Exception as e:
-        print(f"❌ Error in search_json: {e}")
+        print(f"❌ Error in search_json_cosine: {e}")
         return {"score": 0.0, "docs": [], "error": str(e)}
+
+
+
+# res = search_json("5th_metatarsal_fracture", "what is the metatatarsal fracture?")
+# print(res)
