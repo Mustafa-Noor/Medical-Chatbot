@@ -22,13 +22,14 @@ const ChatPage = () => {
   const [recordedAudio, setRecordedAudio] = useState(null);
   const [isVoiceProcessing, setIsVoiceProcessing] = useState(false);
   const [isSpeaking, setIsSpeaking] = useState(false);
+  const [suggestions, setSuggestions] = useState([]);
+  const [hasSentMessage, setHasSentMessage] = useState(false);
 
   const handleNewChat = () => {
-    setMessages([]);         // clear the chat
-    setTopic("");            // reset the topic if needed
-    setSessionId(null);      // optionally generate new session ID
-    // you can also add: scroll to top, reset input, etc.
-  };
+  setMessages([]);
+  setSessionId(null);
+  setHasSentMessage(false); // also reset suggestions visibility if needed
+};
 
 
 
@@ -42,6 +43,21 @@ const ChatPage = () => {
     const storedTopic = localStorage.getItem("selected_topic");
     setTopic(storedTopic || "");
   }, []);
+
+  useEffect(() => {
+  const fetchSuggestions = async () => {
+    try {
+      if (!sessionId && topic) {
+        const res = await API.get(`/chat/suggestions?topic=${encodeURIComponent(topic)}`);
+        setSuggestions(res.data); // response is: ["question1", "question2", "question3"]
+      }
+    } catch (err) {
+      console.error("Failed to load suggestions", err);
+    }
+  };
+
+  fetchSuggestions();
+}, [sessionId, topic]);
 
   useEffect(() => {
     const params = new URLSearchParams(location.search);
@@ -103,6 +119,7 @@ const handleSend = async () => {
     setIsVoiceProcessing(true);
 
     try {
+      if (!hasSentMessage) setHasSentMessage(true);
       const res = await API.post("/voice/voice-chat", formData, {
         headers: { "Content-Type": "multipart/form-data" },
       });
@@ -162,6 +179,8 @@ const handleSend = async () => {
 
     
   try {
+
+    if (!hasSentMessage) setHasSentMessage(true);
     const response = await API.post("/chat/send-message", {
       session_id: sessionId,
       topic,
@@ -357,6 +376,23 @@ return (
             </div>
           )}
         </div>
+
+        {!sessionId && suggestions.length > 0 && !hasSentMessage && (
+  <div className="suggestion-chips">
+    {suggestions.map((q, idx) => (
+      <button
+        key={idx}
+        className="suggestion-chip"
+        onClick={() => {
+          setInput(q);
+          handleSend(q); // or just setInput(q) if you want to delay sending
+        }}
+      >
+        {q}
+      </button>
+    ))}
+  </div>
+)}
 
         <div className="chat-input-wrapper">
           <input

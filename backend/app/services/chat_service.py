@@ -21,6 +21,7 @@ async def handle_chat(request: ChatRequest, db: AsyncSession, current_user) -> C
         if not session:
             raise HTTPException(status_code=404, detail="Session not found")
     else:
+        
         session = ChatSession(
             user_id=current_user.id,
             topic=request.topic,

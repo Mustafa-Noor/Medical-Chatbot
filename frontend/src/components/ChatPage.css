@@ -719,3 +719,32 @@
   outline: 3px solid rgba(126, 184, 242, 0.4);
   outline-offset: 2px;
 }
+
+.suggestion-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 1rem;
+  padding: 0.5rem;
+  justify-content: flex-start;
+}
+
+.suggestion-chip {
+  background: linear-gradient(135deg, #e0f7fa, #e0f2f1);
+  border: 1px solid #b2dfdb;
+  padding: 8px 14px;
+  border-radius: 9999px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #00796b;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: all 0.2s ease-in-out;
+}
+
+.suggestion-chip:hover {
+  background: linear-gradient(135deg, #b2ebf2, #b2dfdb);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 121, 107, 0.2);
+}
+

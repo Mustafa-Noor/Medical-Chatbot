@@ -8,7 +8,9 @@ from datetime import datetime
 from sqlalchemy import func
 from sqlalchemy.future import select
 from app.services.chat_service import handle_chat
+from app.services.suggestions import get_csv_suggestions
 from sqlalchemy import delete
+from typing import List
 
 
 router = APIRouter(
@@ -110,5 +112,8 @@ async def delete_chat_session(
 
 
 
-
-#############
+@router.get("/suggestions", response_model=List[str])
+async def get_random_suggestions(
+    topic: str = Query(..., description="Topic names")
+):
+    return get_csv_suggestions(topic)
