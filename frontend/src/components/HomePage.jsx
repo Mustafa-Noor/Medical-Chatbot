@@ -1,7 +1,7 @@
 // src/components/HomePage.jsx
 import { Link } from "react-router-dom";
 import "./HomePage.css";
-import bgImage from "../assets/medical-bg.jpg";
+import bgImage from "../assets/imagee.jpg";
 
 function HomePage() {
   return (

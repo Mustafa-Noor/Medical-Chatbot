@@ -60,21 +60,23 @@ const ChatSidebar = ({ onSessionSelect, currentSessionId, onClose }) => {
     };
 
   if (loading) {
-  return (
-    <div className="chat-sidebar">
-      <div className="sidebar-header">
-        <h3>Chat History</h3>
-        <button className="toggle-sidebar-btn" onClick={onClose}>
-          ⨯
-        </button>
+    return (
+      <div className="chat-sidebar">
+        <div className="sidebar-header-top">
+          <h3 className="sidebar-title">Chat History</h3>
+          <button className="toggle-sidebar-btn" onClick={onClose}>
+            ⨯
+          </button>
+        </div>
+
+        <div className="loading-wrapper">
+          <div className="loading-spinner" />
+          <p>Loading sessions...</p>
+        </div>
       </div>
-      <div className="loading-sessions">
-        <div className="loading-spinner"></div>
-        <p>Loading sessions...</p>
-      </div>
-    </div>
-  );
-}
+    );
+  }
+
 
   return (
     <div className="chat-sidebar">

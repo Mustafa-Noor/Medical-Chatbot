@@ -3,69 +3,78 @@
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background: linear-gradient(to bottom right, #d7f3f4, #eaf9f9);
-  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to bottom right, #f3faff, #e9f3fb);
+  font-family: 'Inter', 'Segoe UI', sans-serif;
 }
 
 .home-card {
-  background: #ffffff;
-  padding: 3rem 2.5rem;
-  border-radius: 16px;
+  background: var(--surface-white, #ffffff);
+  padding: var(--space-4xl) var(--space-3xl);
+  border-radius: var(--radius-2xl);
   text-align: center;
-  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 20px 60px rgba(90, 93, 255, 0.08);
   width: 90%;
-  max-width: 500px;
+  max-width: 520px;
+  transition: all var(--transition-base);
 }
 
 .home-logo {
   height: 80px;
-  margin-bottom: 1.5rem;
+  margin-bottom: var(--space-xl);
 }
 
 .home-card h1 {
-  font-size: 2.2rem;
-  color: #0a4f52;
-  margin-bottom: 1rem;
+  font-size: 2rem;
+  color: var(--text-primary, #1a1a1a);
+  margin-bottom: var(--space-md);
+  font-weight: 600;
 }
 
 .home-card h1 span {
+  color: var(--accent-blue, #4A90E2);
   font-weight: 700;
 }
 
 .home-card p {
-  font-size: 1.1rem;
-  color: #444;
-  margin-bottom: 2rem;
+  font-size: 1.05rem;
+  color: var(--text-secondary, #4d4d4d);
+  margin-bottom: var(--space-xl);
+  line-height: 1.6;
 }
 
 .home-buttons {
   display: flex;
   justify-content: center;
-  gap: 1rem;
+  gap: var(--space-md);
   flex-wrap: wrap;
 }
 
 .home-btn {
-  padding: 12px 24px;
-  background-color: #0096a0;
-  color: white;
+  padding: var(--space-sm) var(--space-lg);
+  background-color: var(--accent-blue, #4A90E2);
+  color: var(--surface-white, #ffffff);
   font-weight: 600;
-  border-radius: 10px;
+  border-radius: var(--radius-xl);
   text-decoration: none;
-  transition: all 0.3s ease;
+  transition: all var(--transition-base);
+  box-shadow: 0 4px 10px rgba(126, 184, 242, 0.2);
+  border: none;
+  font-size: var(--font-size-md);
 }
 
 .home-btn:hover {
-  background-color: #007b8a;
+  background-color: #5A9EE0;
+  transform: translateY(-1px);
 }
 
 .home-btn.outline {
   background-color: transparent;
-  color: #0096a0;
-  border: 2px solid #0096a0;
+  color: var(--accent-blue, #4A90E2);
+  border: 2px solid var(--accent-blue, #4A90E2);
 }
 
 .home-btn.outline:hover {
-  background-color: #0096a0;
+  background-color: var(--accent-blue, #4A90E2);
   color: white;
+  box-shadow: 0 4px 12px rgba(74, 144, 226, 0.2);
 }
