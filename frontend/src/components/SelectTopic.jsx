@@ -57,17 +57,17 @@ const SelectTopic = () => {
         <ChatSidebar 
           onSessionSelect={handleSessionSelect}
           currentSessionId={currentSessionId}
+          onClose={toggleSidebar}
         />
       )}
       
       <div className={`main-content ${showSidebar ? 'with-sidebar' : 'full-width'}`}>
-        <button 
-          className="sidebar-toggle"
-          onClick={toggleSidebar}
-          aria-label="Toggle sidebar"
-        >
-          {showSidebar ? '◀' : '▶'}
-        </button>
+        {!showSidebar && (
+          <button className="toggle-sidebar-btn-floating" onClick={toggleSidebar}>
+            ☰
+          </button>
+
+        )}
 
         <div className="select-topic-container">
           <div className="select-topic-box">

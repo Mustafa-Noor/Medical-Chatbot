@@ -62,19 +62,19 @@
 
 /* Sidebar */
 .sidebar {
-  width: 280px;
+  width: 230px;
   height: 100vh;
   background: var(--secondary-bg);
   color: var(--text-primary);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: var(--space-3xl) var(--space-2xl);
+  padding: var(--space-xl) var(--space-xl);
   /* box-shadow: 4px 0 32px var(--shadow-medium); */
   border-right: 1px solid var(--shadow-light);
   transition: transform var(--transition-slow);
-  border-top-right-radius: var(--radius-2xl);
-  border-bottom-right-radius: var(--radius-2xl);
+  /* border-top-right-radius: var(--radius-2xl);
+  border-bottom-right-radius: var(--radius-2xl); */
   box-shadow: 4px 0 24px rgba(0, 0, 0, 0.04);
 }
 
@@ -91,7 +91,7 @@
   color: var(--surface-white);
   font-weight: 600;
   font-size: var(--font-size-sm);
-  padding: var(--space-sm) var(--space-md);
+  padding: var(--space-sm) var(--space-sm);
   border-radius: var(--radius-md);
   margin-bottom: var(--space-sm); 
   cursor: pointer;
@@ -111,6 +111,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding-top: 0; /* reduce spacing */
+  margin-bottom: var(--space-md); /* optional: space below buttons */
 }
 
 .back-btn {
@@ -138,7 +140,7 @@
 .sidebar h2 {
   font-size: var(--font-size-l);
   font-weight: 600;
-  margin-top: var(--space-sm); /* default is often too large */
+  margin-top: 0; /* default is often too large */
   margin-bottom: var(--space-sm);
   color: var(--text-primary);
   letter-spacing: -0.025em;
@@ -187,7 +189,7 @@
   background: var(--surface-white);
   border: 1.5px solid var(--border-subtle);
   color: var(--text-primary);
-  padding: var(--space-lg) var(--space-lg);
+  padding: var(--space-sm) var(--space-sm);
   border-radius: var(--radius-lg);
   cursor: pointer;
   text-align: left;
@@ -220,7 +222,7 @@
   color: var(--text-muted);
   font-size: var(--space-lg);
   cursor: pointer;
-  padding: var(--space-sm);
+  padding: 0;
   border-radius: var(--radius-sm);
   transition: all var(--transition-base);
 }
