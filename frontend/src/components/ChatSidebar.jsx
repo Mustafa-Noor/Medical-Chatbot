@@ -4,12 +4,14 @@ import { useNavigate, useLocation } from "react-router-dom";
 import API from "../services/api";
 import "./ChatSidebar.css";
 
-const ChatSidebar = ({ onSessionSelect, currentSessionId }) => {
+const ChatSidebar = ({ onSessionSelect, currentSessionId, onClose }) => {
   const [sessions, setSessions] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const navigate = useNavigate();
   const location = useLocation();
+
+
 
   const handleSessionClick = (session) => {
   navigate(`/chat?sessionId=${session.id}&topic=${encodeURIComponent(session.topic)}`);
@@ -62,6 +64,9 @@ const ChatSidebar = ({ onSessionSelect, currentSessionId }) => {
     <div className="chat-sidebar">
       <div className="sidebar-header">
         <h3>Chat History</h3>
+        <button className="toggle-sidebar-btn" onClick={onClose}>
+          ⨯
+        </button>
       </div>
       <div className="loading-sessions">
         <div className="loading-spinner"></div>
@@ -73,8 +78,9 @@ const ChatSidebar = ({ onSessionSelect, currentSessionId }) => {
 
   return (
     <div className="chat-sidebar">
-      <div className="sidebar-header">
-        <h3>Chat History</h3>
+      <div className="sidebar-header-top">
+        <h3 className="sidebar-title">Chat History</h3>
+        <button className="toggle-sidebar-btn" onClick={onClose}>⨯</button>
       </div>
 
       {error && (
