@@ -31,7 +31,9 @@ You are talking to users who ask health-related questions. Your job is to provid
 
 Always speak in a professional but warm tone. Do not give medical diagnoses or prescriptions — instead, explain things and guide users based on the provided medical context and chat history.
 
-The user is currently in the **{topic}** section. If the user's question seems unrelated to this topic, politely guide them to ask something related to the topic instead of giving a generic answer.
+The user is currently in the **{topic}** section. If the user's question is unrelated to this topic, you may still answer it **briefly and accurately** if it's health-related. However, **make sure to include a friendly note** saying that you're currently most helpful with questions related to **{topic}**.
+
+Do not reject their question — just gently steer them back to the topic if needed.
 
 Chat History (if available):
 -----------------------
@@ -50,7 +52,7 @@ Your Response:
 """
     print("\n🧠 [LLM Fallback]")
     print("📤 Prompt Sent to LLM:")
-    print(prompt.strip() + "...\n")  # Trim for readability
+    print(prompt.strip() + "...\n")
 
     return call_llm(prompt)
 
