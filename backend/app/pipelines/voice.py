@@ -62,6 +62,8 @@ async def process_voice_chat(audio_file: UploadFile, topic: str, db: AsyncSessio
         current_user=current_user
     )
 
+    print("voice response session id :", chat_response.session_id)
+
     chatbot_text = chat_response.reply
     logger.info(f"✅ Final Answer: {chatbot_text[:300]}")
     logger.info(f"🔗 Source: {chat_response.source}")
@@ -87,5 +89,6 @@ async def process_voice_chat(audio_file: UploadFile, topic: str, db: AsyncSessio
     return {
         "text": chatbot_text,
         "user_input": user_input,
-        "audio_stream": audio_stream
+        "audio_stream": audio_stream,
+        "session_id": chat_response.session_id
     }

@@ -117,7 +117,7 @@ const handleSend = async () => {
         { sender: "bot", text: data.text },
       ]);
       const newSessionId = data.session_id;
-      if (!sessionId && newSessionId) {
+      if (newSessionId && newSessionId !== sessionId) {
         setSessionId(newSessionId);
         const updatedSessions = await API.get(`/chat/sessions?topic=${encodeURIComponent(topic)}`);
         setSessions(updatedSessions.data);

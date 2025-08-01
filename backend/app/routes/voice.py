@@ -29,7 +29,8 @@ async def voice_chat(
     return JSONResponse({
         "text": result["text"],
         "user_input": result["user_input"],
-        "audio_base64": audio_base64
+        "audio_base64": audio_base64,
+        "session_id": result["session_id"]
     })
     # result = await process_voice_chat(audio, topic, db, current_user)
 
