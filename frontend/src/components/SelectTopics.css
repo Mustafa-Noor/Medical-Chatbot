@@ -1,52 +1,83 @@
-/* SelectTopics.css */
+/* SelectTopics.css - Aligned with ChatPage theme */
 
+:root {
+  --primary-bg: #FAFCFE;
+  --secondary-bg: #E4E8EE;
+  --accent-blue: #7EB8F2;
+  --accent-blue-dark: #5A9EE0;
+  --text-primary: #2B2B2B;
+  --text-muted: #6F6F6F;
+  --surface-white: #FFFFFF;
+  --border-light: #DCD2CA;
+  --radius-md: 12px;
+  --radius-lg: 14px;
+  --transition-fast: 0.2s ease-in-out;
+}
+
+/* Layout */
 .select-topic-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   height: 100vh;
-  font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(to right, #e0f7fa, #ffffff);
+  background: var(--primary-bg);
+  font-family: 'Inter', 'Poppins', sans-serif;
 }
 
+/* Box */
 .select-topic-box {
-  background-color: white;
-  padding: 40px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  max-width: 400px;
+  background-color: var(--surface-white);
+  padding: 32px;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 4px 16px rgba(90, 93, 255, 0.08);
   width: 100%;
+  max-width: 420px;
+  text-align: center;
 }
 
+/* Heading */
 .select-topic-box h2 {
-  margin-bottom: 20px;
-  color: #004d40;
+  margin-bottom: 24px;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--text-primary);
 }
 
+/* Select Dropdown */
 .select-topic-box select {
   width: 100%;
-  padding: 10px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-  margin-bottom: 20px;
-  font-size: 16px;
+  padding: 12px 16px;
+  border-radius: var(--radius-md);
+  border: 1.5px solid var(--border-light);
+  background: var(--surface-white);
+  font-size: 15px;
+  color: var(--text-primary);
+  margin-bottom: 24px;
+  transition: border-color var(--transition-fast);
 }
 
+.select-topic-box select:focus {
+  outline: none;
+  border-color: var(--accent-blue);
+  box-shadow: 0 0 0 2px rgba(126, 184, 242, 0.2);
+}
+
+/* Button */
 .select-topic-box button {
-  padding: 10px 20px;
-  background-color: #00796b;
-  color: white;
+  padding: 12px 20px;
+  background-color: var(--accent-blue);
+  color: var(--surface-white);
   border: none;
-  border-radius: 6px;
+  border-radius: var(--radius-md);
+  font-size: 15px;
+  font-weight: 600;
   cursor: pointer;
-  font-size: 16px;
-  transition: background-color 0.2s ease;
+  transition: background-color var(--transition-fast), transform var(--transition-fast);
 }
 
 .select-topic-box button:hover {
-  background-color: #004d40;
+  background-color: var(--accent-blue-dark);
+  transform: translateY(-2px);
 }
 
 .select-topic-box button:disabled {
