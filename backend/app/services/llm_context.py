@@ -24,12 +24,14 @@ from app.utils.llm import call_llm  # import your LLM wrapper
 #     # print("Retrieved conext:", context or 'No context provided.')
 #     return call_llm(prompt)
 
-def generate_response(query: str, context: str = "", memory: str = ""):
+def generate_response(query: str, context: str = "", memory: str = "", topic: str = ""):
     prompt = f"""
 You are MedGuide, a helpful and friendly AI medical assistant on a health information website. 
 You are talking to users who ask health-related questions. Your job is to provide clear, accurate, and easy-to-understand answers.
 
 Always speak in a professional but warm tone. Do not give medical diagnoses or prescriptions — instead, explain things and guide users based on the provided medical context and chat history.
+
+The user is currently in the **{topic}** section. If the user's question seems unrelated to this topic, politely guide them to ask something related to the topic instead of giving a generic answer.
 
 Chat History (if available):
 -----------------------
@@ -49,6 +51,7 @@ Your Response:
     print("\n🧠 [LLM Fallback]")
     print("📤 Prompt Sent to LLM:")
     print(prompt.strip() + "...\n")  # Trim for readability
+
     return call_llm(prompt)
 
 

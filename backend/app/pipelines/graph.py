@@ -59,7 +59,7 @@ def llm_with_context_node(state: SearchState) -> SearchState:
         state.source = "llm"
 
 
-    state.final_answer = generate_response(state.query, knowledge_context, memory_context)
+    state.final_answer = generate_response(state.query, knowledge_context, memory_context, state.topic)
     return state
 
 
@@ -73,7 +73,7 @@ def llm_with_context_node(state: SearchState) -> SearchState:
 #     return state
 
 def llm_direct_node(state: SearchState) -> SearchState:
-    answer = generate_response(state.query, "", state.memory)
+    answer = generate_response(state.query, "", state.memory, state.topic)
     state.final_answer = answer
     state.source = "llm"
     return state
