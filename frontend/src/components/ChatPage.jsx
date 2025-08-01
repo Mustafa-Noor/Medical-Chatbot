@@ -23,6 +23,14 @@ const ChatPage = () => {
   const [isVoiceProcessing, setIsVoiceProcessing] = useState(false);
   const [isSpeaking, setIsSpeaking] = useState(false);
 
+  const handleNewChat = () => {
+    setMessages([]);         // clear the chat
+    setTopic("");            // reset the topic if needed
+    setSessionId(null);      // optionally generate new session ID
+    // you can also add: scroll to top, reset input, etc.
+  };
+
+
 
 
   const navigate = useNavigate();
@@ -270,48 +278,57 @@ const handleSend = async () => {
 };
 
 
-  return (
-    <div className={`chat-wrapper ${sidebarOpen ? "sidebar-open" : "sidebar-closed"}`}>
-      {!sidebarOpen && (
-        <button className="toggle-sidebar-btn-floating" onClick={toggleSidebar}>
-          ☰
-        </button>
-      )}
+return (
+  <div className={`chat-wrapper ${sidebarOpen ? "sidebar-open" : "sidebar-closed"}`}>
+    {!sidebarOpen && (
+      <button className="toggle-sidebar-btn-floating" onClick={toggleSidebar}>
+        ☰
+      </button>
+    )}
 
-      {sidebarOpen && (
-        <div className="sidebar">
-          <div className="sidebar-header">
-            <div className="sidebar-header-top">
-              <button onClick={goBack} className="back-btn">← Back</button>
-              <button className="toggle-sidebar-btn" onClick={toggleSidebar}>⨯</button>
-            </div>
-            <h2>Chat Sessions</h2>
-          </div>
-
-          <div className="session-list">
-            {sessions.map((s) => (
-              <div key={s.id} className="session-row">
-                <button
-                  className={`session-btn ${s.id === sessionId ? "active" : ""}`}
-                  onClick={() => handleSessionClick(s.id)}
-                >
-                  {s.title || `Session #${s.id}`}
-                </button>
-                <button
-                  className="delete-btn"
-                  onClick={() => deleteSession(s.id)}
-                  title="Delete session"
-                >
-                  🗑️
-                </button>
-              </div>
-            ))}
-          </div>
-
-          <button onClick={handleLogout} className="logout-btn">Logout</button>
+    {sidebarOpen && (
+      <div className="sidebar">
+        {/* SIDEBAR HEADER */}
+        <div className="sidebar-top-row">
+          <button onClick={goBack} className="back-btn">← Back</button>
+          <button onClick={toggleSidebar} className="toggle-sidebar-btn">⨯</button>
         </div>
-      )}
 
+        {/* NEW CHAT */}
+        <button className="sidebar-new-chat" onClick={handleNewChat}>
+          ✏️ New Chat
+        </button>
+
+        <hr className="sidebar-divider" />
+
+        {/* SESSION TITLE */}
+        <h2 className="sidebar-title">Chat Sessions</h2>
+
+        {/* SESSION LIST */}
+        <div className="session-list">
+          {sessions.map((s) => (
+            <div key={s.id} className="session-row">
+              <button
+                className={`session-btn ${s.id === sessionId ? "active" : ""}`}
+                onClick={() => handleSessionClick(s.id)}
+              >
+                {s.title || `Session #${s.id}`}
+              </button>
+              <button
+                className="delete-btn"
+                onClick={() => deleteSession(s.id)}
+                title="Delete session"
+              >
+                🗑️
+              </button>
+            </div>
+          ))}
+        </div>
+
+        {/* LOGOUT */}
+        <button onClick={handleLogout} className="logout-btn">Logout</button>
+      </div>
+    )}
       <div className="main-content">
         <div className="topic-bar-wrapper">
           <div className="topic-title">
