@@ -106,68 +106,70 @@ const ChatPage = () => {
 const handleSend = async () => {
   // ✅ If sending recorded voice
   if (recordedAudio) {
-    const formData = new FormData();
-    formData.append("audio", recordedAudio);
-    formData.append("topic", topic);
-    if (sessionId) formData.append("session_id", sessionId);
+  const formData = new FormData();
+  formData.append("audio", recordedAudio);
 
-    // ✅ Clear input and recording state BEFORE sending
-    setInput("");
-    setRecordedAudio(null);
-    setShowConfirm(false);
-    setIsRecording(false);
-    setIsVoiceProcessing(true);
+  setMessages((prev) => [...prev, { sender: "user", text: "🎙️ Sending your voice..." }]);
+  setInput("");
+  setRecordedAudio(null);
+  setShowConfirm(false);
+  setIsRecording(false);
+  setIsVoiceProcessing(true);
 
-    try {
-      if (!hasSentMessage) setHasSentMessage(true);
-      const res = await API.post("/voice/voice-chat", formData, {
-        headers: { "Content-Type": "multipart/form-data" },
-      });
+  try {
+    // Step 1️⃣: Transcribe voice
+    const transcribeRes = await API.post("/voice/transcribe", formData, {
+      headers: { "Content-Type": "multipart/form-data" },
+    });
+    const userInput = transcribeRes.data.user_input || "[Voice message]";
 
-      const data = res.data;
-
-      const binary = atob(data.audio_base64);
-      const bytes = new Uint8Array(binary.length);
-      for (let i = 0; i < binary.length; i++) {
-        bytes[i] = binary.charCodeAt(i);
+    // ⏱️ Replace placeholder with real transcription early
+    setMessages((prev) => {
+      const updated = [...prev];
+      const lastIndex = updated.length - 1;
+      if (updated[lastIndex].text === "🎙️ Sending your voice...") {
+        updated[lastIndex] = { sender: "user", text: userInput };
       }
+      return updated;
+    });
 
-      const audioBlob = new Blob([bytes], { type: "audio/wav" });
-      const audioUrl = URL.createObjectURL(audioBlob);
-      const audio = new Audio(audioUrl);
+    // Step 2️⃣: Get bot reply
+    const replyRes = await API.post("/voice/reply", {
+      user_input: userInput,
+      topic,
+      session_id: sessionId,
+    });
 
-      setMessages((prev) => [
-        ...prev,
-        { sender: "user", text: data.user_input || "[Voice message]" },
-        { sender: "bot", text: data.text },
-      ]);
-      const newSessionId = data.session_id;
-      if (newSessionId && newSessionId !== sessionId) {
-        setSessionId(newSessionId);
-        const updatedSessions = await API.get(`/chat/sessions?topic=${encodeURIComponent(topic)}`);
-        setSessions(updatedSessions.data);
-      }
+    const botText = replyRes.data.text;
+    const newSessionId = replyRes.data.session_id;
 
-      setIsSpeaking(true); // 🔒 Lock input
-
-      audio.play();
-
-      audio.onended = () => {
-        setIsSpeaking(false); // 🔓 Unlock input
-      };
-
-    } catch (err) {
-      console.error("Voice chat error:", err);
-      setMessages((prev) => [
-        ...prev,
-        { sender: "bot", text: "Voice processing failed." },
-      ]);
-    } finally {
-    setIsVoiceProcessing(false);  // ✅ END showing "Processing..."
+    if (newSessionId && newSessionId !== sessionId) {
+      setSessionId(newSessionId);
+      const updatedSessions = await API.get(`/chat/sessions?topic=${encodeURIComponent(topic)}`);
+      setSessions(updatedSessions.data);
     }
 
-    return;
+    // Step 3️⃣: TTS
+    const ttsRes = await API.post("/voice/tts", { text: botText }, { responseType: "arraybuffer" });
+
+    const audioBlob = new Blob([ttsRes.data], { type: "audio/mpeg" });
+    const audioUrl = URL.createObjectURL(audioBlob);
+    const audio = new Audio(audioUrl);
+
+    setMessages((prev) => [...prev, { sender: "bot", text: botText }]);
+
+    setIsSpeaking(true);
+    audio.play();
+    audio.onended = () => setIsSpeaking(false);
+  } catch (err) {
+    console.error("Voice chat error:", err);
+    setMessages((prev) => [...prev, { sender: "bot", text: "Voice processing failed." }]);
+  } finally {
+    setIsVoiceProcessing(false);
   }
+
+  return;
+}
 
   // ✅ If sending normal text message
   if (!input.trim() || input === "🎙️ Recorded. Press Send") return;
