@@ -398,11 +398,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 12px;
   padding: var(--space-3xl) var(--space-2xl);
   width: 100%;
   max-width: 100%;
   margin-bottom: var(--space-2xl);
   position: relative;
+  flex-wrap: wrap; 
 }
 
 .chat-input {
@@ -506,29 +508,24 @@
   box-shadow: 0 4px 16px var(--shadow-light);
 }
 
-/* Confirm buttons */
-.confirm-buttons {
-  position: absolute;
-  right: 120px;
-  top: 50%;
-  transform: translateY(-50%);
-  display: flex;
-  gap: var(--space-sm);
-  z-index: 10;
-}
 
 .confirm-btn {
-  padding: var(--space-md) var(--space-lg);
-  border: 1.5px solid var(--border-light);
+  width: 32px;
+  height: 32px;
+  font-size: 14px;
+  padding: 0;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border-subtle);
   background: var(--surface-white);
-  border-radius: var(--radius-lg);
-  cursor: pointer;
-  font-size: var(--space-lg);
-  font-weight: 600;
-  box-shadow: 0 4px 16px var(--shadow-light);
+  box-shadow: 0 2px 8px var(--shadow-light);
   transition: all var(--transition-base);
-  color: var(--text-primary);
+  cursor: pointer;
 }
+
+
 
 .confirm-btn:hover {
   transform: translateY(-2px);

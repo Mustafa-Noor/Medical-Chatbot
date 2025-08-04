@@ -412,7 +412,7 @@ return (
           />
 
           {showConfirm && (
-            <div className="confirm-buttons">
+            <>
               <button
                 className="confirm-btn success"
                 onClick={() => {
@@ -434,8 +434,9 @@ return (
               >
                 ❌
               </button>
-            </div>
+            </>
           )}
+
 
           <button className="send-btn" onClick={handleSend}>Send</button>
           {/* <button
