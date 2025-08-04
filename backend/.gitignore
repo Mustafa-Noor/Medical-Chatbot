@@ -62,3 +62,6 @@ data/embeddings
 csv_embeddings/
 /data/
 /scripts/
+
+*.ini
+*.ipynb

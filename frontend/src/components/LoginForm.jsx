@@ -23,8 +23,12 @@ function LoginForm() {
 
       navigate("/select-topic"); // ✅ REDIRECT TO TOPIC SELECTION
     } catch (err) {
-      alert("Login failed. Please check your credentials.");
-    }
+  if (err.response && err.response.data && err.response.data.detail) {
+    alert(`Login failed: ${err.response.data.detail}`);
+  } else {
+    alert("Login failed. Please try again later.");
+  }
+}
   };
 
   return (

@@ -6,7 +6,8 @@ import ResetPassword from "./components/ResetPassword";
 import ForgotPasswordForm from "./components/ForgotPasswordForm";
 import PasswordResetSent from "./components/PasswordResetSent";
 import SelectTopic from "./components/SelectTopic"; // ✅ new
-import ChatPage from "./components/ChatPage";       // ✅ new
+import ChatPage from "./components/ChatPage";
+import ProtectedRoute from "./components/ProtectedRoute";       // ✅ new
 
 function App() {
   return (
@@ -18,8 +19,25 @@ function App() {
         <Route path="/reset-password" element={<ResetPassword />} />
         <Route path="/forgot-password" element={<ForgotPasswordForm />} />
         <Route path="/forgot-password/sent" element={<PasswordResetSent />} />
-        <Route path="/select-topic" element={<SelectTopic />} />      {/* ✅ new */}
-        <Route path="/chat" element={<ChatPage />} />                 {/* ✅ new */}
+        {/* <Route path="/select-topic" element={<SelectTopic />} />      */}
+        {/* <Route path="/chat" element={<ChatPage />} />                  */}
+      {/* ✅ Protected Routes */}
+        <Route
+          path="/select-topic"
+          element={
+            <ProtectedRoute>
+              <SelectTopic />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/chat"
+          element={
+            <ProtectedRoute>
+              <ChatPage />
+            </ProtectedRoute>
+          }
+        />
       </Routes>
     </BrowserRouter>
   );

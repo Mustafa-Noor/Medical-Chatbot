@@ -53,8 +53,12 @@ function RegisterForm() {
       navigate("/login");
       // window.location.href = "/login";
     } catch (err) {
-      setError("Registration failed. Try again.");
-    }
+  if (err.response && err.response.data && err.response.data.detail) {
+    setError(err.response.data.detail);
+  } else {
+    setError("Registration failed. Try again.");
+  }
+}
   };
 
   return (
