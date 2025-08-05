@@ -45,10 +45,10 @@ We created a custom pipeline to:
 
 ## 🧪 Demo
 
-Watch the [demo video](#) to see the system in action.  
+Watch the [demo video](https://www.linkedin.com/posts/marwah-khokher-20b644317_just-wrapped-up-a-project-of-my-internship-activity-7358374639649099776-7Ajo?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEaSvyIBsx_-M4mU1N4cmO_bBzzmki8fsfA) to see the system in action.  
 Deployed here:
-- [Frontend (Vercel)](#)
-- [Backend API (Hugging Face Spaces)](#)
+- [Frontend (Vercel)](https://medical-chatbot-cyan.vercel.app/)
+- [Backend API (Hugging Face Spaces)](https://huggingface.co/spaces/MustafaNoor/Medical-backend-api)
 
 ## 🚀 Stack
 
