@@ -62,13 +62,14 @@ async def handle_chat(request: ChatRequest, db: AsyncSession, current_user) -> C
         memory = "\n".join(memory_pairs)
     else:
         # Summarize previous messages using your normal `call_llm`
+        memory = "\n".join(memory_pairs)
         summary_prompt = f"""
-    You are a summarization assistant. Summarize the following medical conversation between a user and an assistant:
+        You are a summarization assistant. Summarize the following medical conversation between a user and an assistant:
 
-    {"\n".join(memory_pairs)}
+        {memory}
 
-    Summarized Context:
-    """
+        Summarized Context:
+        """
         memory = call_llm(summary_prompt)
 
 
