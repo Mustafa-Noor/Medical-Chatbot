@@ -159,7 +159,7 @@ def generate_tts_audio(text: str) -> BytesIO:
         voice_id="JBFqnCBsd6RMkjVDRZzb",
         output_format="opus_48000_32",
         text=text,
-        model_id="eleven_multilingual_v2"
+        model_id="eleven_flash_v2_5"
     )
 
     tts_audio = b"".join(tts_generator)

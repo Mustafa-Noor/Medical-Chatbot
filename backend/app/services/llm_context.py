@@ -48,7 +48,7 @@ Context (if available):
 User Question:
 {query.strip()}
 
-Your Response:
+Your Response (please keep it concise and focused, 3 to 4 sentences max):
 """
     print("\n🧠 [LLM Fallback]")
     print("📤 Prompt Sent to LLM:")

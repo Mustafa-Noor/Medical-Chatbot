@@ -213,11 +213,14 @@ async def update_session_memory(session_id: str, db: AsyncSession):
         new_memory = "\n".join(memory_pairs)
     else:
         summary_prompt = f"""
-        You are a summarization assistant. Summarize the following medical conversation between a user and an assistant:
+        You are a summarization assistant. Summarize the following medical conversation between a user and an assistant.
 
+        Provide a **brief and concise** summary that captures only the most important medical points and user concerns. Avoid unnecessary details.
+
+        Conversation:
         {"\n".join(memory_pairs)}
 
-        Summary:
+        Concise Summary:
         """
         new_memory = call_llm(summary_prompt)
 
