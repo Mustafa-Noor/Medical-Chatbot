@@ -20,14 +20,14 @@ qdrant_client = QdrantClient(
 )
 
 
-def embed_with_gemini(text: str) -> List[float]:
-    """Embed a string using Gemini embeddings."""
-    response = genai.embed_content(
-        model=EMBEDDING_MODEL,
-        content=text,
-        task_type="retrieval_query"
-    )
-    return response["embedding"]
+# def embed_with_gemini(text: str) -> List[float]:
+#     """Embed a string using Gemini embeddings."""
+#     response = genai.embed_content(
+#         model=EMBEDDING_MODEL,
+#         content=text,
+#         task_type="retrieval_query"
+#     )
+#     return response["embedding"]
 
 
 def list_available_json_topics() -> List[str]:
@@ -36,21 +36,29 @@ def list_available_json_topics() -> List[str]:
     return [c.name for c in collections if not c.name.endswith("csv")]
 
 
-def search_json(topic: str, query: str, k: int = 3):
+def search_json(topic: str, query: str,query_vector: np.ndarray, k: int = 3):
     try:
         print(f"\n🔍 [QDRANT Search] Query: {query}")
         print(f"📘 Topic (Collection): {topic}")
 
         # Embed the query
-        query_vector = np.array(embed_with_gemini(query)).reshape(1, -1)
+        # query_vector = np.array(embed_with_gemini(query)).reshape(1, -1)
 
         # Fetch all vectors and payloads from the collection
-        points = qdrant_client.scroll(
+        # points = qdrant_client.scroll(
+        #     collection_name=topic,
+        #     with_vectors=True,
+        #     with_payload=True,
+        #     limit=500  # adjust based on size
+        # )[0]
+
+        points = qdrant_client.search(
             collection_name=topic,
+            query_vector=query_vector[0],
+            limit=20,
             with_vectors=True,
-            with_payload=True,
-            limit=500  # adjust based on size
-        )[0]
+            with_payload=True
+        )
 
         vectors = []
         payloads = []

@@ -45,7 +45,7 @@ async def handle_chat(
         message=request.message
     )
     db.add(user_msg)
-    await db.commit()
+    # await db.commit()
 
     # 3. Fetch recent messages (6)
     result = await db.execute(

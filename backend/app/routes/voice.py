@@ -10,6 +10,9 @@ from app.database import get_db, AsyncSessionLocal
 from fastapi import BackgroundTasks
 import base64
 
+import logging
+logger = logging.getLogger()
+
 router = APIRouter(
     prefix="/voice",
     tags=["Voice"]
@@ -17,7 +20,9 @@ router = APIRouter(
 
 @router.post("/transcribe")
 async def transcribe_endpoint(audio: UploadFile, current_user=Depends(deps.get_current_user)):
+    logger.info("transcribing-------")
     user_input = await transcribe_audio(audio)
+    logger.info("transcribing endd-------")
     return {"user_input": user_input}
 
 
@@ -32,6 +37,7 @@ async def reply_endpoint(
     topic = payload["topic"]
     session_id = payload.get("session_id")
 
+    logger.info("reply started ----------")
     chatbot_text, new_session_id = await get_chatbot_reply(user_input, topic, db, current_user, session_id, background_tasks)
     return {
         "text": chatbot_text,
@@ -47,12 +53,14 @@ async def tts_endpoint(
     text = payload["text"]
     session_id = payload.get("session_id")
 
+    logger.info("tts startingggg....")
     audio_stream = generate_tts_audio(text)
 
     if session_id:
         # Do NOT pass `db` directly — create a fresh one in background task
         background_tasks.add_task(update_session_memory_safe, session_id)
 
+    logger.info("tts endinggg....")
     return StreamingResponse(audio_stream, media_type="audio/webm; codecs=opus")
 
 

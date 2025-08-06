@@ -1,6 +1,8 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, ConfigDict
 from typing import List, Optional
-from langchain_core.documents import Document  # or your own Document class
+from langchain_core.documents import Document 
+from typing import Optional
+import numpy as np # or your own Document class
 
 class SearchState(BaseModel):
     query: str
@@ -12,3 +14,6 @@ class SearchState(BaseModel):
     topic: str  # <-- Add this
     source: Optional[str] = "llm"
     memory: Optional[str] = ""
+    query_vector: Optional[np.ndarray] = None
+
+    model_config = ConfigDict(arbitrary_types_allowed=True)

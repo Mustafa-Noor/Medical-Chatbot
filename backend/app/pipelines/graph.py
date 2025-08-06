@@ -1,6 +1,9 @@
 from app.pipelines.builder import build_graph
 from app.schemas.search_state import SearchState
 
+import logging
+logger = logging.getLogger()
+
 app_graph = build_graph()
 
 def run_pipeline(query: str, topic: str, memory: str) -> dict:
@@ -8,6 +11,7 @@ def run_pipeline(query: str, topic: str, memory: str) -> dict:
     print("🧵 Initial SearchState:\n", initial_state.dict())
     print("🧠 Memory passed into initial state:\n", memory)
 
+    logger.info("graph starting----")
     final_state = app_graph.invoke(initial_state)
 
     if isinstance(final_state, dict):

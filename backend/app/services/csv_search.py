@@ -6,6 +6,8 @@ from sklearn.metrics.pairwise import cosine_similarity
 from langchain.schema import Document
 from qdrant_client import QdrantClient
 import google.generativeai as genai
+import logging
+logger = logging.getLogger()
 
 # ---- PATH SETUP ---- #
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
@@ -23,14 +25,14 @@ qdrant_client = QdrantClient(
 )
 
 
-def embed_with_gemini(text: str) -> List[float]:
-    """Generate Gemini embeddings for a query."""
-    response = genai.embed_content(
-        model=EMBEDDING_MODEL,
-        content=text,
-        task_type="retrieval_query"
-    )
-    return response["embedding"]
+# def embed_with_gemini(text: str) -> List[float]:
+#     """Generate Gemini embeddings for a query."""
+#     response = genai.embed_content(
+#         model=EMBEDDING_MODEL,
+#         content=text,
+#         task_type="retrieval_query"
+#     )
+#     return response["embedding"]
 
 
 def list_available_csv_topics() -> List[str]:
@@ -39,7 +41,7 @@ def list_available_csv_topics() -> List[str]:
     return [col.name for col in collections if col.name.endswith(QDRANT_COLLECTION_SUFFIX)]
 
 
-def search_csv(topic: str, query: str, k: int = 3) -> Dict[str, Any]:
+def search_csv(topic: str, query: str, query_vector: np.ndarray, k: int = 3) -> Dict[str, Any]:
     topic = topic.strip() + "_csv"
     query_normalized = query.strip().lower()
 
@@ -47,16 +49,26 @@ def search_csv(topic: str, query: str, k: int = 3) -> Dict[str, Any]:
         print(f"\n🔍 [QDRANT CSV Search] Query: {query}")
         print(f"📘 Topic: {topic}")
 
-        # Embed query
-        query_vector = np.array(embed_with_gemini(query)).reshape(1, -1)
+        logger.info("query vector start")
+        # # Embed query
+        # query_vector = np.array(embed_with_gemini(query)).reshape(1, -1)
 
+        logger.info("query vector end------")
         # Fetch points from Qdrant
-        points = qdrant_client.scroll(
+        # points = qdrant_client.scroll(
+        #     collection_name=topic,
+        #     with_vectors=True,
+        #     with_payload=True,
+        #     limit=500
+        # )[0]
+
+        points = qdrant_client.search(
             collection_name=topic,
+            query_vector=query_vector[0],
+            limit=20,
             with_vectors=True,
-            with_payload=True,
-            limit=500
-        )[0]
+            with_payload=True
+        )
 
         vectors, payloads = [], []
         for p in points:
@@ -68,9 +80,12 @@ def search_csv(topic: str, query: str, k: int = 3) -> Dict[str, Any]:
             print("⚠️ No vectors found.")
             return {"score": 0.0, "docs": []}
 
+        
         # Similarity
         vector_matrix = np.array(vectors)
+        logger.info("cosine similarirty")
         similarities = cosine_similarity(query_vector, vector_matrix)[0]
+        logger.info("simi end------")
         ranked = sorted(zip(payloads, similarities), key=lambda x: x[1], reverse=True)
 
         # Filter

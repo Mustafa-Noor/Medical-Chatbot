@@ -12,6 +12,8 @@ from app.services.suggestions import get_csv_suggestions
 from sqlalchemy import delete
 from typing import List
 from fastapi import BackgroundTasks
+import logging
+logger = logging.getLogger()
 
 
 router = APIRouter(
@@ -27,6 +29,7 @@ async def send_message(
     db: AsyncSession = Depends(get_db),
     current_user=Depends(deps.get_current_user),
 ):
+    logger.info("Called function-")
     return await handle_chat(request, db, current_user, background_tasks)
 
 
