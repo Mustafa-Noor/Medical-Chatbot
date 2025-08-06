@@ -150,9 +150,13 @@ const handleSend = async () => {
     }
 
     // Step 3️⃣: TTS
-    const ttsRes = await API.post("/voice/tts", { text: botText }, { responseType: "arraybuffer" });
+    const ttsRes = await API.post(
+  "/voice/tts",
+  { text: botText, session_id: sessionId },  // include session_id here
+  { responseType: "arraybuffer" }
+);
 
-    const audioBlob = new Blob([ttsRes.data], { type: "audio/mpeg" });
+    const audioBlob = new Blob([ttsRes.data], { type: "audio/webm; codecs=opus" });
     const audioUrl = URL.createObjectURL(audioBlob);
     const audio = new Audio(audioUrl);
 

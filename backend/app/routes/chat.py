@@ -11,6 +11,7 @@ from app.services.chat_service import handle_chat
 from app.services.suggestions import get_csv_suggestions
 from sqlalchemy import delete
 from typing import List
+from fastapi import BackgroundTasks
 
 
 router = APIRouter(
@@ -22,10 +23,11 @@ router = APIRouter(
 @router.post("/send-message", response_model=ChatResponse)
 async def send_message(
     request: ChatRequest,
+    background_tasks: BackgroundTasks,
     db: AsyncSession = Depends(get_db),
-    current_user=Depends(deps.get_current_user)
+    current_user=Depends(deps.get_current_user),
 ):
-    return await handle_chat(request, db, current_user)
+    return await handle_chat(request, db, current_user, background_tasks)
 
 
 

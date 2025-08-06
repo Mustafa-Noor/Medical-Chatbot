@@ -19,6 +19,7 @@ class ChatSession(Base):
     user_id = Column(Integer, ForeignKey("users.id", ondelete="CASCADE"))
     topic = Column(String(100))
     title = Column(String(255))
+    memory = Column(Text, nullable=True)
     created_at = Column(TIMESTAMP, server_default=func.now())
 
 class ChatMessage(Base):

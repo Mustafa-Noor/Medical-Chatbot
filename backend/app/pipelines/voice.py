@@ -104,9 +104,10 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from groq import Groq
 from elevenlabs import ElevenLabs
 from app.config import settings
-from app.services.chat_service import handle_chat
+from app.services.chat_service import handle_chat, handle_voice_chat
 from app.schemas.chat import ChatRequest
 import logging
+from fastapi import BackgroundTasks
 
 logger = logging.getLogger()
 
@@ -139,11 +140,11 @@ async def transcribe_audio(audio_file: UploadFile) -> str:
     return stt_response.text
 
 
-async def get_chatbot_reply(user_input: str, topic: str, db: AsyncSession, current_user, session_id: str | None = None) -> tuple[str, str]:
+async def get_chatbot_reply(user_input: str, topic: str, db: AsyncSession, current_user, session_id: str | None = None, background_tasks: BackgroundTasks = None) -> tuple[str, str]:
     logger.info("🧠 [Getting Chatbot Reply]")
 
     chat_request = ChatRequest(message=user_input, topic=topic, session_id=session_id)
-    chat_response = await handle_chat(chat_request, db, current_user)
+    chat_response = await handle_voice_chat(chat_request, db, current_user, background_tasks)
 
     logger.info(f"✅ Chatbot Response: {chat_response.reply[:300]}")
     return chat_response.reply, chat_response.session_id
@@ -156,7 +157,7 @@ def generate_tts_audio(text: str) -> BytesIO:
 
     tts_generator = eleven_client.text_to_speech.convert(
         voice_id="JBFqnCBsd6RMkjVDRZzb",
-        output_format="mp3_44100_128",
+        output_format="opus_48000_32",
         text=text,
         model_id="eleven_multilingual_v2"
     )
@@ -166,12 +167,19 @@ def generate_tts_audio(text: str) -> BytesIO:
     return BytesIO(tts_audio)
 
 
-async def process_voice_chat(audio_file: UploadFile, topic: str, db: AsyncSession, current_user, session_id: str | None = None):
+async def process_voice_chat(
+    audio_file: UploadFile,
+    topic: str,
+    db: AsyncSession,
+    current_user,
+    background_tasks: BackgroundTasks,
+    session_id: str | None = None,
+):
     logger.info("🎤 [Voice Chat Pipeline Start]")
 
     user_input = await transcribe_audio(audio_file)
 
-    chatbot_text, new_session_id = await get_chatbot_reply(user_input, topic, db, current_user, session_id)
+    chatbot_text, new_session_id = await get_chatbot_reply(user_input, topic, db, current_user, session_id, background_tasks)
 
     audio_stream = generate_tts_audio(chatbot_text)
 
