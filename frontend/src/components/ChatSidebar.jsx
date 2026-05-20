@@ -1,7 +1,7 @@
 // src/components/ChatSidebar.jsx
 import React, { useEffect, useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-import API from "../services/api";
+import API, { authErrorEvent } from "../services/api";
 import "./ChatSidebar.css";
 
 const ChatSidebar = ({ onSessionSelect, currentSessionId, onClose }) => {
@@ -10,6 +10,17 @@ const ChatSidebar = ({ onSessionSelect, currentSessionId, onClose }) => {
   const [error, setError] = useState(null);
   const navigate = useNavigate();
   const location = useLocation();
+
+  // Listen for authentication errors and redirect to login
+  useEffect(() => {
+    const handleAuthError = () => {
+      console.log("Auth error detected in ChatSidebar. Redirecting to login...");
+      navigate("/login", { replace: true });
+    };
+    
+    window.addEventListener("authError", handleAuthError);
+    return () => window.removeEventListener("authError", handleAuthError);
+  }, [navigate]);
 
 
 
@@ -27,6 +38,7 @@ const ChatSidebar = ({ onSessionSelect, currentSessionId, onClose }) => {
       const token = localStorage.getItem("token");
       if (!token) {
         setError("Not authenticated");
+        navigate("/login", { replace: true });
         return;
       }
 
@@ -34,8 +46,13 @@ const ChatSidebar = ({ onSessionSelect, currentSessionId, onClose }) => {
       setSessions(response.data);
       setError(null);
     } catch (err) {
-      console.error("Failed to fetch sessions:", err);
-      setError("Failed to load sessions");
+      if (err.response?.status === 401 || err.response?.status === 403) {
+        setError("Your session has expired. Please log in again.");
+        setTimeout(() => navigate("/login", { replace: true }), 2000);
+      } else {
+        console.error("Failed to fetch sessions:", err);
+        setError("Failed to load sessions");
+      }
     } finally {
       setLoading(false);
     }
