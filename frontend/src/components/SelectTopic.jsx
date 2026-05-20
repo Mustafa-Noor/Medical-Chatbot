@@ -1,7 +1,7 @@
 // src/components/SelectTopic.jsx
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import API from "../services/api";
+import API, { authErrorEvent } from "../services/api";
 import ChatSidebar from "./ChatSidebar";
 import "./SelectTopics.css";
 
@@ -11,6 +11,17 @@ const SelectTopic = () => {
   const [currentSessionId, setCurrentSessionId] = useState(null);
   const [showSidebar, setShowSidebar] = useState(true);
   const navigate = useNavigate();
+
+  // Listen for authentication errors and redirect to login
+  useEffect(() => {
+    const handleAuthError = () => {
+      console.log("Auth error detected in SelectTopic. Redirecting to login...");
+      navigate("/login", { replace: true });
+    };
+    
+    window.addEventListener("authError", handleAuthError);
+    return () => window.removeEventListener("authError", handleAuthError);
+  }, [navigate]);
 
   useEffect(() => {
     const token = localStorage.getItem("token");
@@ -27,10 +38,14 @@ const SelectTopic = () => {
         setTopics(topicsArray);
       })
       .catch((err) => {
-        console.error("Failed to fetch topics:", err);
-        setTopics([]); // Set to empty array on error
+        if (err.response?.status === 401 || err.response?.status === 403) {
+          navigate("/login", { replace: true });
+        } else {
+          console.error("Failed to fetch topics:", err);
+          setTopics([]); // Set to empty array on error
+        }
       });
-  }, []);
+  }, [navigate]);
 
   const handleSubmit = () => {
     if (!selectedTopic) {
