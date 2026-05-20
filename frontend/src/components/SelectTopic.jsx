@@ -22,10 +22,13 @@ const SelectTopic = () => {
     API.get("/topics")
       .then((res) => {
         console.log("Fetched topics:", res.data);
-        setTopics(res.data);
+        // Ensure topics is always an array
+        const topicsArray = Array.isArray(res.data) ? res.data : [];
+        setTopics(topicsArray);
       })
       .catch((err) => {
         console.error("Failed to fetch topics:", err);
+        setTopics([]); // Set to empty array on error
       });
   }, []);
 
