@@ -47,6 +47,10 @@ const API = axios.create({
   // baseURL: "http://localhost:8000", 
 });
 
+
+// Event emitter for auth errors
+export const authErrorEvent = new Event("authError");
+
 // Attach Authorization token
 API.interceptors.request.use((config) => {
   const token = localStorage.getItem("token");
