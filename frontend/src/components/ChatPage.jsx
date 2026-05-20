@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
-import API from "../services/api";
+import API, { authErrorEvent } from "../services/api";
 import "./ChatPage.css";
 import ReactMarkdown from "react-markdown";
 import VoiceChatUI from "../components/VoiceChatUI";
@@ -38,6 +38,16 @@ const ChatPage = () => {
   const chatBoxRef = useRef(null);
   const voiceRef = useRef();
   
+  // Listen for authentication errors and redirect to login
+  useEffect(() => {
+    const handleAuthError = () => {
+      console.log("Auth error detected. Redirecting to login...");
+      navigate("/login", { replace: true });
+    };
+    
+    window.addEventListener("authError", handleAuthError);
+    return () => window.removeEventListener("authError", handleAuthError);
+  }, [navigate]);
 
   useEffect(() => {
     const storedTopic = localStorage.getItem("selected_topic");
@@ -52,12 +62,16 @@ const ChatPage = () => {
         setSuggestions(res.data); // response is: ["question1", "question2", "question3"]
       }
     } catch (err) {
-      console.error("Failed to load suggestions", err);
+      if (err.response?.status === 401 || err.response?.status === 403) {
+        navigate("/login", { replace: true });
+      } else {
+        console.error("Failed to load suggestions", err);
+      }
     }
   };
 
   fetchSuggestions();
-}, [sessionId, topic]);
+}, [sessionId, topic, navigate]);
 
   useEffect(() => {
     const params = new URLSearchParams(location.search);
@@ -83,11 +97,15 @@ const ChatPage = () => {
           setSessions(res.data);
         }
       } catch (err) {
-        console.error("Error fetching sessions", err);
+        if (err.response?.status === 401 || err.response?.status === 403) {
+          navigate("/login", { replace: true });
+        } else {
+          console.error("Error fetching sessions", err);
+        }
       }
     };
     fetchSessions();
-  }, [topic]);
+  }, [topic, navigate]);
 
   const handleSessionClick = async (id) => {
     try {
@@ -99,7 +117,11 @@ const ChatPage = () => {
       setMessages(msgs);
       setSessionId(id);
     } catch (err) {
-      console.error("Failed to load session messages", err);
+      if (err.response?.status === 401 || err.response?.status === 403) {
+        navigate("/login", { replace: true });
+      } else {
+        console.error("Failed to load session messages", err);
+      }
     }
   };
 
@@ -166,8 +188,13 @@ const handleSend = async () => {
     audio.play();
     audio.onended = () => setIsSpeaking(false);
   } catch (err) {
-    console.error("Voice chat error:", err);
-    setMessages((prev) => [...prev, { sender: "bot", text: "Voice processing failed." }]);
+    if (err.response?.status === 401 || err.response?.status === 403) {
+      setMessages((prev) => [...prev, { sender: "bot", text: "Your session has expired. Please log in again." }]);
+      setTimeout(() => navigate("/login", { replace: true }), 2000);
+    } else {
+      console.error("Voice chat error:", err);
+      setMessages((prev) => [...prev, { sender: "bot", text: "Voice processing failed. Please try again." }]);
+    }
   } finally {
     setIsVoiceProcessing(false);
   }
@@ -185,7 +212,6 @@ const handleSend = async () => {
 
     
   try {
-
     if (!hasSentMessage) setHasSentMessage(true);
     const response = await API.post("/chat/send-message", {
       session_id: sessionId,
@@ -206,10 +232,18 @@ const handleSend = async () => {
     const botMessage = { sender: "bot", text: response.data.reply };
     setMessages((prev) => [...prev, botMessage]);
   } catch (err) {
-    setMessages((prev) => [
-      ...prev,
-      { sender: "bot", text: "Sorry, something went wrong." },
-    ]);
+    if (err.response?.status === 401 || err.response?.status === 403) {
+      setMessages((prev) => [
+        ...prev,
+        { sender: "bot", text: "Your session has expired. Please log in again." },
+      ]);
+      setTimeout(() => navigate("/login", { replace: true }), 2000);
+    } else {
+      setMessages((prev) => [
+        ...prev,
+        { sender: "bot", text: "Sorry, something went wrong. Please try again." },
+      ]);
+    }
     console.error("Chat error:", err);
   } finally {
     setIsLoading(false);
@@ -280,11 +314,13 @@ const handleSend = async () => {
       };
 
     } catch (err) {
-      console.error("Voice chat error:", err);
-      setMessages((prev) => [
-        ...prev,
-        { sender: "bot", text: "Voice processing failed." },
-      ]);
+      if (err.response?.status === 401 || err.response?.status === 403) {
+        setMessages((prev) => [...prev, { sender: "bot", text: "Your session has expired. Please log in again." }]);
+        setTimeout(() => navigate("/login", { replace: true }), 2000);
+      } else {
+        console.error("Voice chat error:", err);
+        setMessages((prev) => [...prev, { sender: "bot", text: "Voice processing failed. Please try again." }]);
+      }
     }
   };
 
@@ -297,8 +333,12 @@ const handleSend = async () => {
       setMessages([]);
     }
   } catch (err) {
-    console.error("Failed to delete session:", err);
-    alert("Failed to delete session.");
+    if (err.response?.status === 401 || err.response?.status === 403) {
+      navigate("/login", { replace: true });
+    } else {
+      console.error("Failed to delete session:", err);
+      alert("Failed to delete session. Please try again.");
+    }
   }
 };
 
